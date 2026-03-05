@@ -1,0 +1,41 @@
+[project]
+name = 'StacksDao'
+description = 'NFT Minting, Staking, Token Rewards & Governance DAO on Stacks'
+authors = []
+telemetry = false
+cache_dir = './.cache'
+
+[[project.requirements]]
+contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
+
+[[project.requirements]]
+contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
+[contracts.governance-dao]
+path = 'contracts/governance-dao.clar'
+clarity_version = 2
+epoch = 2.5
+depends_on = ["governance-token"]
+
+[contracts.governance-token]
+path = 'contracts/governance-token.clar'
+clarity_version = 2
+epoch = 2.5
+
+[contracts.nft-staking]
+path = 'contracts/nft-staking.clar'
+clarity_version = 2
+epoch = 2.5
+depends_on = ["governance-token", "stacks-nft"]
+
+[contracts.stacks-nft]
+path = 'contracts/stacks-nft.clar'
+clarity_version = 2
+epoch = 2.5
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
