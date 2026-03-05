@@ -48,8 +48,8 @@ export default function Home() {
         functionName: 'mint',
         functionArgs: [],
         postConditionMode: PostConditionMode.Deny,
-        postConditions,
-        network: NETWORK,
+        postConditions: postConditions as any,
+        network: NETWORK as any,
         onFinish: (data) => {
           toast.success('Mint transaction broadcasted!');
           console.log('TXID:', data.txId);
@@ -77,7 +77,7 @@ export default function Home() {
         contractName: CONTRACTS.NFT_STAKING,
         functionName: 'stake-nft',
         functionArgs: [Cl.uint(tokenId)],
-        network: NETWORK,
+        network: NETWORK as any,
         onFinish: (data) => {
           toast.success('Staking transaction broadcasted!');
           setIsStaking(false);
