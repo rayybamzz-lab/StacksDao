@@ -9,39 +9,39 @@ plan:
     - id: 0
       transactions:
         - contract-publish:
-            contract-name: governance-token
+            contract-name: governance-token-v2
             expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
             cost: 20000
-            path: contracts/governance-token.clar
+            path: contracts/governance-token-v2.clar
             anchor-block-only: true
             clarity-version: 2
         - contract-publish:
-            contract-name: stacks-nft
+            contract-name: stacks-nft-v2
             expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
             cost: 20000
-            path: contracts/stacks-nft.clar
+            path: contracts/stacks-nft-v2.clar
             anchor-block-only: true
             clarity-version: 2
         - contract-publish:
-            contract-name: nft-staking
+            contract-name: nft-staking-v2
             expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
             cost: 20000
-            path: contracts/nft-staking.clar
+            path: contracts/nft-staking-v2.clar
             anchor-block-only: true
             clarity-version: 2
         - contract-publish:
-            contract-name: governance-dao
+            contract-name: governance-dao-v2
             expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
             cost: 20000
-            path: contracts/governance-dao.clar
+            path: contracts/governance-dao-v2.clar
             anchor-block-only: true
             clarity-version: 2
         - contract-call:
-            contract-id: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2.governance-token
+            contract-id: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2.governance-token-v2
             expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
             method: set-authorized-minter
             parameters:
-              - "'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2.nft-staking"
+              - "'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2.nft-staking-v2"
             cost: 20000
             anchor-block-only: true
       epoch: "2.5"

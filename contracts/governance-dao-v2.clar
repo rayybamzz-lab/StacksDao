@@ -65,7 +65,7 @@
   )
   (let
     (
-      (proposer-balance (unwrap-panic (contract-call? .governance-token get-balance tx-sender)))
+      (proposer-balance (unwrap-panic (contract-call? .governance-token-v2 get-balance tx-sender)))
       (new-id (+ (var-get proposal-count) u1))
     )
     ;; Must hold minimum SDAO to propose
@@ -98,7 +98,7 @@
   (let
     (
       (proposal (unwrap! (map-get? proposals proposal-id) ERR-PROPOSAL-NOT-FOUND))
-      (voter-balance (unwrap-panic (contract-call? .governance-token get-balance tx-sender)))
+      (voter-balance (unwrap-panic (contract-call? .governance-token-v2 get-balance tx-sender)))
     )
     ;; Voting must be active
     (asserts! (<= block-height (get end-block proposal)) ERR-VOTING-ENDED)
@@ -132,7 +132,7 @@
   (let
     (
       (proposal (unwrap! (map-get? proposals proposal-id) ERR-PROPOSAL-NOT-FOUND))
-      (voter-balance (unwrap-panic (contract-call? .governance-token get-balance tx-sender)))
+      (voter-balance (unwrap-panic (contract-call? .governance-token-v2 get-balance tx-sender)))
     )
     ;; Voting must be active
     (asserts! (<= block-height (get end-block proposal)) ERR-VOTING-ENDED)

@@ -4,10 +4,10 @@
 
 Contracts must be deployed in this exact order due to inter-contract dependencies:
 
-1. `governance-token` — no dependencies
-2. `stacks-nft` — no dependencies
-3. `nft-staking` — calls `stacks-nft` and `governance-token`
-4. `governance-dao` — calls `governance-token`
+1. `governance-token-v2` — no dependencies
+2. `stacks-nft-v2` — no dependencies
+3. `nft-staking-v2` — calls `stacks-nft-v2` and `governance-token-v2`
+4. `governance-dao-v2` — calls `governance-token-v2`
 
 ## Post-Deployment Setup
 
@@ -15,18 +15,18 @@ After deploying all four contracts, call these transactions in order:
 
 ### 1. Authorize the Staking Contract to Mint SDAO
 ```
-Contract: governance-token
+Contract: governance-token-v2
 Function: set-authorized-minter
-Argument: <your-deployer-address>.nft-staking
+Argument: <your-deployer-address>.nft-staking-v2
 ```
 
 This step is **critical** — without it, the staking contract cannot mint reward tokens for stakers.
 
 ### 2. Verify Deployment
-- Call `get-mint-price` on `stacks-nft` → should return `u100000`
-- Call `get-max-supply` on `stacks-nft` → should return `u10000`
-- Call `get-reward-per-block` on `nft-staking` → should return `u10000000`
-- Call `get-symbol` on `governance-token` → should return `"SDAO"`
+- Call `get-mint-price` on `stacks-nft-v2` → should return `u10000`
+- Call `get-max-supply` on `stacks-nft-v2` → should return `u10000`
+- Call `get-reward-per-block` on `nft-staking-v2` → should return `u10000000`
+- Call `get-symbol` on `governance-token-v2` → should return `"SDAO"`
 
 ## Mainnet Trait Addresses (already in contracts)
 

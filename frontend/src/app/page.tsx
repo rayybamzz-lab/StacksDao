@@ -35,7 +35,7 @@ export default function Home() {
     if (!isSignedIn) return connectWallet();
 
     setIsMinting(true);
-    const mintPrice = 100000; // 0.1 STX as per contract constant
+    const mintPrice = 10000; // 0.01 STX as per contract constant
 
     try {
       const postConditions = [
@@ -191,7 +191,7 @@ export default function Home() {
             <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-zinc-800">
               <div className="flex justify-between text-sm">
                 <span className="text-slate-500">Price</span>
-                <span className="font-bold">0.1 STX</span>
+                <span className="font-bold">0.01 STX</span>
               </div>
               <div className="flex justify-between text-sm">
                 <span className="text-slate-500">Max Supply</span>

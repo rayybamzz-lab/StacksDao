@@ -10,25 +10,25 @@ contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standa
 
 [[project.requirements]]
 contract_id = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait'
-[contracts.governance-dao]
-path = 'contracts/governance-dao.clar'
+[contracts.governance-dao-v2]
+path = 'contracts/governance-dao-v2.clar'
 clarity_version = 2
 epoch = 2.5
-depends_on = ["governance-token"]
+depends_on = ["governance-token-v2"]
 
-[contracts.governance-token]
-path = 'contracts/governance-token.clar'
+[contracts.governance-token-v2]
+path = 'contracts/governance-token-v2.clar'
 clarity_version = 2
 epoch = 2.5
 
-[contracts.nft-staking]
-path = 'contracts/nft-staking.clar'
+[contracts.nft-staking-v2]
+path = 'contracts/nft-staking-v2.clar'
 clarity_version = 2
 epoch = 2.5
-depends_on = ["governance-token", "stacks-nft"]
+depends_on = ["governance-token-v2", "stacks-nft-v2"]
 
-[contracts.stacks-nft]
-path = 'contracts/stacks-nft.clar'
+[contracts.stacks-nft-v2]
+path = 'contracts/stacks-nft-v2.clar'
 clarity_version = 2
 epoch = 2.5
 [repl.analysis]

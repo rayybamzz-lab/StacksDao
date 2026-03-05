@@ -41,7 +41,7 @@
 (define-public (stake-nft (token-id uint))
   (let
     (
-      (owner (unwrap! (contract-call? .stacks-nft get-owner token-id) ERR-NOT-AUTHORIZED))
+      (owner (unwrap! (contract-call? .stacks-nft-v2 get-owner token-id) ERR-NOT-AUTHORIZED))
     )
     ;; Verify caller owns the NFT
     (asserts! (is-eq (some tx-sender) owner) ERR-NOT-OWNER)
@@ -49,7 +49,7 @@
     (asserts! (is-none (map-get? staking-data token-id)) ERR-ALREADY-STAKED)
 
     ;; Transfer NFT to this contract for custody
-    (try! (contract-call? .stacks-nft transfer token-id tx-sender (as-contract tx-sender)))
+    (try! (contract-call? .stacks-nft-v2 transfer token-id tx-sender (as-contract tx-sender)))
 
     ;; Record staking data
     (map-set staking-data token-id {
@@ -86,12 +86,12 @@
 
     ;; Mint any pending rewards
     (if (> rewards u0)
-      (try! (contract-call? .governance-token mint rewards tx-sender))
+      (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
       true
     )
 
     ;; Return NFT to staker
-    (try! (as-contract (contract-call? .stacks-nft transfer token-id tx-sender staker)))
+    (try! (as-contract (contract-call? .stacks-nft-v2 transfer token-id tx-sender staker)))
 
     ;; Clean up staking data
     (map-delete staking-data token-id)
@@ -125,7 +125,7 @@
     (asserts! (> rewards u0) ERR-NO-REWARDS)
 
     ;; Mint rewards
-    (try! (contract-call? .governance-token mint rewards tx-sender))
+    (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
 
     ;; Update last claim block
     (map-set staking-data token-id

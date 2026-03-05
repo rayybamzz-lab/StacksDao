@@ -1,7 +1,7 @@
 ;; ============================================================
 ;; StacksDAO NFT - SIP-009 Non-Fungible Token
 ;; ============================================================
-;; Mint cost: 0.001 STX (u100000 micro-STX)
+;; Mint cost: 0.01 STX (u10000 micro-STX)
 ;; Max supply: 10,000 NFTs
 ;; Sequential token IDs starting from 1
 ;; ============================================================
@@ -20,7 +20,7 @@
 ;; Constants
 ;; ---------------------
 (define-constant CONTRACT-OWNER tx-sender)
-(define-constant MINT-PRICE u100000)             ;; 0.001 STX in micro-STX
+(define-constant MINT-PRICE u10000)             ;; 0.01 STX in micro-STX
 (define-constant MAX-SUPPLY u10000)
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-SOLD-OUT (err u501))

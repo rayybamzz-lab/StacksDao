@@ -9,10 +9,10 @@ export const NETWORK = STACKS_MAINNET;
 export const CONTRACT_ADDRESS = 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
 
 export const CONTRACTS = {
-    GOVERNANCE_TOKEN: 'governance-token',
-    STACKS_NFT: 'stacks-nft',
-    NFT_STAKING: 'nft-staking',
-    GOVERNANCE_DAO: 'governance-dao'
+    GOVERNANCE_TOKEN: 'governance-token-v2',
+    STACKS_NFT: 'stacks-nft-v2',
+    NFT_STAKING: 'nft-staking-v2',
+    GOVERNANCE_DAO: 'governance-dao-v2'
 };
 
 export const CONTRACT_IDENTIFIERS = {
