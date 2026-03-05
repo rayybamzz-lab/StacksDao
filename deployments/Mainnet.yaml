@@ -1,0 +1,70 @@
+---
+id: 1
+name: "StacksDao Mainnet Deployment"
+network: mainnet
+stacks-node: "https://stacks-node-api.mainnet.stacks.co"
+bitcoin-node: "https://blockstream.info/api"
+
+transactions:
+  # --------------------------------------------------------
+  # Step 1: Deploy SDAO Governance Token
+  # --------------------------------------------------------
+  - id: 1
+    type: contract-publish
+    expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+    contract-name: governance-token
+    source: contracts/governance-token.clar
+    clarity-version: 2
+    anchor-block-only: true
+    cost: 20000
+
+  # --------------------------------------------------------
+  # Step 2: Deploy StacksDAO NFT
+  # --------------------------------------------------------
+  - id: 2
+    type: contract-publish
+    expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+    contract-name: stacks-nft
+    source: contracts/stacks-nft.clar
+    clarity-version: 2
+    anchor-block-only: true
+    cost: 20000
+
+  # --------------------------------------------------------
+  # Step 3: Deploy NFT Staking Contract
+  # --------------------------------------------------------
+  - id: 3
+    type: contract-publish
+    expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+    contract-name: nft-staking
+    source: contracts/nft-staking.clar
+    clarity-version: 2
+    anchor-block-only: true
+    cost: 20000
+
+  # --------------------------------------------------------
+  # Step 4: Deploy Governance DAO
+  # --------------------------------------------------------
+  - id: 4
+    type: contract-publish
+    expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+    contract-name: governance-dao
+    source: contracts/governance-dao.clar
+    clarity-version: 2
+    anchor-block-only: true
+    cost: 20000
+
+  # --------------------------------------------------------
+  # Step 5: Authorize staking contract to mint SDAO
+  # CRITICAL: must be called right after deployment
+  # --------------------------------------------------------
+  - id: 5
+    type: contract-call
+    expected-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+    contract-id: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.governance-token
+    method: set-authorized-minter
+    parameters:
+      - type: principal
+        value: "ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM.nft-staking"
+    anchor-block-only: true
+    cost: 20000
