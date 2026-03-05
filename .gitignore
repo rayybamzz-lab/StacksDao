@@ -1,0 +1,14 @@
+# Build artifacts
+.cache/
+node_modules/
+
+# Clarinet devnet state
+.clarinet/
+
+# Environment / secrets - NEVER commit real mnemonics
+.env
+.env.local
+
+# OS files
+.DS_Store
+Thumbs.db
