@@ -12,3 +12,9 @@ node_modules/
 # OS files
 .DS_Store
 Thumbs.db
+
+# Settings and Secrets
+settings/Mainnet.toml
+settings/Testnet.toml
+*.env
+deployments/default.mainnet-plan.yaml
