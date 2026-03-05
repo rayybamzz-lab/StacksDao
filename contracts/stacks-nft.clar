@@ -1,0 +1,136 @@
+;; ============================================================
+;; StacksDAO NFT - SIP-009 Non-Fungible Token
+;; ============================================================
+;; Mint cost: 0.001 STX (u100000 micro-STX)
+;; Max supply: 10,000 NFTs
+;; Sequential token IDs starting from 1
+;; ============================================================
+
+;; ---------------------
+;; SIP-009 Trait
+;; ---------------------
+(impl-trait 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait.nft-trait)
+
+;; ---------------------
+;; NFT Definition
+;; ---------------------
+(define-non-fungible-token stacksdao-nft uint)
+
+;; ---------------------
+;; Constants
+;; ---------------------
+(define-constant CONTRACT-OWNER tx-sender)
+(define-constant MINT-PRICE u100000)             ;; 0.001 STX in micro-STX
+(define-constant MAX-SUPPLY u10000)
+(define-constant ERR-NOT-AUTHORIZED (err u401))
+(define-constant ERR-SOLD-OUT (err u501))
+(define-constant ERR-INSUFFICIENT-PAYMENT (err u502))
+(define-constant ERR-NOT-FOUND (err u504))
+(define-constant ERR-ALREADY-LISTED (err u505))
+(define-constant ERR-NOT-OWNER (err u506))
+
+;; ---------------------
+;; Data Variables
+;; ---------------------
+(define-data-var last-token-id uint u0)
+(define-data-var base-uri (string-ascii 256) "https://stacksdao.io/nft/metadata/")
+(define-data-var paused bool false)
+
+;; ---------------------
+;; Data Maps
+;; ---------------------
+(define-map token-uris uint (string-ascii 256))
+
+;; ---------------------
+;; Mint Function
+;; ---------------------
+(define-public (mint)
+  (let
+    (
+      (next-id (+ (var-get last-token-id) u1))
+    )
+    ;; Check not paused
+    (asserts! (not (var-get paused)) ERR-NOT-AUTHORIZED)
+    ;; Check supply cap
+    (asserts! (<= next-id MAX-SUPPLY) ERR-SOLD-OUT)
+    ;; Transfer mint price to contract owner
+    (try! (stx-transfer? MINT-PRICE tx-sender CONTRACT-OWNER))
+    ;; Mint the NFT
+    (try! (nft-mint? stacksdao-nft next-id tx-sender))
+    ;; Update counter
+    (var-set last-token-id next-id)
+    (ok next-id)
+  )
+)
+
+;; Batch mint (up to 5 per call)
+(define-public (mint-batch (count uint))
+  (begin
+    (asserts! (<= count u5) (err u503))
+    ;; Using internal unwrapping for batch mints
+    (if (>= count u1) (unwrap-panic (mint)) u0)
+    (if (>= count u2) (unwrap-panic (mint)) u0)
+    (if (>= count u3) (unwrap-panic (mint)) u0)
+    (if (>= count u4) (unwrap-panic (mint)) u0)
+    (if (>= count u5) (unwrap-panic (mint)) u0)
+    (ok true)
+  )
+)
+
+;; ---------------------
+;; Admin Functions
+;; ---------------------
+
+(define-public (set-base-uri (new-uri (string-ascii 256)))
+  (begin
+    (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (ok (var-set base-uri new-uri))
+  )
+)
+
+(define-public (set-paused (new-paused bool))
+  (begin
+    (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (ok (var-set paused new-paused))
+  )
+)
+
+;; ---------------------
+;; SIP-009 Interface
+;; ---------------------
+
+(define-public (transfer (token-id uint) (sender principal) (recipient principal))
+  (begin
+    (asserts! (is-eq tx-sender sender) ERR-NOT-AUTHORIZED)
+    (asserts! (is-eq (some sender) (nft-get-owner? stacksdao-nft token-id)) ERR-NOT-OWNER)
+    (nft-transfer? stacksdao-nft token-id sender recipient)
+  )
+)
+
+(define-read-only (get-owner (token-id uint))
+  (ok (nft-get-owner? stacksdao-nft token-id))
+)
+
+(define-read-only (get-last-token-id)
+  (ok (var-get last-token-id))
+)
+
+(define-read-only (get-token-uri (token-id uint))
+  (ok (some (var-get base-uri)))
+)
+
+;; ---------------------
+;; Read-Only Helpers
+;; ---------------------
+
+(define-read-only (get-mint-price)
+  (ok MINT-PRICE)
+)
+
+(define-read-only (get-max-supply)
+  (ok MAX-SUPPLY)
+)
+
+(define-read-only (get-remaining-supply)
+  (ok (- MAX-SUPPLY (var-get last-token-id)))
+)
