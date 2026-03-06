@@ -18,3 +18,7 @@ settings/Mainnet.toml
 settings/Testnet.toml
 *.env
 deployments/default.mainnet-plan.yaml
+
+# Scripts with test wallet data
+scripts/
+test-wallet.json
