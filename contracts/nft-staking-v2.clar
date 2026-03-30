@@ -174,6 +174,9 @@
 ;; Read-Only Functions
 ;; ---------------------
 
+
+;; @desc get-staking-info
+;; Read-only context viewer
 (define-read-only (get-staking-info (token-id uint))
   (map-get? staking-data token-id)
 )
