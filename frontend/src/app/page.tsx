@@ -237,7 +237,7 @@ export default function Home() {
                 <span className="text-slate-500">Proposal Threshold</span>
                 <span className="font-bold">10,000 SDAO</span>
               </div>
-              <div className="p-3 bg-purple-50 dark:bg-purple-900/10 rounded-lg">
+              <div className="bg-purple-50 dark:bg-purple-900/10 p-3 rounded-lg">
                 <p className="text-[11px] font-medium text-purple-800 dark:text-purple-300">
                   Governance is powered by the SIP-010 standard SDAO token.
                 </p>
