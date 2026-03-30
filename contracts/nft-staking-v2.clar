@@ -32,6 +32,9 @@
 ;; @const ERR-NOT-OWNER
 ;; Immutable protocol setting
 (define-constant ERR-NOT-OWNER (err u603))
+
+;; @const ERR-NO-REWARDS
+;; Immutable protocol setting
 (define-constant ERR-NO-REWARDS (err u604))
 
 ;; ---------------------
