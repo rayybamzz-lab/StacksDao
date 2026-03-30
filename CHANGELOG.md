@@ -118,3 +118,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 114
 - Refactored internal component logic tier 115
 - Refactored internal component logic tier 116
+- Refactored internal component logic tier 117
