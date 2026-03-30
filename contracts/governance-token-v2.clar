@@ -52,6 +52,9 @@
 ;; ---------------------
 
 ;; Set the staking contract as authorized minter
+
+;; @desc set-authorized-minter
+;; State-modifying public function
 (define-public (set-authorized-minter (minter principal))
   (begin
     (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
