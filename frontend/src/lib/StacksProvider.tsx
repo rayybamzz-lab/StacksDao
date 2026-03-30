@@ -14,8 +14,8 @@ interface StacksContextType {
 const StacksContext = createContext<StacksContextType | undefined>(undefined);
 
 /**
- * StacksProvider
- * Functional UI component / utility
+ * StacksProvider component that manages the authentication state and
+ * user session for the application.
  */
 export function StacksProvider({ children }: { children: React.ReactNode }) {
     const [isSignedIn, setIsSignedIn] = useState(false);
@@ -65,8 +65,7 @@ export function StacksProvider({ children }: { children: React.ReactNode }) {
 }
 
 /**
- * useStacks
- * Functional UI component / utility
+ * Hook to access the Stacks authentication context.
  */
 export function useStacks() {
     const context = useContext(StacksContext);
