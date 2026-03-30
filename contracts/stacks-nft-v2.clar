@@ -180,7 +180,6 @@
   (ok MINT-PRICE)
 )
 
-
 ;; @desc get-max-supply
 ;; Read-only context viewer
 (define-read-only (get-max-supply)
