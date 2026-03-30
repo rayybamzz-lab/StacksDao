@@ -428,3 +428,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 424
 - Refactored internal component logic tier 425
 - Refactored internal component logic tier 426
+- Refactored internal component logic tier 427
