@@ -259,7 +259,6 @@
   (ok (var-get proposal-count))
 )
 
-
 ;; @desc get-vote
 ;; Read-only context viewer
 (define-read-only (get-vote (proposal-id uint) (voter principal))
