@@ -106,7 +106,7 @@ export default function Home() {
               <span className="font-bold text-xl tracking-tight">StacksDAO</span>
             </div>
 
-            <div className="flex items-center gap-4">
+            <div className="flex gap-4 items-center">
               {isSignedIn ? (
                 <div className="flex items-center gap-3">
                   <div className="hidden sm:flex flex-col items-end leading-none">
