@@ -376,3 +376,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 372
 - Refactored internal component logic tier 373
 - Refactored internal component logic tier 374
+- Refactored internal component logic tier 375
