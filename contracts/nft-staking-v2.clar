@@ -33,6 +33,9 @@
 (define-map staker-balance principal uint)
 
 ;; Total NFTs currently staked
+
+;; @var total-staked
+;; Protocol state tracking for total staked
 (define-data-var total-staked uint u0)
 
 ;; ---------------------
