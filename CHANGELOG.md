@@ -455,3 +455,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 451
 - Refactored internal component logic tier 452
 - Refactored internal component logic tier 453
+- Refactored internal component logic tier 454
