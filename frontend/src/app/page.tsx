@@ -228,7 +228,7 @@ export default function Home() {
             <div className="bg-purple-100 dark:bg-purple-900/30 dark:text-purple-400 flex h-12 items-center justify-center mb-6 rounded-xl text-purple-600 w-12">
               <Vote className="h-6 w-6" />
             </div>
-            <h3 className="text-xl font-bold mb-2">Governance</h3>
+            <h3 className="font-bold mb-2 text-xl">Governance</h3>
             <p className="text-sm text-slate-500 dark:text-zinc-400 mb-6">
               Use your SDAO tokens to vote on proposals or create your own.
             </p>
