@@ -178,7 +178,7 @@ export default function Home() {
         </section>
 
         {/* Dashboard Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="gap-8 grid grid-cols-1 md:grid-cols-3">
           {/* Minting Card */}
           <div className="col-span-1 p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
             <div className="w-12 h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-6 text-orange-600 dark:text-orange-400">
