@@ -100,6 +100,9 @@
 )
 
 ;; Batch mint (up to 5 per call)
+
+;; @desc mint-batch
+;; State-modifying public function
 (define-public (mint-batch (count uint))
   (begin
     (asserts! (<= count u5) (err u503))
