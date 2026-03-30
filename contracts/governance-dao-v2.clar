@@ -9,6 +9,9 @@
 ;; ---------------------
 ;; Constants
 ;; ---------------------
+
+;; @const CONTRACT-OWNER
+;; Immutable protocol setting
 (define-constant CONTRACT-OWNER tx-sender)
 (define-constant VOTING-PERIOD u144)                ;; ~1 day (144 blocks x 10 min)
 (define-constant MIN-PROPOSAL-BALANCE u100000000)   ;; 100 SDAO (with 6 decimals) to create proposal
