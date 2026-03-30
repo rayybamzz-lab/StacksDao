@@ -61,6 +61,9 @@
 ;; @const ERR-INSUFFICIENT-BALANCE
 ;; Immutable protocol setting
 (define-constant ERR-INSUFFICIENT-BALANCE (err u708))
+
+;; @const ERR-VOTING-NOT-ENDED
+;; Immutable protocol setting
 (define-constant ERR-VOTING-NOT-ENDED (err u709))
 
 ;; ---------------------
