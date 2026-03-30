@@ -103,7 +103,7 @@ export default function Home() {
               <div className="bg-indigo-600 flex h-8 items-center justify-center rounded-lg w-8">
                 <ShieldCheck className="h-5 text-white w-5" />
               </div>
-              <span className="text-xl font-bold tracking-tight">StacksDAO</span>
+              <span className="font-bold text-xl tracking-tight">StacksDAO</span>
             </div>
 
             <div className="flex items-center gap-4">
