@@ -1,0 +1,11 @@
+%echo Generating a standard key
+Key-Type: rsa
+Key-Length: 4096
+Subkey-Type: rsa
+Subkey-Length: 4096
+Name-Real: rayybamzz-lab
+Name-Email: rayybamzz@gmail.com
+Expire-Date: 0
+%no-protection
+%commit
+%echo done
