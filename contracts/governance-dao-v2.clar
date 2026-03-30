@@ -179,6 +179,9 @@
 ;; ---------------------
 ;; Vote Against
 ;; ---------------------
+
+;; @desc vote-against
+;; State-modifying public function
 (define-public (vote-against (proposal-id uint))
   (let
     (
