@@ -159,7 +159,7 @@ export default function Home() {
                 <button
                   onClick={handleMint}
                   disabled={isMinting}
-                  className="h-12 px-8 rounded-xl bg-white text-indigo-700 font-bold hover:bg-indigo-50 transition-colors flex items-center gap-2 disabled:opacity-50"
+                  className="bg-white disabled:opacity-50 flex font-bold gap-2 h-12 hover:bg-indigo-50 items-center px-8 rounded-xl text-indigo-700 transition-colors"
                 >
                   {isMinting ? 'Minting...' : 'Mint StacksNFT'}
                   <ArrowRight className="w-4 h-4" />
