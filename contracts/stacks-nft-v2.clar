@@ -95,6 +95,13 @@
   )
 )
 
+(define-public (set-token-uri (token-id uint) (new-uri (string-ascii 256)))
+  (begin
+    (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (ok (map-set token-uris token-id new-uri))
+  )
+)
+
 ;; ---------------------
 ;; SIP-009 Interface
 ;; ---------------------
@@ -116,7 +123,10 @@
 )
 
 (define-read-only (get-token-uri (token-id uint))
-  (ok (some (var-get base-uri)))
+  (match (map-get? token-uris token-id)
+    uri (ok (some uri))
+    (ok (some (var-get base-uri)))
+  )
 )
 
 ;; ---------------------
