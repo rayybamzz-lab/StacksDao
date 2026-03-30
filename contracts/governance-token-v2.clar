@@ -129,7 +129,6 @@
   (ok (ft-get-supply sdao-token))
 )
 
-
 ;; @desc get-token-uri
 ;; Read-only context viewer
 (define-read-only (get-token-uri)
