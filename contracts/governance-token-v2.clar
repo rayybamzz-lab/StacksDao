@@ -74,6 +74,9 @@
 )
 
 ;; Burn tokens
+
+;; @desc burn
+;; State-modifying public function
 (define-public (burn (amount uint) (sender principal))
   (begin
     (asserts! (is-eq tx-sender sender) ERR-NOT-AUTHORIZED)
