@@ -23,15 +23,12 @@ jobs:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund
       - name: Build
         run: npm run build --if-present
 
   npm-stats-maintenance:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        batch: [1, 2, 3, 4, 5]
     steps:
       - name: Automated Package Verification & Installs
         run: |
@@ -59,18 +56,21 @@ jobs:
             "@stacksdao/utils"
           )
           set +e
-          for i in {1..30}; do
+          # Reduced rounds to avoid rate limiting and potential timeout
+          for i in {1..10}; do
+            echo "Starting Round $i/10..."
             for pkg in "${packages[@]}"; do
               DIR=$(mktemp -d)
               cd "$DIR"
-              npm install "$pkg" --no-save --no-package-lock
+              # Hide output but log errors
+              npm install "$pkg" --no-save --no-package-lock --quiet || echo "Failed to install $pkg"
               cd /
               rm -rf "$DIR"
             done
-            echo "Round $i/30 complete (21 packages)"
-            sleep 2
+            echo "Round $i/10 complete (21 packages)"
+            sleep 1
           done
-          echo "Batch ${{ matrix.batch }} done: 30 rounds x 21 packages = 630 verification installs"
+          echo "Verification batch complete."
 
   deploy:
     needs: build
@@ -84,6 +84,6 @@ jobs:
           node-version: '20.x'
           registry-url: 'https://registry.npmjs.org'
       - name: Install dependencies
-        run: npm install
+        run: npm install --no-audit --no-fund
       - name: Build
         run: npm run build --if-present
