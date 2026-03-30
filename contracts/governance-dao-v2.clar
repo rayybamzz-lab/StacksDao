@@ -142,6 +142,9 @@
 ;; ---------------------
 ;; Vote For
 ;; ---------------------
+
+;; @desc vote-for
+;; State-modifying public function
 (define-public (vote-for (proposal-id uint))
   (let
     (
