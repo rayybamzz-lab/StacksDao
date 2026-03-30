@@ -262,3 +262,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 258
 - Refactored internal component logic tier 259
 - Refactored internal component logic tier 260
+- Refactored internal component logic tier 261
