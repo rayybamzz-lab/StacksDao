@@ -18,6 +18,9 @@
 ;; ---------------------
 ;; Constants
 ;; ---------------------
+
+;; @const CONTRACT-OWNER
+;; Immutable protocol setting
 (define-constant CONTRACT-OWNER tx-sender)
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-INSUFFICIENT-BALANCE (err u402))
