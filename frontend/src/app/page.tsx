@@ -185,7 +185,7 @@ export default function Home() {
               <Coins className="h-6 w-6" />
             </div>
             <h3 className="font-bold mb-2 text-xl">NFT Minting</h3>
-            <p className="text-sm text-slate-500 dark:text-zinc-400 mb-6">
+            <p className="dark:text-zinc-400 mb-6 text-slate-500 text-sm">
               Mint your unique StacksDao NFT to start earning protocol rewards.
             </p>
             <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-zinc-800">
