@@ -268,7 +268,7 @@ export default function Home() {
       <footer className="border-slate-200 border-t dark:border-zinc-900 mt-24 py-12">
         <div className="flex flex-col gap-6 items-center justify-between lg:px-8 max-w-7xl mx-auto px-4 sm:flex-row sm:px-6">
           <div className="flex gap-2 grayscale items-center opacity-60">
-            <ShieldCheck className="w-5 h-5" />
+            <ShieldCheck className="h-5 w-5" />
             <span className="font-bold tracking-tight">StacksDAO Protocol</span>
           </div>
           <p className="text-sm text-slate-500 dark:text-zinc-500">
