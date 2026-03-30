@@ -98,7 +98,7 @@ export default function Home() {
       {/* Navigation */}
       <nav className="backdrop-blur-md bg-white/80 border-b border-slate-200/60 dark:bg-zinc-950/80 dark:border-zinc-800/60 sticky top-0 z-50">
         <div className="lg:px-8 max-w-7xl mx-auto px-4 sm:px-6">
-          <div className="flex justify-between items-center h-16">
+          <div className="flex h-16 items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="w-8 h-8 rounded-lg bg-indigo-600 flex items-center justify-center">
                 <ShieldCheck className="w-5 h-5 text-white" />
