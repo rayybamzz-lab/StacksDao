@@ -117,7 +117,6 @@
   (ok u6)
 )
 
-
 ;; @desc get-balance
 ;; Read-only context viewer
 (define-read-only (get-balance (account principal))
