@@ -151,3 +151,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 147
 - Refactored internal component logic tier 148
 - Refactored internal component logic tier 149
+- Refactored internal component logic tier 150
