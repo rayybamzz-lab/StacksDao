@@ -265,7 +265,7 @@ export default function Home() {
       </main>
 
       {/* Footer */}
-      <footer className="mt-24 border-t border-slate-200 dark:border-zinc-900 py-12">
+      <footer className="border-slate-200 border-t dark:border-zinc-900 mt-24 py-12">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2 grayscale opacity-60">
             <ShieldCheck className="w-5 h-5" />
