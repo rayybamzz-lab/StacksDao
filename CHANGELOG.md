@@ -234,3 +234,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 230
 - Refactored internal component logic tier 231
 - Refactored internal component logic tier 232
+- Refactored internal component logic tier 233
