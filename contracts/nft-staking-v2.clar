@@ -20,6 +20,9 @@
 ;; @const ERR-NOT-AUTHORIZED
 ;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
+
+;; @const ERR-NOT-STAKED
+;; Immutable protocol setting
 (define-constant ERR-NOT-STAKED (err u601))
 (define-constant ERR-ALREADY-STAKED (err u602))
 (define-constant ERR-NOT-OWNER (err u603))
