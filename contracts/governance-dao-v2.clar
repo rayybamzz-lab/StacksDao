@@ -247,7 +247,6 @@
 ;; Read-Only Functions
 ;; ---------------------
 
-
 ;; @desc get-proposal
 ;; Read-only context viewer
 (define-read-only (get-proposal (proposal-id uint))
