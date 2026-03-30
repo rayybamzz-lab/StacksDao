@@ -180,6 +180,9 @@
 ;; Read-Only Helpers
 ;; ---------------------
 
+
+;; @desc get-mint-price
+;; Read-only context viewer
 (define-read-only (get-mint-price)
   (ok MINT-PRICE)
 )
