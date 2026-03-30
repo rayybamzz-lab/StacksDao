@@ -181,6 +181,9 @@
   (map-get? staking-data token-id)
 )
 
+
+;; @desc get-pending-rewards
+;; Read-only context viewer
 (define-read-only (get-pending-rewards (token-id uint))
   (match (map-get? staking-data token-id)
     stake-info
