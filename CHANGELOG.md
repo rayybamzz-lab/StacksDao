@@ -16,3 +16,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 12
 - Refactored internal component logic tier 13
 - Refactored internal component logic tier 14
+- Refactored internal component logic tier 15
