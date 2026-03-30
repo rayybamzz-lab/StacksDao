@@ -194,6 +194,9 @@
   (ok MAX-SUPPLY)
 )
 
+
+;; @desc get-remaining-supply
+;; Read-only context viewer
 (define-read-only (get-remaining-supply)
   (ok (- MAX-SUPPLY (var-get last-token-id)))
 )
