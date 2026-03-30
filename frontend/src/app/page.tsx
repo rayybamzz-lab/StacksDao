@@ -134,7 +134,7 @@ export default function Home() {
         </div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main className="lg:px-8 max-w-7xl mx-auto px-4 py-12 sm:px-6">
         {/* Hero Section */}
         <section className="mb-16">
           <div className="relative rounded-3xl overflow-hidden bg-indigo-600 p-8 sm:p-12 shadow-2xl shadow-indigo-500/20">
