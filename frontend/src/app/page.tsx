@@ -25,6 +25,10 @@ import {
   Zap
 } from 'lucide-react';
 
+/**
+ * Home
+ * Functional UI component / utility
+ */
 export default function Home() {
   const { isSignedIn, userAddress, connectWallet, disconnectWallet } = useStacks();
   const [isMinting, setIsMinting] = useState(false);
