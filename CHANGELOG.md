@@ -38,3 +38,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 34
 - Refactored internal component logic tier 35
 - Refactored internal component logic tier 36
+- Refactored internal component logic tier 37
