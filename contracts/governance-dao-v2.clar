@@ -53,6 +53,9 @@
 ;; @const ERR-PROPOSAL-REJECTED
 ;; Immutable protocol setting
 (define-constant ERR-PROPOSAL-REJECTED (err u706))
+
+;; @const ERR-ALREADY-EXECUTED
+;; Immutable protocol setting
 (define-constant ERR-ALREADY-EXECUTED (err u707))
 (define-constant ERR-INSUFFICIENT-BALANCE (err u708))
 (define-constant ERR-VOTING-NOT-ENDED (err u709))
