@@ -45,6 +45,9 @@
 ;; @const ERR-VOTING-ACTIVE
 ;; Immutable protocol setting
 (define-constant ERR-VOTING-ACTIVE (err u704))
+
+;; @const ERR-QUORUM-NOT-MET
+;; Immutable protocol setting
 (define-constant ERR-QUORUM-NOT-MET (err u705))
 (define-constant ERR-PROPOSAL-REJECTED (err u706))
 (define-constant ERR-ALREADY-EXECUTED (err u707))
