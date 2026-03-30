@@ -226,7 +226,7 @@ export default function Home() {
           {/* DAO Card */}
           <div className="bg-white border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl shadow-sm">
             <div className="bg-purple-100 dark:bg-purple-900/30 dark:text-purple-400 flex h-12 items-center justify-center mb-6 rounded-xl text-purple-600 w-12">
-              <Vote className="w-6 h-6" />
+              <Vote className="h-6 w-6" />
             </div>
             <h3 className="text-xl font-bold mb-2">Governance</h3>
             <p className="text-sm text-slate-500 dark:text-zinc-400 mb-6">
