@@ -266,7 +266,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-slate-200 border-t dark:border-zinc-900 mt-24 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-6">
+        <div className="flex flex-col gap-6 items-center justify-between lg:px-8 max-w-7xl mx-auto px-4 sm:flex-row sm:px-6">
           <div className="flex items-center gap-2 grayscale opacity-60">
             <ShieldCheck className="w-5 h-5" />
             <span className="font-bold tracking-tight">StacksDAO Protocol</span>
