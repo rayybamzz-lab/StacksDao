@@ -335,3 +335,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 331
 - Refactored internal component logic tier 332
 - Refactored internal component logic tier 333
+- Refactored internal component logic tier 334
