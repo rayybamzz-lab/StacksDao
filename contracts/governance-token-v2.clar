@@ -63,6 +63,9 @@
 )
 
 ;; Mint tokens - restricted to deployer or staking contract
+
+;; @desc mint
+;; State-modifying public function
 (define-public (mint (amount uint) (recipient principal))
   (begin
     (asserts! (is-authorized-minter) ERR-NOT-AUTHORIZED)
