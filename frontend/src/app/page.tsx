@@ -170,7 +170,7 @@ export default function Home() {
                   className="bg-indigo-500/20 border border-indigo-400/30 flex font-semibold gap-2 h-12 hover:bg-indigo-500/30 items-center px-6 rounded-xl text-white transition-colors"
                 >
                   View Contracts
-                  <ExternalLink className="w-4 h-4" />
+                  <ExternalLink className="h-4 w-4" />
                 </a>
               </div>
             </div>
