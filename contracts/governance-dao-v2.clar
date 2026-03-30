@@ -216,6 +216,9 @@
 ;; ---------------------
 ;; Execute Proposal
 ;; ---------------------
+
+;; @desc execute-proposal
+;; State-modifying public function
 (define-public (execute-proposal (proposal-id uint))
   (let
     (
