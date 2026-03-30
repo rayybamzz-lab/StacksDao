@@ -26,6 +26,9 @@
 ;; @const ERR-NOT-AUTHORIZED
 ;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
+
+;; @const ERR-INSUFFICIENT-BALANCE
+;; Immutable protocol setting
 (define-constant ERR-INSUFFICIENT-BALANCE (err u402))
 
 ;; ---------------------
