@@ -158,7 +158,6 @@
   (ok (nft-get-owner? stacksdao-nft token-id))
 )
 
-
 ;; @desc get-last-token-id
 ;; Read-only context viewer
 (define-read-only (get-last-token-id)
