@@ -57,6 +57,9 @@
 ;; @const ERR-ALREADY-EXECUTED
 ;; Immutable protocol setting
 (define-constant ERR-ALREADY-EXECUTED (err u707))
+
+;; @const ERR-INSUFFICIENT-BALANCE
+;; Immutable protocol setting
 (define-constant ERR-INSUFFICIENT-BALANCE (err u708))
 (define-constant ERR-VOTING-NOT-ENDED (err u709))
 
