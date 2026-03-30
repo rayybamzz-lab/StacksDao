@@ -35,6 +35,9 @@
 ;; @const ERR-NOT-AUTHORIZED
 ;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
+
+;; @const ERR-SOLD-OUT
+;; Immutable protocol setting
 (define-constant ERR-SOLD-OUT (err u501))
 (define-constant ERR-INSUFFICIENT-PAYMENT (err u502))
 (define-constant ERR-NOT-FOUND (err u504))
