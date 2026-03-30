@@ -251,7 +251,7 @@ export default function Home() {
           <div className="bg-slate-100 border-2 border-dashed border-slate-200 dark:bg-zinc-900/50 dark:border-zinc-800 mt-16 px-6 py-12 rounded-3xl text-center">
             <LayoutDashboard className="h-12 mb-4 mx-auto text-slate-300 w-12" />
             <h2 className="font-bold mb-2 text-2xl">Start Your Journey</h2>
-            <p className="text-slate-600 dark:text-zinc-400 mb-8 max-w-sm mx-auto">
+            <p className="dark:text-zinc-400 max-w-sm mb-8 mx-auto text-slate-600">
               Unlock your personalized dashboard by connecting your Stacks wallet below.
             </p>
             <button
