@@ -201,7 +201,7 @@ export default function Home() {
           </div>
 
           {/* Staking Card */}
-          <div className="col-span-1 p-6 rounded-2xl bg-white dark:bg-zinc-900 border border-slate-200 dark:border-zinc-800">
+          <div className="bg-white border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
             <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400">
               <Trophy className="w-6 h-6" />
             </div>
