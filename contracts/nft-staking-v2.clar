@@ -8,6 +8,9 @@
 ;; ---------------------
 ;; Constants
 ;; ---------------------
+
+;; @const CONTRACT-OWNER
+;; Immutable protocol setting
 (define-constant CONTRACT-OWNER tx-sender)
 (define-constant REWARD-PER-BLOCK u10000000)       ;; 10 SDAO per block (with 6 decimals)
 (define-constant ERR-NOT-AUTHORIZED (err u401))
