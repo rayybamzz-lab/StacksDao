@@ -152,7 +152,7 @@ export default function Home() {
               <h1 className="font-extrabold leading-[1.1] mb-6 sm:text-5xl text-4xl text-white">
                 Mint, Stake & Govern the <br />Future of Stacks
               </h1>
-              <p className="text-lg text-indigo-100/80 mb-8 max-w-lg">
+              <p className="max-w-lg mb-8 text-indigo-100/80 text-lg">
                 The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.
               </p>
               <div className="flex flex-wrap gap-4">
