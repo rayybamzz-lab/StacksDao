@@ -243,6 +243,12 @@
   )
 )
 
+;; @desc get-contract-owner
+;; Read-only context viewer
+(define-read-only (get-contract-owner)
+  (ok CONTRACT-OWNER)
+)
+
 ;; ---------------------
 ;; Read-Only Functions
 ;; ---------------------
