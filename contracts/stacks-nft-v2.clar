@@ -39,6 +39,9 @@
 ;; @const ERR-SOLD-OUT
 ;; Immutable protocol setting
 (define-constant ERR-SOLD-OUT (err u501))
+
+;; @const ERR-INSUFFICIENT-PAYMENT
+;; Immutable protocol setting
 (define-constant ERR-INSUFFICIENT-PAYMENT (err u502))
 (define-constant ERR-NOT-FOUND (err u504))
 (define-constant ERR-ALREADY-LISTED (err u505))
