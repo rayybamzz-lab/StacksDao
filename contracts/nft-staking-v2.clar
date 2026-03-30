@@ -99,6 +99,9 @@
 ;; ---------------------
 ;; Unstake NFT
 ;; ---------------------
+
+;; @desc unstake-nft
+;; State-modifying public function
 (define-public (unstake-nft (token-id uint))
   (let
     (
