@@ -155,6 +155,9 @@
   )
 )
 
+
+;; @desc get-owner
+;; Read-only context viewer
 (define-read-only (get-owner (token-id uint))
   (ok (nft-get-owner? stacksdao-nft token-id))
 )
