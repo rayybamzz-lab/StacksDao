@@ -123,7 +123,6 @@
   (ok (ft-get-balance sdao-token account))
 )
 
-
 ;; @desc get-total-supply
 ;; Read-only context viewer
 (define-read-only (get-total-supply)
