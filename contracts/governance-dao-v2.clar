@@ -49,6 +49,9 @@
 ;; @const ERR-QUORUM-NOT-MET
 ;; Immutable protocol setting
 (define-constant ERR-QUORUM-NOT-MET (err u705))
+
+;; @const ERR-PROPOSAL-REJECTED
+;; Immutable protocol setting
 (define-constant ERR-PROPOSAL-REJECTED (err u706))
 (define-constant ERR-ALREADY-EXECUTED (err u707))
 (define-constant ERR-INSUFFICIENT-BALANCE (err u708))
