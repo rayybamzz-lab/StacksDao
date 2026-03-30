@@ -21,6 +21,9 @@
 ;; @const MIN-PROPOSAL-BALANCE
 ;; Immutable protocol setting
 (define-constant MIN-PROPOSAL-BALANCE u100000000)   ;; 100 SDAO (with 6 decimals) to create proposal
+
+;; @const QUORUM
+;; Immutable protocol setting
 (define-constant QUORUM u500000000)                 ;; 500 SDAO minimum total votes for quorum
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-PROPOSAL-NOT-FOUND (err u701))
