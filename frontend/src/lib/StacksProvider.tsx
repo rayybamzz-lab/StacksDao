@@ -64,6 +64,10 @@ export function StacksProvider({ children }: { children: React.ReactNode }) {
     );
 }
 
+/**
+ * useStacks
+ * Functional UI component / utility
+ */
 export function useStacks() {
     const context = useContext(StacksContext);
     if (context === undefined) {
