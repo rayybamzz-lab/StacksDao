@@ -104,6 +104,9 @@
 ;; ---------------------
 ;; Create Proposal
 ;; ---------------------
+
+;; @desc create-proposal
+;; State-modifying public function
 (define-public (create-proposal
     (title (string-utf8 256))
     (description (string-utf8 1024))
