@@ -130,6 +130,9 @@
   )
 )
 
+
+;; @desc set-paused
+;; State-modifying public function
 (define-public (set-paused (new-paused bool))
   (begin
     (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
