@@ -27,6 +27,9 @@
 ;; @const MINT-PRICE
 ;; Immutable protocol setting
 (define-constant MINT-PRICE u10000)             ;; 0.01 STX in micro-STX
+
+;; @const MAX-SUPPLY
+;; Immutable protocol setting
 (define-constant MAX-SUPPLY u10000)
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-SOLD-OUT (err u501))
