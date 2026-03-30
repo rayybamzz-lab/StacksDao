@@ -16,6 +16,9 @@
 ;; @const REWARD-PER-BLOCK
 ;; Immutable protocol setting
 (define-constant REWARD-PER-BLOCK u10000000)       ;; 10 SDAO per block (with 6 decimals)
+
+;; @const ERR-NOT-AUTHORIZED
+;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-NOT-STAKED (err u601))
 (define-constant ERR-ALREADY-STAKED (err u602))
