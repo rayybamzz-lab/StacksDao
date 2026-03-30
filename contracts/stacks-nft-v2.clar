@@ -129,7 +129,6 @@
   )
 )
 
-
 ;; @desc set-paused
 ;; State-modifying public function
 (define-public (set-paused (new-paused bool))
