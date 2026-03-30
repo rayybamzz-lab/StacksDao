@@ -208,7 +208,6 @@
   (ok (var-get total-staked))
 )
 
-
 ;; @desc get-reward-per-block
 ;; Read-only context viewer
 (define-read-only (get-reward-per-block)
