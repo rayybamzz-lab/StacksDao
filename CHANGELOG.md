@@ -205,3 +205,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 201
 - Refactored internal component logic tier 202
 - Refactored internal component logic tier 203
+- Refactored internal component logic tier 204
