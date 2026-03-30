@@ -105,7 +105,6 @@
   (ok "StacksDAO Token")
 )
 
-
 ;; @desc get-symbol
 ;; Read-only context viewer
 (define-read-only (get-symbol)
