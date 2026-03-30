@@ -144,6 +144,9 @@
 ;; SIP-009 Interface
 ;; ---------------------
 
+
+;; @desc transfer
+;; State-modifying public function
 (define-public (transfer (token-id uint) (sender principal) (recipient principal))
   (begin
     (asserts! (is-eq tx-sender sender) ERR-NOT-AUTHORIZED)
