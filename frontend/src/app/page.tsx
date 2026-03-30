@@ -209,7 +209,7 @@ export default function Home() {
             <p className="dark:text-zinc-400 mb-6 text-slate-500 text-sm">
               Lock your NFTs in our secure vault and earn SDAO tokens every block.
             </p>
-            <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-zinc-800">
+            <div className="border-slate-100 border-t dark:border-zinc-800 pt-4 space-y-4">
               <div className="flex justify-between text-sm">
                 <span className="text-slate-500">Yield</span>
                 <span className="font-bold text-emerald-500">10 SDAO / Block</span>
