@@ -77,6 +77,9 @@
 ;; ---------------------
 ;; Mint Function
 ;; ---------------------
+
+;; @desc mint
+;; State-modifying public function
 (define-public (mint)
   (let
     (
