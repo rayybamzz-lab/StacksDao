@@ -144,7 +144,7 @@ export default function Home() {
             <div className="max-w-2xl relative z-10">
               <div className="bg-indigo-500/30 font-bold gap-2 inline-flex items-center mb-6 px-3 py-1 rounded-full text-indigo-100 text-xs">
                 <span className="flex h-2 relative w-2">
-                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
+                  <span className="absolute animate-ping bg-indigo-400 h-full inline-flex opacity-75 rounded-full w-full"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-300"></span>
                 </span>
                 MAINNET LIVE
