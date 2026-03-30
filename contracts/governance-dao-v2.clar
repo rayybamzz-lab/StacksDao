@@ -29,6 +29,9 @@
 ;; @const ERR-NOT-AUTHORIZED
 ;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
+
+;; @const ERR-PROPOSAL-NOT-FOUND
+;; Immutable protocol setting
 (define-constant ERR-PROPOSAL-NOT-FOUND (err u701))
 (define-constant ERR-ALREADY-VOTED (err u702))
 (define-constant ERR-VOTING-ENDED (err u703))
