@@ -169,6 +169,9 @@
   (ok (var-get last-token-id))
 )
 
+
+;; @desc get-token-uri
+;; Read-only context viewer
 (define-read-only (get-token-uri (token-id uint))
   (ok (some (var-get base-uri)))
 )
