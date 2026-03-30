@@ -25,6 +25,9 @@
 ;; @const QUORUM
 ;; Immutable protocol setting
 (define-constant QUORUM u500000000)                 ;; 500 SDAO minimum total votes for quorum
+
+;; @const ERR-NOT-AUTHORIZED
+;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-PROPOSAL-NOT-FOUND (err u701))
 (define-constant ERR-ALREADY-VOTED (err u702))
