@@ -285,6 +285,9 @@
   (ok VOTING-PERIOD)
 )
 
+
+;; @desc get-min-proposal-balance
+;; Read-only context viewer
 (define-read-only (get-min-proposal-balance)
   (ok MIN-PROPOSAL-BALANCE)
 )
