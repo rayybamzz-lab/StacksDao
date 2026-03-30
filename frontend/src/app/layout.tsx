@@ -24,6 +24,10 @@ export const metadata: Metadata = {
 import { StacksProvider } from '@/lib/StacksProvider';
 import { Toaster } from 'react-hot-toast';
 
+/**
+ * RootLayout
+ * Functional UI component / utility
+ */
 export default function RootLayout({
   children,
 }: Readonly<{
