@@ -205,6 +205,9 @@
   (default-to u0 (map-get? staker-balance staker))
 )
 
+
+;; @desc get-total-staked
+;; Read-only context viewer
 (define-read-only (get-total-staked)
   (ok (var-get total-staked))
 )
