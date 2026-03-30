@@ -43,6 +43,9 @@
 ;; @const ERR-INSUFFICIENT-PAYMENT
 ;; Immutable protocol setting
 (define-constant ERR-INSUFFICIENT-PAYMENT (err u502))
+
+;; @const ERR-NOT-FOUND
+;; Immutable protocol setting
 (define-constant ERR-NOT-FOUND (err u504))
 (define-constant ERR-ALREADY-LISTED (err u505))
 (define-constant ERR-NOT-OWNER (err u506))
