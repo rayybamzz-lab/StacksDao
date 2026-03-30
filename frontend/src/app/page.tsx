@@ -138,7 +138,7 @@ export default function Home() {
         {/* Hero Section */}
         <section className="mb-16">
           <div className="bg-indigo-600 overflow-hidden p-8 relative rounded-3xl shadow-2xl shadow-indigo-500/20 sm:p-12">
-            <div className="absolute top-0 right-0 p-12 opacity-10 pointer-events-none">
+            <div className="absolute opacity-10 p-12 pointer-events-none right-0 top-0">
               <Zap className="w-64 h-64 text-white" />
             </div>
             <div className="relative z-10 max-w-2xl">
