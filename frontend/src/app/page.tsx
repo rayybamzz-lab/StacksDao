@@ -111,7 +111,7 @@ export default function Home() {
                 <div className="flex gap-3 items-center">
                   <div className="flex-col hidden items-end leading-none sm:flex">
                     <span className="font-medium text-sm">{userAddress?.slice(0, 6)}...{userAddress?.slice(-4)}</span>
-                    <span className="text-[10px] text-slate-500 dark:text-zinc-400">Mainnet Connected</span>
+                    <span className="dark:text-zinc-400 text-[10px] text-slate-500">Mainnet Connected</span>
                   </div>
                   <button
                     onClick={disconnectWallet}
