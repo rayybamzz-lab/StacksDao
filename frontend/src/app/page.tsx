@@ -162,7 +162,7 @@ export default function Home() {
                   className="bg-white disabled:opacity-50 flex font-bold gap-2 h-12 hover:bg-indigo-50 items-center px-8 rounded-xl text-indigo-700 transition-colors"
                 >
                   {isMinting ? 'Minting...' : 'Mint StacksNFT'}
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="h-4 w-4" />
                 </button>
                 <a
                   href={`https://explorer.hiro.so/address/${CONTRACT_ADDRESS}?chain=mainnet`}
