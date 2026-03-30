@@ -96,3 +96,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 92
 - Refactored internal component logic tier 93
 - Refactored internal component logic tier 94
+- Refactored internal component logic tier 95
