@@ -142,7 +142,7 @@ export default function Home() {
               <Zap className="h-64 text-white w-64" />
             </div>
             <div className="max-w-2xl relative z-10">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-100 text-xs font-bold mb-6">
+              <div className="bg-indigo-500/30 font-bold gap-2 inline-flex items-center mb-6 px-3 py-1 rounded-full text-indigo-100 text-xs">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-indigo-400 opacity-75"></span>
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-indigo-300"></span>
