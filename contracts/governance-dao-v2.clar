@@ -274,7 +274,6 @@
   )
 )
 
-
 ;; @desc get-voting-period
 ;; Read-only context viewer
 (define-read-only (get-voting-period)
