@@ -179,3 +179,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 175
 - Refactored internal component logic tier 176
 - Refactored internal component logic tier 177
+- Refactored internal component logic tier 178
