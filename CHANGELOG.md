@@ -107,3 +107,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 103
 - Refactored internal component logic tier 104
 - Refactored internal component logic tier 105
+- Refactored internal component logic tier 106
