@@ -123,7 +123,7 @@ export default function Home() {
               ) : (
                 <button
                   onClick={connectWallet}
-                  className="h-10 px-6 rounded-full bg-indigo-600 hover:bg-indigo-700 text-white transition-all shadow-lg shadow-indigo-500/20 text-sm font-semibold flex items-center gap-2"
+                  className="bg-indigo-600 flex font-semibold gap-2 h-10 hover:bg-indigo-700 items-center px-6 rounded-full shadow-indigo-500/20 shadow-lg text-sm text-white transition-all"
                 >
                   <Wallet className="w-4 h-4" />
                   Connect Wallet
