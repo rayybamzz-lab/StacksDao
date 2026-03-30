@@ -253,7 +253,6 @@
   (map-get? proposals proposal-id)
 )
 
-
 ;; @desc get-proposal-count
 ;; Read-only context viewer
 (define-read-only (get-proposal-count)
