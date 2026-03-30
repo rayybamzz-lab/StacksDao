@@ -81,3 +81,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 77
 - Refactored internal component logic tier 78
 - Refactored internal component logic tier 79
+- Refactored internal component logic tier 80
