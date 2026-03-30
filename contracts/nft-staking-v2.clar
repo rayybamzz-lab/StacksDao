@@ -24,6 +24,9 @@
 ;; @const ERR-NOT-STAKED
 ;; Immutable protocol setting
 (define-constant ERR-NOT-STAKED (err u601))
+
+;; @const ERR-ALREADY-STAKED
+;; Immutable protocol setting
 (define-constant ERR-ALREADY-STAKED (err u602))
 (define-constant ERR-NOT-OWNER (err u603))
 (define-constant ERR-NO-REWARDS (err u604))
