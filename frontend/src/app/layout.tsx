@@ -25,8 +25,8 @@ import { StacksProvider } from '@/lib/StacksProvider';
 import { Toaster } from 'react-hot-toast';
 
 /**
- * RootLayout
- * Functional UI component / utility
+ * RootLayout component that wraps the application in the StacksProvider
+ * and global Toaster configurations, providing necessary DApp context.
  */
 export default function RootLayout({
   children,
