@@ -27,6 +27,9 @@
 ;; ---------------------
 ;; Data Variables
 ;; ---------------------
+
+;; @var proposal-count
+;; Protocol state tracking for proposal count
 (define-data-var proposal-count uint u0)
 
 ;; ---------------------
