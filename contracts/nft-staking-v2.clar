@@ -62,6 +62,9 @@
 ;; ---------------------
 ;; Stake NFT
 ;; ---------------------
+
+;; @desc stake-nft
+;; State-modifying public function
 (define-public (stake-nft (token-id uint))
   (let
     (
