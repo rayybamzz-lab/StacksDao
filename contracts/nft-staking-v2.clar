@@ -140,6 +140,9 @@
 ;; ---------------------
 ;; Claim Rewards (without unstaking)
 ;; ---------------------
+
+;; @desc claim-rewards
+;; State-modifying public function
 (define-public (claim-rewards (token-id uint))
   (let
     (
