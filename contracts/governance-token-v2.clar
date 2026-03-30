@@ -88,7 +88,6 @@
 ;; SIP-010 Interface
 ;; ---------------------
 
-
 ;; @desc transfer
 ;; State-modifying public function
 (define-public (transfer (amount uint) (sender principal) (recipient principal) (memo (optional (buff 34))))
