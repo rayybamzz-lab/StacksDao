@@ -13,7 +13,7 @@ export const CONTRACTS = {
     STACKS_NFT: 'stacks-nft-v2',
     NFT_STAKING: 'nft-staking-v2',
     GOVERNANCE_DAO: 'governance-dao-v2'
-};
+} as const;
 
 export const CONTRACT_IDENTIFIERS = {
     GOVERNANCE_TOKEN: `${CONTRACT_ADDRESS}.${CONTRACTS.GOVERNANCE_TOKEN}`,
