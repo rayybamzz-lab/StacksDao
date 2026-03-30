@@ -33,6 +33,9 @@
 ;; @const ERR-PROPOSAL-NOT-FOUND
 ;; Immutable protocol setting
 (define-constant ERR-PROPOSAL-NOT-FOUND (err u701))
+
+;; @const ERR-ALREADY-VOTED
+;; Immutable protocol setting
 (define-constant ERR-ALREADY-VOTED (err u702))
 (define-constant ERR-VOTING-ENDED (err u703))
 (define-constant ERR-VOTING-ACTIVE (err u704))
