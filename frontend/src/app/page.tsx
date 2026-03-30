@@ -167,7 +167,7 @@ export default function Home() {
                 <a
                   href={`https://explorer.hiro.so/address/${CONTRACT_ADDRESS}?chain=mainnet`}
                   target="_blank"
-                  className="h-12 px-6 rounded-xl bg-indigo-500/20 text-white font-semibold hover:bg-indigo-500/30 transition-colors flex items-center gap-2 border border-indigo-400/30"
+                  className="bg-indigo-500/20 border border-indigo-400/30 flex font-semibold gap-2 h-12 hover:bg-indigo-500/30 items-center px-6 rounded-xl text-white transition-colors"
                 >
                   View Contracts
                   <ExternalLink className="w-4 h-4" />
