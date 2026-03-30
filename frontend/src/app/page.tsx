@@ -188,7 +188,7 @@ export default function Home() {
             <p className="dark:text-zinc-400 mb-6 text-slate-500 text-sm">
               Mint your unique StacksDao NFT to start earning protocol rewards.
             </p>
-            <div className="space-y-4 pt-4 border-t border-slate-100 dark:border-zinc-800">
+            <div className="border-slate-100 border-t dark:border-zinc-800 pt-4 space-y-4">
               <div className="flex justify-between text-sm">
                 <span className="text-slate-500">Price</span>
                 <span className="font-bold">0.01 STX</span>
