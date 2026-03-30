@@ -13,6 +13,10 @@ interface StacksContextType {
 
 const StacksContext = createContext<StacksContextType | undefined>(undefined);
 
+/**
+ * StacksProvider
+ * Functional UI component / utility
+ */
 export function StacksProvider({ children }: { children: React.ReactNode }) {
     const [isSignedIn, setIsSignedIn] = useState(false);
     const [userAddress, setUserAddress] = useState<string | null>(null);
