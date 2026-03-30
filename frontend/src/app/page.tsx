@@ -271,7 +271,7 @@ export default function Home() {
             <ShieldCheck className="h-5 w-5" />
             <span className="font-bold tracking-tight">StacksDAO Protocol</span>
           </div>
-          <p className="text-sm text-slate-500 dark:text-zinc-500">
+          <p className="dark:text-zinc-500 text-slate-500 text-sm">
             © 2026 StacksDAO Mainnet Deployment. Audited Contracts.
           </p>
         </div>
