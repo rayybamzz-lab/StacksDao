@@ -26,3 +26,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 22
 - Refactored internal component logic tier 23
 - Refactored internal component logic tier 24
+- Refactored internal component logic tier 25
