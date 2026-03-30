@@ -15,6 +15,13 @@
 (define-constant ERR-ALREADY-STAKED (err u602))
 (define-constant ERR-NOT-OWNER (err u603))
 (define-constant ERR-NO-REWARDS (err u604))
+(define-constant ERR-PAUSED (err u605))
+
+;; ---------------------
+;; Data Variables
+;; ---------------------
+(define-data-var paused bool false)
+(define-data-var total-staked uint u0)
 
 ;; ---------------------
 ;; Data Maps
@@ -33,7 +40,7 @@
 (define-map staker-balance principal uint)
 
 ;; Total NFTs currently staked
-(define-data-var total-staked uint u0)
+;; (Moved to Data Variables section above)
 
 ;; ---------------------
 ;; Stake NFT
@@ -45,6 +52,8 @@
     )
     ;; Verify caller owns the NFT
     (asserts! (is-eq (some tx-sender) owner) ERR-NOT-OWNER)
+    ;; Verify contract is not paused
+    (asserts! (not (var-get paused)) ERR-PAUSED)
     ;; Verify NFT is not already staked
     (asserts! (is-none (map-get? staking-data token-id)) ERR-ALREADY-STAKED)
 
@@ -121,6 +130,8 @@
     )
     ;; Only the staker can claim
     (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
+    ;; Verify contract is not paused
+    (asserts! (not (var-get paused)) ERR-PAUSED)
     ;; Must have rewards to claim
     (asserts! (> rewards u0) ERR-NO-REWARDS)
 
@@ -169,4 +180,18 @@
 
 (define-read-only (get-reward-per-block)
   (ok REWARD-PER-BLOCK)
+)
+
+(define-read-only (is-paused)
+  (ok (var-get paused))
+)
+
+;; ---------------------
+;; Admin Functions
+;; ---------------------
+(define-public (set-paused (new-paused bool))
+  (begin
+    (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (ok (var-set paused new-paused))
+  )
 )
