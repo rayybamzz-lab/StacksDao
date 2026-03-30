@@ -31,6 +31,9 @@
 ;; @const MAX-SUPPLY
 ;; Immutable protocol setting
 (define-constant MAX-SUPPLY u10000)
+
+;; @const ERR-NOT-AUTHORIZED
+;; Immutable protocol setting
 (define-constant ERR-NOT-AUTHORIZED (err u401))
 (define-constant ERR-SOLD-OUT (err u501))
 (define-constant ERR-INSUFFICIENT-PAYMENT (err u502))
