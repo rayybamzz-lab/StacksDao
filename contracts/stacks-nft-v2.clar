@@ -51,6 +51,9 @@
 ;; @const ERR-ALREADY-LISTED
 ;; Immutable protocol setting
 (define-constant ERR-ALREADY-LISTED (err u505))
+
+;; @const ERR-NOT-OWNER
+;; Immutable protocol setting
 (define-constant ERR-NOT-OWNER (err u506))
 
 ;; ---------------------
