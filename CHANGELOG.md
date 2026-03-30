@@ -51,3 +51,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 47
 - Refactored internal component logic tier 48
 - Refactored internal component logic tier 49
+- Refactored internal component logic tier 50
