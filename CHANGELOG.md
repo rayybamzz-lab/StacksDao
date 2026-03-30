@@ -131,3 +131,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 127
 - Refactored internal component logic tier 128
 - Refactored internal component logic tier 129
+- Refactored internal component logic tier 130
