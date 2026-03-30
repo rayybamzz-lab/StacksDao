@@ -149,7 +149,7 @@ export default function Home() {
                 </span>
                 MAINNET LIVE
               </div>
-              <h1 className="text-4xl sm:text-5xl font-extrabold text-white mb-6 leading-[1.1]">
+              <h1 className="font-extrabold leading-[1.1] mb-6 sm:text-5xl text-4xl text-white">
                 Mint, Stake & Govern the <br />Future of Stacks
               </h1>
               <p className="text-lg text-indigo-100/80 mb-8 max-w-lg">
