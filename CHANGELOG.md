@@ -12,3 +12,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 8
 - Refactored internal component logic tier 9
 - Refactored internal component logic tier 10
+- Refactored internal component logic tier 11
