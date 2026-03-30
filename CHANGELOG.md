@@ -63,3 +63,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 59
 - Refactored internal component logic tier 60
 - Refactored internal component logic tier 61
+- Refactored internal component logic tier 62
