@@ -47,6 +47,9 @@
 ;; @const ERR-NOT-FOUND
 ;; Immutable protocol setting
 (define-constant ERR-NOT-FOUND (err u504))
+
+;; @const ERR-ALREADY-LISTED
+;; Immutable protocol setting
 (define-constant ERR-ALREADY-LISTED (err u505))
 (define-constant ERR-NOT-OWNER (err u506))
 
