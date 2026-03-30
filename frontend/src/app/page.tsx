@@ -216,7 +216,7 @@ export default function Home() {
               </div>
               <button
                 onClick={() => toast.error('You need to mint an NFT first')}
-                className="w-full h-10 rounded-lg bg-slate-900 dark:bg-zinc-100 text-white dark:text-black text-sm font-bold mt-4"
+                className="bg-slate-900 dark:bg-zinc-100 dark:text-black font-bold h-10 mt-4 rounded-lg text-sm text-white w-full"
               >
                 Go to Vault
               </button>
