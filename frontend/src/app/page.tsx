@@ -115,7 +115,7 @@ export default function Home() {
                   </div>
                   <button
                     onClick={disconnectWallet}
-                    className="h-10 px-4 rounded-full bg-slate-100 dark:bg-zinc-900 hover:bg-slate-200 dark:hover:bg-zinc-800 transition-colors text-sm font-medium"
+                    className="bg-slate-100 dark:bg-zinc-900 dark:hover:bg-zinc-800 font-medium h-10 hover:bg-slate-200 px-4 rounded-full text-sm transition-colors"
                   >
                     Disconnect
                   </button>
