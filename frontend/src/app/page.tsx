@@ -202,7 +202,7 @@ export default function Home() {
 
           {/* Staking Card */}
           <div className="bg-white border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
-            <div className="w-12 h-12 rounded-xl bg-emerald-100 dark:bg-emerald-900/30 flex items-center justify-center mb-6 text-emerald-600 dark:text-emerald-400">
+            <div className="bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 flex h-12 items-center justify-center mb-6 rounded-xl text-emerald-600 w-12">
               <Trophy className="w-6 h-6" />
             </div>
             <h3 className="text-xl font-bold mb-2">Passive Staking</h3>
