@@ -198,6 +198,9 @@
   )
 )
 
+
+;; @desc get-staker-balance
+;; Read-only context viewer
 (define-read-only (get-staker-balance (staker principal))
   (default-to u0 (map-get? staker-balance staker))
 )
