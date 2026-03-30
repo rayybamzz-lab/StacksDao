@@ -284,3 +284,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 280
 - Refactored internal component logic tier 281
 - Refactored internal component logic tier 282
+- Refactored internal component logic tier 283
