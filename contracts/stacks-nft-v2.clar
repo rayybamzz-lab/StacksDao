@@ -19,6 +19,9 @@
 ;; ---------------------
 ;; Constants
 ;; ---------------------
+
+;; @const CONTRACT-OWNER
+;; Immutable protocol setting
 (define-constant CONTRACT-OWNER tx-sender)
 (define-constant MINT-PRICE u10000)             ;; 0.01 STX in micro-STX
 (define-constant MAX-SUPPLY u10000)
