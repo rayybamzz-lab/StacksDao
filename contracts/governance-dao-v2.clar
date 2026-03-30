@@ -17,6 +17,9 @@
 ;; @const VOTING-PERIOD
 ;; Immutable protocol setting
 (define-constant VOTING-PERIOD u144)                ;; ~1 day (144 blocks x 10 min)
+
+;; @const MIN-PROPOSAL-BALANCE
+;; Immutable protocol setting
 (define-constant MIN-PROPOSAL-BALANCE u100000000)   ;; 100 SDAO (with 6 decimals) to create proposal
 (define-constant QUORUM u500000000)                 ;; 500 SDAO minimum total votes for quorum
 (define-constant ERR-NOT-AUTHORIZED (err u401))
