@@ -139,3 +139,4 @@ All notable changes to this project will be documented in this file.
 - Refactored internal component logic tier 135
 - Refactored internal component logic tier 136
 - Refactored internal component logic tier 137
+- Refactored internal component logic tier 138
