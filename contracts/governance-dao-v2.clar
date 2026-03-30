@@ -268,6 +268,9 @@
   (map-get? votes { proposal-id: proposal-id, voter: voter })
 )
 
+
+;; @desc is-voting-active
+;; Read-only context viewer
 (define-read-only (is-voting-active (proposal-id uint))
   (match (map-get? proposals proposal-id)
     proposal (ok (<= block-height (get end-block proposal)))
