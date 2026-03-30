@@ -120,7 +120,6 @@
 ;; Admin Functions
 ;; ---------------------
 
-
 ;; @desc set-base-uri
 ;; State-modifying public function
 (define-public (set-base-uri (new-uri (string-ascii 256)))
