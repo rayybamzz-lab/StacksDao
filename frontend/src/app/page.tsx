@@ -139,7 +139,7 @@ export default function Home() {
         <section className="mb-16">
           <div className="bg-indigo-600 overflow-hidden p-8 relative rounded-3xl shadow-2xl shadow-indigo-500/20 sm:p-12">
             <div className="absolute opacity-10 p-12 pointer-events-none right-0 top-0">
-              <Zap className="w-64 h-64 text-white" />
+              <Zap className="h-64 text-white w-64" />
             </div>
             <div className="relative z-10 max-w-2xl">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-indigo-500/30 text-indigo-100 text-xs font-bold mb-6">
