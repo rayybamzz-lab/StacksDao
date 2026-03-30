@@ -286,7 +286,6 @@
   (ok MIN-PROPOSAL-BALANCE)
 )
 
-
 ;; @desc get-quorum
 ;; Read-only context viewer
 (define-read-only (get-quorum)
