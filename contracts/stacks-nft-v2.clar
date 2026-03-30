@@ -32,6 +32,9 @@
 ;; ---------------------
 ;; Data Variables
 ;; ---------------------
+
+;; @var last-token-id
+;; Protocol state tracking for last token id
 (define-data-var last-token-id uint u0)
 (define-data-var base-uri (string-ascii 256) "https://stacksdao.io/nft/metadata/")
 (define-data-var paused bool false)
