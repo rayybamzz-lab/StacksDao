@@ -109,7 +109,7 @@ export default function Home() {
             <div className="flex gap-4 items-center">
               {isSignedIn ? (
                 <div className="flex gap-3 items-center">
-                  <div className="hidden sm:flex flex-col items-end leading-none">
+                  <div className="flex-col hidden items-end leading-none sm:flex">
                     <span className="text-sm font-medium">{userAddress?.slice(0, 6)}...{userAddress?.slice(-4)}</span>
                     <span className="text-[10px] text-slate-500 dark:text-zinc-400">Mainnet Connected</span>
                   </div>
