@@ -114,6 +114,9 @@
   (ok "SDAO")
 )
 
+
+;; @desc get-decimals
+;; Read-only context viewer
 (define-read-only (get-decimals)
   (ok u6)
 )
