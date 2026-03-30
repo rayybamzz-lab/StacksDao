@@ -100,6 +100,9 @@
   )
 )
 
+
+;; @desc get-name
+;; Read-only context viewer
 (define-read-only (get-name)
   (ok "StacksDAO Token")
 )
