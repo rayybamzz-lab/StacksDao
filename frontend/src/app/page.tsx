@@ -26,6 +26,7 @@ import {
   History,
   Flame
 } from 'lucide-react';
+import ProposalCard from '@/components/ProposalCard';
 
 /**
  * Home
@@ -150,6 +151,33 @@ export default function Home() {
     } catch (e: any) {
       console.error('[Claim] Error:', e);
       toast.error(`Claim Failed: ${e.message || 'Unknown error'}`);
+    }
+  };
+
+  const handleVote = async (proposalId: number, inFavor: boolean) => {
+    if (!isSignedIn) return connectWallet();
+
+    const functionName = inFavor ? 'vote-for' : 'vote-against';
+
+    try {
+      await openContractCall({
+        network: NETWORK,
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACTS.GOVERNANCE_DAO,
+        functionName,
+        functionArgs: [Cl.uint(proposalId)],
+        postConditionMode: PostConditionMode.Deny,
+        onFinish: (data) => {
+          toast.success(`Vote ${inFavor ? 'for' : 'against'} proposal #${proposalId} broadcasted!`);
+          console.log('Transaction:', data.txId);
+        },
+        onCancel: () => {
+          toast.error('Voting cancelled');
+        },
+      });
+    } catch (error) {
+      console.error('Voting error:', error);
+      toast.error('Failed to broadcast vote');
     }
   };
 
@@ -335,26 +363,20 @@ export default function Home() {
           </div>
 
           {/* DAO Card */}
-          <div className="bg-white border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl shadow-sm">
-            <div className="bg-purple-100 dark:bg-purple-900/30 dark:text-purple-400 flex h-12 items-center justify-center mb-6 rounded-xl text-purple-600 w-12">
-              <Vote className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold mb-2 text-xl">Governance</h3>
-            <p className="dark:text-zinc-400 mb-6 text-slate-500 text-sm">
-              Use your SDAO tokens to vote on proposals or create your own.
-            </p>
-            <div className="border-slate-100 border-t dark:border-zinc-800 pt-4 space-y-4">
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Proposal Threshold</span>
-                <span className="font-bold">10,000 SDAO</span>
-              </div>
-              <div className="bg-purple-50 dark:bg-purple-900/10 p-3 rounded-lg">
-                <p className="dark:text-purple-300 font-medium text-[11px] text-purple-800">
-                  Governance is powered by the SIP-010 standard SDAO token.
-                </p>
-              </div>
-            </div>
-          </div>
+          <ProposalCard
+            proposal={{
+              id: 1,
+              title: "Increase Staking Rewards",
+              description: "Proposal to increase the SDAO rewards from 10 to 15 per block to incentivize long-term stakers.",
+              votesFor: 450000000,
+              votesAgainst: 50000000,
+              endBlock: 154000,
+              executed: false
+            }}
+            currentBlock={153000}
+            onVote={handleVote}
+            onExecute={handleExecute}
+          />
         </div>
 
         {/* Status Section */}
