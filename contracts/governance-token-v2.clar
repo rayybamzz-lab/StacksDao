@@ -81,6 +81,7 @@
 (define-public (burn (amount uint) (sender principal))
   (begin
     (asserts! (is-eq tx-sender sender) ERR-NOT-AUTHORIZED)
+    (asserts! (> amount u0) ERR-INSUFFICIENT-BALANCE)
     (ft-burn? sdao-token amount sender)
   )
 )
