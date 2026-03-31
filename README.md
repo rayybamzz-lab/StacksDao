@@ -82,29 +82,43 @@ StacksDao/
 
 ---
 
-## Development Setup
+## Prerequisites
 
-```bash
-# Install Clarinet
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-cargo install clarinet-cli
+Before starting, ensure you have the following installed:
+- [Clarinet](https://github.com/hirosystems/clarinet) >= v1.7.0
+- [Node.js](https://nodejs.org/) >= v18.0.0
+- [npm](https://www.npmjs.com/) or [yarn](https://yarnpkg.com/)
 
-# Or via npm
-npm install -g @hirosystems/clarinet-sdk
+## Quick Start
 
-# Check contracts
-clarinet check
+1. **Clone and Install**
+   ```bash
+   git clone https://github.com/StacksDao/protocol.git
+   cd protocol
+   npm install
+   ```
 
-# Start local devnet
-clarinet devnet start
+2. **Run Tests**
+   ```bash
+   clarinet test
+   ```
 
-# Run tests
-clarinet test
+3. **Check Logic**
+   ```bash
+   clarinet check
+   ```
+
+## Environment Setup
+
+Create a `.env` file in the `frontend` directory:
+```env
+NEXT_PUBLIC_CONTRACT_ADDRESS=SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
+NEXT_PUBLIC_NETWORK=mainnet
 ```
 
 ---
 
-## Deployment (Mainnet)
+## Smart Contracts (Mainnet)
 
 > See [DEPLOYMENT.md](./DEPLOYMENT.md) for the full step-by-step guide.
 
