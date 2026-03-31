@@ -2,6 +2,9 @@
 
 A complete Stacks blockchain protocol built in Clarity — featuring NFT minting, NFT staking for token rewards, and on-chain governance.
 
+> [!NOTE]
+> All contracts in this repository use the `-v2` suffix to denote the latest protocol version with hardened security and optimized gas fees.
+
 ## Overview
 
 | Feature | Details |
