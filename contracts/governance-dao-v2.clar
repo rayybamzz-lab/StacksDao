@@ -116,10 +116,10 @@
       (proposer-balance (unwrap-panic (contract-call? .governance-token-v2 get-balance tx-sender)))
       (new-id (+ (var-get proposal-count) u1))
     )
-    ;; Must hold minimum SDAO to propose
-    (asserts! (>= proposer-balance MIN-PROPOSAL-BALANCE) ERR-INSUFFICIENT-BALANCE)
     ;; Validate title
     (asserts! (> (len title) u0) ERR-INSUFFICIENT-BALANCE)
+    ;; Validate description
+    (asserts! (> (len description) u0) ERR-INSUFFICIENT-BALANCE)
 
     ;; Create the proposal
     (map-set proposals new-id {
