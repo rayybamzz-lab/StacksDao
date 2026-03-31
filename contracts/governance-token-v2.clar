@@ -65,6 +65,19 @@
   )
 )
 
+;; @desc set-token-uri
+;; @param new-uri (string-utf8 256) - The new metadata URI
+;; @returns (response bool uint) - Returns true on success
+;; State-modifying public function
+(define-public (set-token-uri (new-uri (string-utf8 256)))
+  (begin
+    (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (var-set token-uri (some new-uri))
+    (print { event: "token-metadata-update", new-uri: new-uri })
+    (ok true)
+  )
+)
+
 ;; Mint tokens - restricted to deployer or staking contract
 
 ;; @desc mint
