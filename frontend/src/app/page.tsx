@@ -84,16 +84,19 @@ export default function Home() {
         functionArgs: [Cl.uint(tokenId)],
         network: NETWORK as any,
         onFinish: (data) => {
-          toast.success('Staking transaction broadcasted!');
+          toast.success('Successfully broadcasted staking transaction!');
+          console.log('Stake TXID:', data.txId);
           setIsStaking(false);
         },
         onCancel: () => {
+          toast('Staking cancelled by user', { icon: 'ℹ️' });
           setIsStaking(false);
         },
       });
     } catch (e: any) {
-      console.error('Staking error:', e);
-      toast.error(`Staking failed: ${e.message || 'Unknown error'}`);
+      console.error('[Stake] Error:', e);
+      const errorMessage = e.message || 'Transaction failed to broadcast';
+      toast.error(`Staking Failed: ${errorMessage}`);
       setIsStaking(false);
     }
   };
