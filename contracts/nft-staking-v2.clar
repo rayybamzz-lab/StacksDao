@@ -41,6 +41,10 @@
 ;; Immutable protocol setting
 (define-constant ERR-INVALID-TOKEN-ID (err u605))
 
+;; @const ERR-COOLDOWN-ACTIVE
+;; Immutable protocol setting
+(define-constant ERR-COOLDOWN-ACTIVE (err u606))
+
 ;; ---------------------
 ;; Data Maps
 ;; ---------------------
@@ -62,6 +66,10 @@
 ;; @var total-staked
 ;; Protocol state tracking for total staked
 (define-data-var total-staked uint u0)
+
+;; @var unstake-delay
+;; Minimum blocks required before unstaking is allowed
+(define-data-var unstake-delay uint u0)
 
 ;; ---------------------
 ;; Stake NFT
@@ -129,6 +137,9 @@
     ;; Only the original staker can unstake
     (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
 
+    ;; Verify cooldown period has passed
+    (asserts! (>= block-height (+ (get staked-at-block stake-info) (var-get unstake-delay))) ERR-COOLDOWN-ACTIVE)
+
     ;; Mint any pending rewards
     (if (> rewards u0)
       (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
@@ -184,6 +195,21 @@
 
     (print { event: "rewards-claimed", token-id: token-id, staker: tx-sender, rewards: rewards })
     (ok rewards)
+  )
+)
+
+;; ---------------------
+;; Admin Functions
+;; ---------------------
+
+;; @desc set-unstake-delay
+;; @param new-delay uint - Minimum blocks required before unstaking
+;; @returns (response bool uint) - Returns true on success
+;; State-modifying public function
+(define-public (set-unstake-delay (new-delay uint))
+  (begin
+    (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (ok (var-set unstake-delay new-delay))
   )
 )
 
