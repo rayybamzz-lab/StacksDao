@@ -186,7 +186,13 @@ export default function Home() {
               <div className="bg-indigo-600 flex h-8 items-center justify-center rounded-lg w-8">
                 <ShieldCheck className="h-5 text-white w-5" />
               </div>
-              <span className="font-bold text-xl tracking-tight">StacksDAO</span>
+              <div className="flex flex-col leading-none">
+                <div className="flex gap-1.5 items-center">
+                  <span className="font-bold text-xl tracking-tight">StacksDAO</span>
+                  <span className="bg-indigo-500/10 border border-indigo-500/20 font-bold px-1.5 py-0.5 rounded text-[10px] text-indigo-400">V2</span>
+                </div>
+                <span className="font-medium opacity-50 px-0.5 text-[9px] tracking-widest uppercase">Protocol</span>
+              </div>
             </div>
 
             <div className="flex gap-4 items-center">
