@@ -55,6 +55,8 @@
 ;; Set the staking contract as authorized minter
 
 ;; @desc set-authorized-minter
+;; @param minter principal - The address of the staking/admin contract
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (set-authorized-minter (minter principal))
   (begin
@@ -115,18 +117,21 @@
 )
 
 ;; @desc get-name
+;; @returns (response (string-ascii 32) none) - Returns "StacksDAO Token"
 ;; Read-only context viewer
 (define-read-only (get-name)
   (ok "StacksDAO Token")
 )
 
 ;; @desc get-symbol
+;; @returns (response (string-ascii 10) none) - Returns "SDAO"
 ;; Read-only context viewer
 (define-read-only (get-symbol)
   (ok "SDAO")
 )
 
 ;; @desc get-decimals
+;; @returns (response uint none) - Returns u6 (standard fungible token decimals)
 ;; Read-only context viewer
 (define-read-only (get-decimals)
   (ok u6)
@@ -148,6 +153,7 @@
 )
 
 ;; @desc get-token-uri
+;; @returns (response (optional (string-utf8 256)) none) - Returns the token metadata URI
 ;; Read-only context viewer
 (define-read-only (get-token-uri)
   (ok (var-get token-uri))
