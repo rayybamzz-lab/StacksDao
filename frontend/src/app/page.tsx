@@ -224,6 +224,7 @@ export default function Home() {
               </div>
               <button
                 onClick={() => toast.error('You need to mint an NFT first')}
+                aria-label="Go to staking vault"
                 className="bg-slate-900 dark:bg-zinc-100 dark:text-black font-bold h-10 mt-4 rounded-lg text-sm text-white w-full"
               >
                 Go to Vault
