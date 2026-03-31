@@ -106,6 +106,9 @@
 ;; ---------------------
 
 ;; @desc create-proposal
+;; @param title (string-utf8 256) - The title of the proposal
+;; @param description (string-utf8 1024) - Detailed description of the proposal
+;; @returns (response uint uint) - Returns the new proposal ID
 ;; State-modifying public function
 (define-public (create-proposal
     (title (string-utf8 256))
