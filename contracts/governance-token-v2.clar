@@ -91,6 +91,11 @@
 ;; ---------------------
 
 ;; @desc transfer
+;; @param amount uint - The number of tokens to transfer
+;; @param sender principal - The address sending the tokens
+;; @param recipient principal - The address receiving the tokens
+;; @param memo (optional (buff 34)) - Optional memo for the transfer
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (transfer (amount uint) (sender principal) (recipient principal) (memo (optional (buff 34))))
   (begin
