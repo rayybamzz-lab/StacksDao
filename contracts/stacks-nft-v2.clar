@@ -103,6 +103,8 @@
 ;; Batch mint (up to 5 per call)
 
 ;; @desc mint-batch
+;; @param count uint - The number of NFTs to mint (max 5)
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (mint-batch (count uint))
   (begin
@@ -145,6 +147,8 @@
 ;; --------------------------------------------------------------------------
 
 ;; @desc set-paused
+;; @param new-paused bool - True to pause minting
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (set-paused (new-paused bool))
   (begin
@@ -181,12 +185,15 @@
 )
 
 ;; @desc get-last-token-id
+;; @returns (response uint none) - Returns the count of minted NFTs
 ;; Read-only context viewer
 (define-read-only (get-last-token-id)
   (ok (var-get last-token-id))
 )
 
 ;; @desc get-token-uri
+;; @param token-id uint - The ID of the NFT to query
+;; @returns (response (optional (string-ascii 256)) uint) - Returns the token metadata URI
 ;; Read-only context viewer
 (define-read-only (get-token-uri (token-id uint))
   (ok (some (var-get base-uri)))
@@ -197,18 +204,21 @@
 ;; ---------------------
 
 ;; @desc get-mint-price
+;; @returns (response uint none) - Returns the current mint price in micro-STX
 ;; Read-only context viewer
 (define-read-only (get-mint-price)
   (ok MINT-PRICE)
 )
 
 ;; @desc get-max-supply
+;; @returns (response uint none) - Returns the maximum allowed supply
 ;; Read-only context viewer
 (define-read-only (get-max-supply)
   (ok MAX-SUPPLY)
 )
 
 ;; @desc get-remaining-supply
+;; @returns (response uint none) - Returns the number of NFTs remaining to be minted
 ;; Read-only context viewer
 (define-read-only (get-remaining-supply)
   (ok (- MAX-SUPPLY (var-get last-token-id)))
