@@ -66,6 +66,14 @@
 ;; Immutable protocol setting
 (define-constant ERR-VOTING-NOT-ENDED (err u709))
 
+;; @const ERR-INVALID-TITLE
+;; Immutable protocol setting
+(define-constant ERR-INVALID-TITLE (err u710))
+
+;; @const ERR-INVALID-DESCRIPTION
+;; Immutable protocol setting
+(define-constant ERR-INVALID-DESCRIPTION (err u711))
+
 ;; ---------------------
 ;; Data Variables
 ;; ---------------------
@@ -130,9 +138,9 @@
       (new-id (+ (var-get proposal-count) u1))
     )
     ;; Validate title
-    (asserts! (> (len title) u0) ERR-INSUFFICIENT-BALANCE)
+    (asserts! (> (len title) u0) ERR-INVALID-TITLE)
     ;; Validate description
-    (asserts! (> (len description) u0) ERR-INSUFFICIENT-BALANCE)
+    (asserts! (> (len description) u0) ERR-INVALID-DESCRIPTION)
 
     ;; Create the proposal
     (map-set proposals new-id {
