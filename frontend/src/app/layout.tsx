@@ -30,6 +30,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://stacksdao.io",
+    siteName: "StacksDAO",
+    title: "StacksDAO - NFT Staking & Governance",
+    description: "The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.",
+  },
 };
 
 import { StacksProvider } from '@/lib/StacksProvider';
