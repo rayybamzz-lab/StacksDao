@@ -308,40 +308,13 @@ export default function Home() {
         {/* Dashboard Grid */}
         <div className="gap-8 grid grid-cols-1 md:grid-cols-3">
           {/* Minting Card */}
-          <div className="glass-panel border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
-            <div className="flex flex-col gap-6 glass-panel p-8 rounded-3xl">
-              <div className="flex items-center justify-between">
-                <div className="bg-emerald-500/10 p-3 rounded-xl">
-                  <Flame className="h-6 text-emerald-400 w-6" />
-                </div>
-                <span className="bg-emerald-500/10 font-medium px-3 py-1 rounded-full text-emerald-400 text-sm">
-                  SIP-009 Standard
-                </span>
-              </div>
-              <div>
-                <h3 className="font-bold mb-1 text-2xl text-white">Mint Stacks NFT</h3>
-                <p className="text-indigo-200/60">Limit: 5 NFTs per transaction</p>
-              </div>
-              <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
-                <div className="flex justify-between mb-2">
-                  <span className="text-indigo-200/50">Price</span>
-                  <span className="font-medium text-white">0.01 STX</span>
-                </div>
-                <div className="flex justify-between">
-                  <span className="text-indigo-200/50">Supply</span>
-                  <span className="font-medium text-white">2,450 / 5,000</span>
-                </div>
-              </div>
-              <button
-                onClick={handleMint}
-                disabled={isMinting}
-                className="bg-white flex font-bold h-12 hover:bg-indigo-50 items-center justify-center rounded-xl text-indigo-950 transition-colors w-full"
-                aria-label="Mint NFT for 0.01 STX"
-              >
-                {isMinting ? 'Minting...' : 'Mint Now'}
-              </button>
-            </div>
-          </div>
+          <MinterCard
+            price="0.01 STX"
+            mintedCount={2450}
+            maxSupply={5000}
+            isMinting={isMinting}
+            onMint={handleMint}
+          />
 
           {/* Staking Card */}
           <StakingCard
