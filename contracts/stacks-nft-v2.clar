@@ -148,6 +148,7 @@
 (define-public (transfer (token-id uint) (sender principal) (recipient principal))
   (begin
     (asserts! (is-eq tx-sender sender) ERR-NOT-AUTHORIZED)
+    (asserts! (not (is-eq recipient sender)) ERR-NOT-AUTHORIZED)
     (asserts! (is-eq (some sender) (nft-get-owner? stacksdao-nft token-id)) ERR-NOT-OWNER)
     (nft-transfer? stacksdao-nft token-id sender recipient)
   )
