@@ -300,13 +300,15 @@
 ;; @desc get-vote
 ;; @param proposal-id uint - The ID of the proposal
 ;; @param voter principal - The address of the voter
-;; @returns (optional (tuple (amount uint) (in-favor bool)))
+;; @returns (optional (tuple (amount uint) (in-favor bool))) - Returns the vote record or none
 ;; Read-only context viewer
 (define-read-only (get-vote (proposal-id uint) (voter principal))
   (map-get? votes { proposal-id: proposal-id, voter: voter })
 )
 
 ;; @desc is-voting-active
+;; @param proposal-id uint - The ID of the proposal
+;; @returns (response bool uint) - Returns true if the voting period has not ended
 ;; Read-only context viewer
 (define-read-only (is-voting-active (proposal-id uint))
   (match (map-get? proposals proposal-id)
