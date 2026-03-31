@@ -384,6 +384,17 @@ export default function Home() {
           />
         </div>
 
+        {/* Transaction History Section */}
+        {isSignedIn && (
+          <TransactionHistory
+            transactions={[
+              { id: '0x1c...a2f', type: 'NFT Minting', status: 'confirmed', timestamp: '2 hours ago', amount: '0.01 STX' },
+              { id: '0x3b...e4d', type: 'Token Staking', status: 'confirmed', timestamp: '5 hours ago', amount: '1 NFT' },
+              { id: '0x9a...f11', type: 'Governance Vote', status: 'pending', timestamp: '10 mins ago' },
+            ]}
+          />
+        )}
+
         {/* Status Section */}
         {!isSignedIn && (
           <div className="bg-slate-100 border-2 border-dashed border-slate-200 dark:bg-zinc-900/50 dark:border-zinc-800 mt-16 px-6 py-12 rounded-3xl text-center">
