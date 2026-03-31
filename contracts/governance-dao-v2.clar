@@ -149,6 +149,8 @@
 ;; ---------------------
 
 ;; @desc vote-for
+;; @param proposal-id uint - The ID of the proposal to vote in favor of
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (vote-for (proposal-id uint))
   (let
@@ -186,6 +188,8 @@
 ;; ---------------------
 
 ;; @desc vote-against
+;; @param proposal-id uint - The ID of the proposal to vote against
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (vote-against (proposal-id uint))
   (let
@@ -223,6 +227,8 @@
 ;; ---------------------
 
 ;; @desc execute-proposal
+;; @param proposal-id uint - The ID of the proposal to execute
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (execute-proposal (proposal-id uint))
   (let
