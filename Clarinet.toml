@@ -1,9 +1,11 @@
 [project]
 name = 'StacksDao'
-description = 'NFT Minting, Staking, Token Rewards & Governance DAO on Stacks'
-authors = []
+description = 'On-chain DAO, NFT Staking, and SIP-010 Tokens for the Stacks ecosystem (v2).'
+authors = ['StacksDao Core Team']
 telemetry = false
 cache_dir = './.cache'
+homepage = 'https://stacksdao.com'
+repository = 'https://github.com/StacksDao/protocol'
 
 [[project.requirements]]
 contract_id = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard'
