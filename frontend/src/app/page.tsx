@@ -265,6 +265,7 @@ export default function Home() {
             </p>
             <button
               onClick={connectWallet}
+              aria-label="Sign in to Stacks wallet"
               className="bg-slate-900 dark:bg-zinc-100 dark:text-black font-bold h-12 hover:scale-105 px-10 rounded-2xl text-white transition-transform"
             >
               Sign In with Leather / Xverse
