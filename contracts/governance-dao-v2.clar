@@ -265,18 +265,24 @@
 ;; ---------------------
 
 ;; @desc get-proposal
+;; @param proposal-id uint - The ID of the proposal to query
+;; @returns (optional (tuple (title (string-utf8 256)) (description (string-utf8 1024)) (proposer principal) (start-block uint) (end-block uint) (votes-for uint) (votes-against uint) (executed bool) (total-votes uint)))
 ;; Read-only context viewer
 (define-read-only (get-proposal (proposal-id uint))
   (map-get? proposals proposal-id)
 )
 
 ;; @desc get-proposal-count
+;; @returns (response uint none) - Returns the total number of proposals created
 ;; Read-only context viewer
 (define-read-only (get-proposal-count)
   (ok (var-get proposal-count))
 )
 
 ;; @desc get-vote
+;; @param proposal-id uint - The ID of the proposal
+;; @param voter principal - The address of the voter
+;; @returns (optional (tuple (amount uint) (in-favor bool)))
 ;; Read-only context viewer
 (define-read-only (get-vote (proposal-id uint) (voter principal))
   (map-get? votes { proposal-id: proposal-id, voter: voter })
