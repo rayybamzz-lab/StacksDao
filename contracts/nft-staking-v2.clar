@@ -115,6 +115,13 @@
       (blocks-staked (- block-height last-claim))
       (rewards (* blocks-staked REWARD-PER-BLOCK))
     )
+    ;; --------------------------------------------------------------------------
+    ;; Reward Calculation & Balance Updates
+    ;; --------------------------------------------------------------------------
+    ;; Calculates pending rewards based on blocks elapsed since last claim.
+    ;; 10 SDAO per block (10,000,000 micro-SDAO).
+    ;; --------------------------------------------------------------------------
+    
     ;; Only the original staker can unstake
     (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
 
