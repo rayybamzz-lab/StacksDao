@@ -39,10 +39,11 @@
 
 ;; ---------------------
 ;; Authorization Helpers
-;; ---------------------
+;; @desc is-authorized-minter
+;; @returns bool - True if sender is the deployer or an authorized contract
 (define-private (is-authorized-minter)
-  (or
-    (is-eq tx-sender CONTRACT-OWNER)
+  (or 
+    (is-eq tx-sender CONTRACT-OWNER) 
     (is-eq (some tx-sender) (var-get authorized-minter))
   )
 )
