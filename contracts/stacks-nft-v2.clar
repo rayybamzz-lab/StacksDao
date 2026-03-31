@@ -125,6 +125,7 @@
 (define-public (set-base-uri (new-uri (string-ascii 256)))
   (begin
     (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
+    (asserts! (> (len new-uri) u0) ERR-NOT-AUTHORIZED)
     (ok (var-set base-uri new-uri))
   )
 )
