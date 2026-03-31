@@ -26,6 +26,10 @@ export const metadata: Metadata = {
     "apple-mobile-web-app-capable": "yes",
     "apple-mobile-web-app-status-bar-style": "black-translucent",
   },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 import { StacksProvider } from '@/lib/StacksProvider';
