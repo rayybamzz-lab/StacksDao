@@ -181,12 +181,16 @@
 ;; ---------------------
 
 ;; @desc get-staking-info
+;; @param token-id uint - The ID of the NFT to query
+;; @returns (optional (tuple (staker principal) (staked-at-block uint) (last-claim-block uint)))
 ;; Read-only context viewer
 (define-read-only (get-staking-info (token-id uint))
   (map-get? staking-data token-id)
 )
 
 ;; @desc get-pending-rewards
+;; @param token-id uint - The ID of the NFT to query
+;; @returns (response uint uint) - Returns the rewards accrued but not claimed
 ;; Read-only context viewer
 (define-read-only (get-pending-rewards (token-id uint))
   (match (map-get? staking-data token-id)
