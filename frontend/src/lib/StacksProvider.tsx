@@ -4,18 +4,26 @@ import React, { createContext, useContext, useEffect, useState } from 'react';
 import { showConnect, AuthOptions } from '@stacks/connect';
 import { userSession, appConfig } from './stacks-config';
 
+/**
+ * StacksContextType
+ * Defines the shape of the Stacks authentication context
+ */
 interface StacksContextType {
+    /** Whether the user is signed in */
     isSignedIn: boolean;
+    /** Current user's Stacks address */
     userAddress: string | null;
+    /** Function to trigger wallet connection */
     connectWallet: () => void;
+    /** Function to sign out the user */
     disconnectWallet: () => void;
 }
 
 const StacksContext = createContext<StacksContextType | undefined>(undefined);
 
 /**
- * StacksProvider
- * Functional UI component / utility
+ * StacksProvider component
+ * Provides Stacks authentication state to the application
  */
 export function StacksProvider({ children }: { children: React.ReactNode }) {
     const [isSignedIn, setIsSignedIn] = useState(false);
