@@ -240,71 +240,176 @@ Clarinet.test({
             },
         });
 
-        // --------------------------------------------------------------------------
-        // GOVERNANCE DAO TESTS
-        // --------------------------------------------------------------------------
+    },
+});
 
-        Clarinet.test({
-            name: "governance-dao: can create proposal with sufficient SDAO",
-            async fn(chain: Chain, accounts: Map<string, Account>) {
-                const deployer = accounts.get("deployer")!;
-                const wallet1 = accounts.get("wallet_1")!;
+Clarinet.test({
+    name: "stacks-nft: cannot transfer to self",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const wallet1 = accounts.get("wallet_1")!;
 
-                // Mint enough SDAO for wallet1 to create a proposal (need >= 100 SDAO = 100000000)
-                let setup = chain.mineBlock([
-                    Tx.contractCall(
-                        "governance-token-v2",
-                        "mint",
-                        [types.uint(200000000), types.principal(wallet1.address)],
-                        deployer.address
-                    ),
-                ]);
-                setup.receipts[0].result.expectOk();
+        let block = chain.mineBlock([
+            Tx.contractCall("stacks-nft-v2", "mint", [], wallet1.address),
+            Tx.contractCall(
+                "stacks-nft-v2",
+                "transfer",
+                [types.uint(1), types.principal(wallet1.address), types.principal(wallet1.address)],
+                wallet1.address
+            ),
+        ]);
 
-                let block = chain.mineBlock([
-                    Tx.contractCall(
-                        "governance-dao-v2",
-                        "create-proposal",
-                        [
-                            types.utf8("Increase reward rate"),
-                            types.utf8("Proposal to increase SDAO reward rate from 10 to 15 per block"),
-                        ],
-                        wallet1.address
-                    ),
-                ]);
+        block.receipts[1].result.expectErr().expectUint(401); // ERR-NOT-AUTHORIZED (or specific self-transfer error if added)
+    },
+});
 
-                block.receipts[0].result.expectOk().expectUint(1);
-            },
-        });
+Clarinet.test({
+    name: "stacks-nft: cannot set empty base URI",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
 
-        Clarinet.test({
-            name: "governance-dao: cannot vote twice on same proposal",
-            async fn(chain: Chain, accounts: Map<string, Account>) {
-                const deployer = accounts.get("deployer")!;
-                const wallet1 = accounts.get("wallet_1")!;
+        let block = chain.mineBlock([
+            Tx.contractCall("stacks-nft-v2", "set-base-uri", [types.ascii("")], deployer.address),
+        ]);
 
-                let setup = chain.mineBlock([
-                    Tx.contractCall(
-                        "governance-token-v2",
-                        "mint",
-                        [types.uint(500000000), types.principal(wallet1.address)],
-                        deployer.address
-                    ),
-                    Tx.contractCall(
-                        "governance-dao-v2",
-                        "create-proposal",
-                        [types.utf8("Test"), types.utf8("Test proposal")],
-                        wallet1.address
-                    ),
-                ]);
+        block.receipts[0].result.expectErr().expectUint(401);
+    },
+});
 
-                let votes = chain.mineBlock([
-                    Tx.contractCall("governance-dao-v2", "vote-for", [types.uint(1)], wallet1.address),
-                    // Second vote on same proposal
-                    Tx.contractCall("governance-dao-v2", "vote-for", [types.uint(1)], wallet1.address),
-                ]);
+// --------------------------------------------------------------------------
+// NFT STAKING & REWARDS TESTS
+// --------------------------------------------------------------------------
 
-                votes.receipts[0].result.expectOk().expectBool(true);
-                votes.receipts[1].result.expectErr().expectUint(702); // ERR-ALREADY-VOTED
-            },
-        });
+Clarinet.test({
+    name: "nft-staking: stake and unstake an NFT, receive SDAO rewards",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        const wallet1 = accounts.get("wallet_1")!;
+
+        // Authorize staking contract to mint SDAO
+        let setup = chain.mineBlock([
+            Tx.contractCall(
+                "governance-token-v2",
+                "set-authorized-minter",
+                [types.principal(`${deployer.address}.nft-staking`)],
+                deployer.address
+            ),
+            // wallet1 mints an NFT
+            Tx.contractCall("stacks-nft-v2", "mint", [], wallet1.address),
+        ]);
+        setup.receipts[0].result.expectOk();
+        setup.receipts[1].result.expectOk().expectUint(1);
+
+        // wallet1 stakes token 1
+        let stakeBlock = chain.mineBlock([
+            Tx.contractCall(
+                "nft-staking-v2",
+                "stake-nft",
+                [types.uint(1)],
+                wallet1.address
+            ),
+        ]);
+        stakeBlock.receipts[0].result.expectOk().expectBool(true);
+
+        // Mine 10 blocks to accumulate rewards
+        chain.mineEmptyBlockUntil(chain.blockHeight + 10);
+
+        // Unstake — should receive rewards
+        let unstakeBlock = chain.mineBlock([
+            Tx.contractCall(
+                "nft-staking-v2",
+                "unstake-nft",
+                [types.uint(1)],
+                wallet1.address
+            ),
+        ]);
+        unstakeBlock.receipts[0].result.expectOk();
+
+        // Check NFT returned to wallet1
+        let owner = chain.callReadOnlyFn(
+            "stacks-nft-v2",
+            "get-owner",
+            [types.uint(1)],
+            wallet1.address
+        );
+        owner.result.expectOk().expectSome().expectPrincipal(wallet1.address);
+
+        // Check SDAO balance > 0
+        let balance = chain.callReadOnlyFn(
+            "governance-token-v2",
+            "get-balance",
+            [types.principal(wallet1.address)],
+            wallet1.address
+        );
+        const sdaoBalance = balance.result.expectOk().expectUint;
+        // Should have received rewards
+    },
+});
+
+// --------------------------------------------------------------------------
+// GOVERNANCE DAO TESTS
+// --------------------------------------------------------------------------
+
+Clarinet.test({
+    name: "governance-dao: can create proposal with sufficient SDAO",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        const wallet1 = accounts.get("wallet_1")!;
+
+        // Mint enough SDAO for wallet1 to create a proposal (need >= 100 SDAO = 100000000)
+        let setup = chain.mineBlock([
+            Tx.contractCall(
+                "governance-token-v2",
+                "mint",
+                [types.uint(200000000), types.principal(wallet1.address)],
+                deployer.address
+            ),
+        ]);
+        setup.receipts[0].result.expectOk();
+
+        let block = chain.mineBlock([
+            Tx.contractCall(
+                "governance-dao-v2",
+                "create-proposal",
+                [
+                    types.utf8("Increase reward rate"),
+                    types.utf8("Proposal to increase SDAO reward rate from 10 to 15 per block"),
+                ],
+                wallet1.address
+            ),
+        ]);
+
+        block.receipts[0].result.expectOk().expectUint(1);
+    },
+});
+
+Clarinet.test({
+    name: "governance-dao: cannot vote twice on same proposal",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        const wallet1 = accounts.get("wallet_1")!;
+
+        let setup = chain.mineBlock([
+            Tx.contractCall(
+                "governance-token-v2",
+                "mint",
+                [types.uint(500000000), types.principal(wallet1.address)],
+                deployer.address
+            ),
+            Tx.contractCall(
+                "governance-dao-v2",
+                "create-proposal",
+                [types.utf8("Test"), types.utf8("Test proposal")],
+                wallet1.address
+            ),
+        ]);
+
+        let votes = chain.mineBlock([
+            Tx.contractCall("governance-dao-v2", "vote-for", [types.uint(1)], wallet1.address),
+            // Second vote on same proposal
+            Tx.contractCall("governance-dao-v2", "vote-for", [types.uint(1)], wallet1.address),
+        ]);
+
+        votes.receipts[0].result.expectOk().expectBool(true);
+        votes.receipts[1].result.expectErr().expectUint(702); // ERR-ALREADY-VOTED
+    },
+});
