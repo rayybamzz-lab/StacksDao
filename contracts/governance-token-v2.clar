@@ -65,6 +65,9 @@
 ;; Mint tokens - restricted to deployer or staking contract
 
 ;; @desc mint
+;; @param amount uint - The number of tokens to mint
+;; @param recipient principal - The address receiving the tokens
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (mint (amount uint) (recipient principal))
   (begin
