@@ -79,6 +79,7 @@
 ;; ---------------------
 
 ;; @desc mint
+;; @returns (response uint uint) - Returns the newly minted token ID
 ;; State-modifying public function
 (define-public (mint)
   (let
