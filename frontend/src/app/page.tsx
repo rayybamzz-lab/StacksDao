@@ -22,7 +22,9 @@ import {
   ArrowRight,
   ExternalLink,
   ShieldCheck,
-  Zap
+  Zap,
+  History,
+  Flame
 } from 'lucide-react';
 
 /**
@@ -194,28 +196,43 @@ export default function Home() {
         {/* Dashboard Grid */}
         <div className="gap-8 grid grid-cols-1 md:grid-cols-3">
           {/* Minting Card */}
-          <div className="bg-white border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
-            <div className="bg-orange-100 dark:bg-orange-900/30 dark:text-orange-400 flex h-12 items-center justify-center mb-6 rounded-xl text-orange-600 w-12">
-              <Coins className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold mb-2 text-xl">NFT Minting</h3>
-            <p className="dark:text-zinc-400 mb-6 text-slate-500 text-sm">
-              Mint your unique StacksDao NFT to start earning protocol rewards.
-            </p>
-            <div className="border-slate-100 border-t dark:border-zinc-800 pt-4 space-y-4">
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Price</span>
-                <span className="font-bold">0.01 STX</span>
+          <div className="glass-panel border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
+            <div className="flex flex-col gap-6 glass-panel p-8 rounded-3xl">
+              <div className="flex items-center justify-between">
+                <div className="bg-emerald-500/10 p-3 rounded-xl">
+                  <Flame className="h-6 text-emerald-400 w-6" />
+                </div>
+                <span className="bg-emerald-500/10 font-medium px-3 py-1 rounded-full text-emerald-400 text-sm">
+                  SIP-009 Standard
+                </span>
               </div>
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Max Supply</span>
-                <span className="font-bold">10,000</span>
+              <div>
+                <h3 className="font-bold mb-1 text-2xl text-white">Mint Stacks NFT</h3>
+                <p className="text-indigo-200/60">Limit: 5 NFTs per transaction</p>
               </div>
+              <div className="bg-white/5 border border-white/10 p-4 rounded-xl">
+                <div className="flex justify-between mb-2">
+                  <span className="text-indigo-200/50">Price</span>
+                  <span className="font-medium text-white">0.01 STX</span>
+                </div>
+                <div className="flex justify-between">
+                  <span className="text-indigo-200/50">Supply</span>
+                  <span className="font-medium text-white">2,450 / 5,000</span>
+                </div>
+              </div>
+              <button
+                onClick={handleMint}
+                disabled={isMinting}
+                className="bg-white flex font-bold h-12 hover:bg-indigo-50 items-center justify-center rounded-xl text-indigo-950 transition-colors w-full"
+                aria-label="Mint NFT for 0.01 STX"
+              >
+                {isMinting ? 'Minting...' : 'Mint Now'}
+              </button>
             </div>
           </div>
 
           {/* Staking Card */}
-          <div className="bg-white border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
+          <div className="glass-panel border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
             <div className="bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 flex h-12 items-center justify-center mb-6 rounded-xl text-emerald-600 w-12">
               <Trophy className="h-6 w-6" />
             </div>
