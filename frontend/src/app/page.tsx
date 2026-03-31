@@ -27,6 +27,10 @@ import {
   Flame
 } from 'lucide-react';
 import ProposalCard from '@/components/ProposalCard';
+import StakingCard from '@/components/StakingCard';
+import MinterCard from '@/components/MinterCard';
+import TransactionHistory from '@/components/TransactionHistory';
+import ThemeToggle from '@/components/ThemeToggle';
 
 /**
  * Home
@@ -224,6 +228,7 @@ export default function Home() {
             </div>
 
             <div className="flex gap-4 items-center">
+              <ThemeToggle />
               {isSignedIn ? (
                 <div className="flex gap-3 items-center">
                   <div className="flex-col hidden items-end leading-none sm:flex">
