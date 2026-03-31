@@ -146,6 +146,8 @@
 ;; ---------------------
 
 ;; @desc claim-rewards
+;; @param token-id uint - The ID of the NFT to claim rewards for
+;; @returns (response uint uint) - Returns the rewards minted
 ;; State-modifying public function
 (define-public (claim-rewards (token-id uint))
   (let
