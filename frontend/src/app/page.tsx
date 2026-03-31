@@ -178,6 +178,8 @@ export default function Home() {
                 <a
                   href={`https://explorer.hiro.so/address/${CONTRACT_ADDRESS}?chain=mainnet`}
                   target="_blank"
+                  rel="noopener noreferrer"
+                  title="View StacksDao contracts (v2) on Hiro Explorer"
                   aria-label="View StacksDao contracts on Explorer"
                   className="bg-indigo-500/20 border border-indigo-400/30 flex font-semibold gap-2 h-12 hover:bg-indigo-500/30 items-center px-6 rounded-xl text-white transition-colors"
                 >
