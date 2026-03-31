@@ -118,6 +118,8 @@
     )
     ;; Must hold minimum SDAO to propose
     (asserts! (>= proposer-balance MIN-PROPOSAL-BALANCE) ERR-INSUFFICIENT-BALANCE)
+    ;; Validate title
+    (asserts! (> (len title) u0) ERR-INSUFFICIENT-BALANCE)
 
     ;; Create the proposal
     (map-set proposals new-id {
