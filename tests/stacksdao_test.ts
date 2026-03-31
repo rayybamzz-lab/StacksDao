@@ -413,3 +413,39 @@ Clarinet.test({
         votes.receipts[1].result.expectErr().expectUint(702); // ERR-ALREADY-VOTED
     },
 });
+
+Clarinet.test({
+    name: "governance-dao: cannot create proposal with empty title",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const wallet1 = accounts.get("wallet_1")!;
+        const deployer = accounts.get("deployer")!;
+
+        let setup = chain.mineBlock([
+            Tx.contractCall("governance-token-v2", "mint", [types.uint(200000000), types.principal(wallet1.address)], deployer.address),
+        ]);
+
+        let block = chain.mineBlock([
+            Tx.contractCall("governance-dao-v2", "create-proposal", [types.utf8(""), types.utf8("Valid description")], wallet1.address),
+        ]);
+
+        block.receipts[0].result.expectErr().expectUint(710); // ERR-INVALID-TITLE
+    },
+});
+
+Clarinet.test({
+    name: "governance-dao: cannot create proposal with empty description",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const wallet1 = accounts.get("wallet_1")!;
+        const deployer = accounts.get("deployer")!;
+
+        let setup = chain.mineBlock([
+            Tx.contractCall("governance-token-v2", "mint", [types.uint(200000000), types.principal(wallet1.address)], deployer.address),
+        ]);
+
+        let block = chain.mineBlock([
+            Tx.contractCall("governance-dao-v2", "create-proposal", [types.utf8("Valid title"), types.utf8("")], wallet1.address),
+        ]);
+
+        block.receipts[0].result.expectErr().expectUint(711); // ERR-INVALID-DESCRIPTION
+    },
+});
