@@ -19,6 +19,13 @@ export const metadata: Metadata = {
     icon: "/favicon.ico",
     apple: "/favicon.ico",
   },
+  alternates: {
+    canonical: "https://stacksdao.io",
+  },
+  other: {
+    "apple-mobile-web-app-capable": "yes",
+    "apple-mobile-web-app-status-bar-style": "black-translucent",
+  },
 };
 
 import { StacksProvider } from '@/lib/StacksProvider';
