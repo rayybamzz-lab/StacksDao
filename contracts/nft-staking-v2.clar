@@ -103,6 +103,8 @@
 ;; ---------------------
 
 ;; @desc unstake-nft
+;; @param token-id uint - The ID of the NFT to unstake
+;; @returns (response uint uint) - Returns the total rewards minted on unstake
 ;; State-modifying public function
 (define-public (unstake-nft (token-id uint))
   (let
