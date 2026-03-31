@@ -69,6 +69,7 @@
 (define-public (mint (amount uint) (recipient principal))
   (begin
     (asserts! (is-authorized-minter) ERR-NOT-AUTHORIZED)
+    (asserts! (> amount u0) ERR-INSUFFICIENT-BALANCE)
     (ft-mint? sdao-token amount recipient)
   )
 )
