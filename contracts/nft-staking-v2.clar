@@ -37,6 +37,10 @@
 ;; Immutable protocol setting
 (define-constant ERR-NO-REWARDS (err u604))
 
+;; @const ERR-INVALID-TOKEN-ID
+;; Immutable protocol setting
+(define-constant ERR-INVALID-TOKEN-ID (err u605))
+
 ;; ---------------------
 ;; Data Maps
 ;; ---------------------
