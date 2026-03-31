@@ -55,18 +55,19 @@ export default function Home() {
         postConditions: postConditions as any,
         network: NETWORK as any,
         onFinish: (data) => {
-          toast.success('Mint transaction broadcasted!');
-          console.log('TXID:', data.txId);
+          toast.success('Successfully broadcasted mint transaction!');
+          console.log('Mint TXID:', data.txId);
           setIsMinting(false);
         },
         onCancel: () => {
-          toast.error('Minting cancelled');
+          toast('Minting cancelled by user', { icon: 'ℹ️' });
           setIsMinting(false);
         },
       });
     } catch (e: any) {
-      console.error('Minting error:', e);
-      toast.error(`Minting failed: ${e.message || 'Unknown error'}`);
+      console.error('[Mint] Error:', e);
+      const errorMessage = e.message || 'Transaction failed to broadcast';
+      toast.error(`Minting Failed: ${errorMessage}`);
       setIsMinting(false);
     }
   };
