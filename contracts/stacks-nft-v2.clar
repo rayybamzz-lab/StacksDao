@@ -117,19 +117,32 @@
   )
 )
 
-;; ---------------------
-;; Admin Functions
-;; ---------------------
+;; --------------------------------------------------------------------------
+;; URI Management
+;; --------------------------------------------------------------------------
+;; @desc get-base-uri
+;; Read-only context viewer
+(define-read-only (get-base-uri)
+  (ok (var-get base-uri))
+)
 
 ;; @desc set-base-uri
+;; @param new-base-uri (string-ascii 256) - The new base URI
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
-(define-public (set-base-uri (new-uri (string-ascii 256)))
+(define-public (set-base-uri (new-base-uri (string-ascii 256)))
   (begin
     (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
-    (asserts! (> (len new-uri) u0) ERR-NOT-AUTHORIZED)
-    (ok (var-set base-uri new-uri))
+    ;; Prevents setting an empty or oversized URI
+    (asserts! (> (len new-base-uri) u0) ERR-NOT-AUTHORIZED)
+    (var-set base-uri new-base-uri)
+    (ok true)
   )
 )
+
+;; --------------------------------------------------------------------------
+;; Supply Management
+;; --------------------------------------------------------------------------
 
 ;; @desc set-paused
 ;; State-modifying public function
