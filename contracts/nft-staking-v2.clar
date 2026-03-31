@@ -193,7 +193,7 @@
 
 ;; @desc get-staking-info
 ;; @param token-id uint - The ID of the NFT to query
-;; @returns (optional (tuple (staker principal) (staked-at-block uint) (last-claim-block uint)))
+;; @returns (optional (tuple (staker principal) (staked-at-block uint) (last-claim-block uint))) - Returns the staking record or none
 ;; Read-only context viewer
 (define-read-only (get-staking-info (token-id uint))
   (map-get? staking-data token-id)
