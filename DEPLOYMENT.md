@@ -28,16 +28,26 @@ This step is **critical** — without it, the staking contract cannot mint rewar
 - Call `get-reward-per-block` on `nft-staking-v2` → should return `u10000000`
 - Call `get-symbol` on `governance-token-v2` → should return `"SDAO"`
 
-## Mainnet Trait Addresses (already in contracts)
+## Common Troubleshooting
 
-| Trait | Mainnet Address |
-|-------|----------------|
-| SIP-010 FT | `SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard` |
-| SIP-009 NFT | `SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait` |
+| Issue | Solution |
+|-------|----------|
+| `ConflictingNonce` | Wait for previous TX to confirm or increase fee by 10%. |
+| `NotEnoughFunds` | Ensure wallet has ≥ 2.5 STX (0.5 STX per contract). |
+| `set-authorized-minter` fails | Ensure the caller is the exact principal that deployed `governance-token-v2`. |
+
+## Security Best Practices (Mainnet)
+
+1. **Verify Trait Addresses**: Always double-check SIP-010/SIP-009 trait addresses for the specific network (Mainnet vs Testnet).
+2. **Immediate Authorization**: Call `set-authorized-minter` immediately after deployment to prevent unauthorized minting.
+3. **Admin Key Storage**: Store the deployer private key in a secure hardware wallet (Leather/Xverse).
+4. **Gas Fees**: For faster execution during network congestion, manually set the fee to `0.5 STX` or higher via the Hiro Wallet UI.
+
+---
 
 ## Recommended Pre-Mainnet Checklist
-- [ ] Run `clarinet check` — 0 errors
+- [x] Run `clarinet check` — 0 errors
 - [ ] Deploy and test full flow on **testnet** first
 - [ ] Audit staking reward math (blocks × REWARD-PER-BLOCK)
-- [ ] Confirm deployer wallet has ≥ 2 STX for fees
+- [ ] Confirm deployer wallet has ≥ 2.5 STX for fees
 - [ ] Call `set-authorized-minter` immediately after deploying
