@@ -119,6 +119,7 @@ export default function Home() {
                   </div>
                   <button
                     onClick={disconnectWallet}
+                    aria-label="Disconnect wallet"
                     className="bg-slate-100 dark:bg-zinc-900 dark:hover:bg-zinc-800 font-medium h-10 hover:bg-slate-200 px-4 rounded-full text-sm transition-colors"
                   >
                     Disconnect
