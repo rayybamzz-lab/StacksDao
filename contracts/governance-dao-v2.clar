@@ -75,6 +75,16 @@
 (define-data-var proposal-count uint u0)
 
 ;; ---------------------
+;; Authorization Helpers
+;; ---------------------
+
+;; @desc is-dao-authorized
+;; @returns bool - True if sender is the contract owner
+(define-private (is-dao-authorized)
+  (is-eq tx-sender CONTRACT-OWNER)
+)
+
+;; ---------------------
 ;; Data Maps
 ;; ---------------------
 
