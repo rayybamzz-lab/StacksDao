@@ -207,18 +207,22 @@
 )
 
 ;; @desc get-staker-balance
+;; @param staker principal - The address to query
+;; @returns uint - The number of NFTs staked by the address
 ;; Read-only context viewer
 (define-read-only (get-staker-balance (staker principal))
   (default-to u0 (map-get? staker-balance staker))
 )
 
 ;; @desc get-total-staked
+;; @returns (response uint none) - Returns the total number of NFTs staked in the protocol
 ;; Read-only context viewer
 (define-read-only (get-total-staked)
   (ok (var-get total-staked))
 )
 
 ;; @desc get-reward-per-block
+;; @returns (response uint none) - Returns the current reward rate per block
 ;; Read-only context viewer
 (define-read-only (get-reward-per-block)
   (ok REWARD-PER-BLOCK)
