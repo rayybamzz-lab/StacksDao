@@ -80,6 +80,9 @@
 ;; Burn tokens
 
 ;; @desc burn
+;; @param amount uint - The number of tokens to burn
+;; @param sender principal - The address owning the tokens
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (burn (amount uint) (sender principal))
   (begin
@@ -129,12 +132,15 @@
 )
 
 ;; @desc get-balance
+;; @param account principal - The address to query
+;; @returns (response uint none) - Returns the token balance
 ;; Read-only context viewer
 (define-read-only (get-balance (account principal))
   (ok (ft-get-balance sdao-token account))
 )
 
 ;; @desc get-total-supply
+;; @returns (response uint none) - Returns the total token supply
 ;; Read-only context viewer
 (define-read-only (get-total-supply)
   (ok (ft-get-supply sdao-token))
