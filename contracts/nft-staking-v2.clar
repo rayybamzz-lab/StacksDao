@@ -64,6 +64,8 @@
 ;; ---------------------
 
 ;; @desc stake-nft
+;; @param token-id uint - The ID of the NFT to stake
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (stake-nft (token-id uint))
   (let
