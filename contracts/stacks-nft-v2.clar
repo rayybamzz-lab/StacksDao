@@ -160,6 +160,8 @@
 )
 
 ;; @desc get-owner
+;; @param token-id uint - The ID of the NFT to query
+;; @returns (response (optional principal) uint) - Returns the owner address
 ;; Read-only context viewer
 (define-read-only (get-owner (token-id uint))
   (ok (nft-get-owner? stacksdao-nft token-id))
