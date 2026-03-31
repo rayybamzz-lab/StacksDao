@@ -298,18 +298,21 @@
 )
 
 ;; @desc get-voting-period
+;; @returns (response uint none) - Returns the voting duration in blocks
 ;; Read-only context viewer
 (define-read-only (get-voting-period)
   (ok VOTING-PERIOD)
 )
 
 ;; @desc get-min-proposal-balance
+;; @returns (response uint none) - Returns the minimum SDAO required to create a proposal
 ;; Read-only context viewer
 (define-read-only (get-min-proposal-balance)
   (ok MIN-PROPOSAL-BALANCE)
 )
 
 ;; @desc get-quorum
+;; @returns (response uint none) - Returns the minimum total votes required for quorum
 ;; Read-only context viewer
 (define-read-only (get-quorum)
   (ok QUORUM)
