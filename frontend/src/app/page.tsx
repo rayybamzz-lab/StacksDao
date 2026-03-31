@@ -103,6 +103,79 @@ export default function Home() {
     }
   };
 
+  const handleUnstake = async (tokenId: number) => {
+    if (!isSignedIn) return connectWallet();
+    setIsUnstaking(true);
+    try {
+      await openContractCall({
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACTS.NFT_STAKING,
+        functionName: 'unstake-nft',
+        functionArgs: [Cl.uint(tokenId)],
+        network: NETWORK as any,
+        onFinish: (data) => {
+          toast.success('Successfully broadcasted unstaking transaction!');
+          console.log('Unstake TXID:', data.txId);
+          setIsUnstaking(false);
+        },
+        onCancel: () => {
+          toast('Unstaking cancelled', { icon: 'ℹ️' });
+          setIsUnstaking(false);
+        },
+      });
+    } catch (e: any) {
+      console.error('[Unstake] Error:', e);
+      toast.error(`Unstaking Failed: ${e.message || 'Unknown error'}`);
+      setIsUnstaking(false);
+    }
+  };
+
+  const handleClaim = async (tokenId: number) => {
+    if (!isSignedIn) return connectWallet();
+    try {
+      await openContractCall({
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACTS.NFT_STAKING,
+        functionName: 'claim-rewards',
+        functionArgs: [Cl.uint(tokenId)],
+        network: NETWORK as any,
+        onFinish: (data) => {
+          toast.success('Successfully broadcasted claim transaction!');
+          console.log('Claim TXID:', data.txId);
+        },
+        onCancel: () => {
+          toast('Claim cancelled', { icon: 'ℹ️' });
+        },
+      });
+    } catch (e: any) {
+      console.error('[Claim] Error:', e);
+      toast.error(`Claim Failed: ${e.message || 'Unknown error'}`);
+    }
+  };
+
+  const handleExecute = async (proposalId: number) => {
+    if (!isSignedIn) return connectWallet();
+    try {
+      await openContractCall({
+        contractAddress: CONTRACT_ADDRESS,
+        contractName: CONTRACTS.GOVERNANCE_DAO,
+        functionName: 'execute-proposal',
+        functionArgs: [Cl.uint(proposalId)],
+        network: NETWORK as any,
+        onFinish: (data) => {
+          toast.success('Successfully broadcasted execution transaction!');
+          console.log('Execute TXID:', data.txId);
+        },
+        onCancel: () => {
+          toast('Execution cancelled', { icon: 'ℹ️' });
+        },
+      });
+    } catch (e: any) {
+      console.error('[Execute] Error:', e);
+      toast.error(`Execution Failed: ${e.message || 'Unknown error'}`);
+    }
+  };
+
   return (
     <div className="bg-slate-50 dark:bg-zinc-950 dark:text-zinc-100 font-sans min-h-screen selection:bg-indigo-500/30 text-slate-900">
       {/* Navigation */}
