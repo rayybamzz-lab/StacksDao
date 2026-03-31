@@ -145,6 +145,10 @@
 ;; ---------------------
 
 ;; @desc transfer
+;; @param token-id uint - The ID of the NFT to transfer
+;; @param sender principal - The address currently owning the NFT
+;; @param recipient principal - The address to receive the NFT
+;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (transfer (token-id uint) (sender principal) (recipient principal))
   (begin
