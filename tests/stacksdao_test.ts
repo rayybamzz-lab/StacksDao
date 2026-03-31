@@ -1,9 +1,9 @@
 import { Clarinet, Tx, Chain, Account, types } from 'https://deno.land/x/clarinet@v1.7.1/index.ts';
 import { assertEquals } from 'https://deno.land/std@0.170.0/testing/asserts.ts';
 
-// ============================================================
-// governance-token tests
-// ============================================================
+// --------------------------------------------------------------------------
+// GOVERNANCE TOKEN (SIP-010) TESTS
+// --------------------------------------------------------------------------
 
 Clarinet.test({
     name: "governance-token: deployer can mint tokens",
