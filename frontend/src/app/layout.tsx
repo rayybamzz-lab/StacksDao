@@ -16,8 +16,8 @@ export const metadata: Metadata = {
   title: "StacksDAO - NFT Staking & Governance",
   description: "The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.",
   icons: {
-    icon: "/favicon.ico",
-    apple: "/favicon.ico",
+    icon: "/logo.png",
+    apple: "/logo.png",
   },
   alternates: {
     canonical: "https://stacksdao.io",
