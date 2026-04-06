@@ -1,6 +1,6 @@
 {
   "name": "@stacksdao/network",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -15,6 +15,6 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/AdekunleBamz/StacksDao.git"
+    "url": "git+https://github.com/rayybamzz-lab/StacksDao.git"
   }
 }
