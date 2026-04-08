@@ -27,6 +27,7 @@ import {
   Flame
 } from 'lucide-react';
 import ProposalCard from '@/components/ProposalCard';
+import StakingCard from '@/components/StakingCard';
 
 /**
  * Home
@@ -339,28 +340,11 @@ export default function Home() {
           </div>
 
           {/* Staking Card */}
-          <div className="glass-panel border border-slate-200 col-span-1 dark:bg-zinc-900 dark:border-zinc-800 p-6 rounded-2xl">
-            <div className="bg-emerald-100 dark:bg-emerald-900/30 dark:text-emerald-400 flex h-12 items-center justify-center mb-6 rounded-xl text-emerald-600 w-12">
-              <Trophy className="h-6 w-6" />
-            </div>
-            <h3 className="font-bold mb-2 text-xl">Passive Staking</h3>
-            <p className="dark:text-zinc-400 mb-6 text-slate-500 text-sm">
-              Lock your NFTs in our secure vault and earn SDAO tokens every block.
-            </p>
-            <div className="border-slate-100 border-t dark:border-zinc-800 pt-4 space-y-4">
-              <div className="flex justify-between text-sm">
-                <span className="text-slate-500">Yield</span>
-                <span className="font-bold text-emerald-500">10 SDAO / Block</span>
-              </div>
-              <button
-                onClick={() => toast.error('You need to mint an NFT first')}
-                aria-label="Go to staking vault"
-                className="bg-slate-900 dark:bg-zinc-100 dark:text-black font-bold h-10 mt-4 rounded-lg text-sm text-white w-full"
-              >
-                Go to Vault
-              </button>
-            </div>
-          </div>
+          <StakingCard
+            totalStaked={1250}
+            rewardRate={10}
+            onAction={() => toast.error('You need to mint an NFT first')}
+          />
 
           {/* DAO Card */}
           <ProposalCard
