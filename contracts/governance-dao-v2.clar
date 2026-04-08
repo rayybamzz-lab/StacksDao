@@ -74,6 +74,10 @@
 ;; Immutable protocol setting
 (define-constant ERR-INVALID-DESCRIPTION (err u711))
 
+;; @const ERR-INVALID-CATEGORY
+;; Immutable protocol setting
+(define-constant ERR-INVALID-CATEGORY (err u712))
+
 ;; ---------------------
 ;; Data Variables
 ;; ---------------------
@@ -101,6 +105,7 @@
   {
     title: (string-utf8 256),
     description: (string-utf8 1024),
+    category: uint,
     proposer: principal,
     start-block: uint,
     end-block: uint,
@@ -126,11 +131,13 @@
 ;; @desc create-proposal
 ;; @param title (string-utf8 256) - The title of the proposal
 ;; @param description (string-utf8 1024) - Detailed description of the proposal
+;; @param category uint - The category (1: General, 2: Ecosystem, 3: Governance, 4: Treasury)
 ;; @returns (response uint uint) - Returns the new proposal ID
 ;; State-modifying public function
 (define-public (create-proposal
     (title (string-utf8 256))
     (description (string-utf8 1024))
+    (category uint)
   )
   (let
     (
@@ -141,11 +148,14 @@
     (asserts! (> (len title) u0) ERR-INVALID-TITLE)
     ;; Validate description
     (asserts! (> (len description) u0) ERR-INVALID-DESCRIPTION)
+    ;; Validate category (u1 to u4)
+    (asserts! (and (>= category u1) (<= category u4)) ERR-INVALID-CATEGORY)
 
     ;; Create the proposal
     (map-set proposals new-id {
       title: title,
       description: description,
+      category: category,
       proposer: tx-sender,
       start-block: block-height,
       end-block: (+ block-height VOTING-PERIOD),
