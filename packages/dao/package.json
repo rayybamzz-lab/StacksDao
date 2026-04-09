@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Governance DAO helpers for proposals and voting flows."
+  "description": "Governance DAO helpers for proposals and voting flows.",
+  "keywords": [
+    "stacksdao",
+    "dao",
+    "governance",
+    "typescript"
+  ]
 }
