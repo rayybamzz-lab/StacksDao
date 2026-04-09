@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Typed event helpers for contract and app integrations."
+  "description": "Typed event helpers for contract and app integrations.",
+  "keywords": [
+    "stacksdao",
+    "events",
+    "indexer",
+    "typescript"
+  ]
 }
