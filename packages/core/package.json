@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Core primitives shared across the StacksDao monorepo."
+  "description": "Core primitives shared across the StacksDao monorepo.",
+  "keywords": [
+    "stacksdao",
+    "core",
+    "shared",
+    "typescript"
+  ]
 }
