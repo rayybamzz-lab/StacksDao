@@ -12,7 +12,7 @@ A complete Stacks blockchain protocol built in Clarity — featuring NFT minting
 | Network | Stacks Mainnet |
 | NFT Standard | SIP-009 |
 | Token Standard | SIP-010 |
-| Mint Price | **0.001 STX** (100,000 micro-STX) |
+| Mint Price | **0.01 STX** (10,000 micro-STX) |
 | Max Supply | 10,000 NFTs |
 | Reward Token | **SDAO** (StacksDAO Token) |
 | Reward Rate | 10 SDAO per block staked |
@@ -32,9 +32,9 @@ The protocol's SIP-010 fungible token used for staking rewards and governance vo
 - **Burn**: Token holders can burn their own tokens
 
 ### 2. `stacks-nft.clar` — StacksDAO NFT
-SIP-009 compliant NFT collection with a 0.001 STX mint cost.
+SIP-009 compliant NFT collection with a 0.01 STX mint cost.
 
-- **`mint`** — Mint one NFT for 0.001 STX
+- **`mint`** — Mint one NFT for 0.01 STX
 - **`mint-batch (count)`** — Mint up to 5 NFTs in a single transaction
 - **`transfer`** — Standard SIP-009 transfer
 - Admin can update `base-uri` and pause minting
