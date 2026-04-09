@@ -71,13 +71,14 @@ StacksDao/
 │   └── governance-dao-v2.clar     # DAO voting
 ├── settings/
 │   ├── Devnet.toml
-│   ├── Testnet.toml
-│   └── Mainnet.toml
+│   └── Simnet.toml
+├── deployments/
+│   ├── Devnet.yaml
+│   ├── Testnet.yaml
+│   ├── Mainnet.yaml
+│   └── FinalizeMainnet.yaml
 └── tests/
-    ├── governance-token_test.ts
-    ├── stacks-nft_test.ts
-    ├── nft-staking_test.ts
-    └── governance-dao_test.ts
+    └── stacksdao_test.ts
 ```
 
 ---
