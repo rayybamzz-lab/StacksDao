@@ -13,5 +13,7 @@ We follow the standard contributor code of conduct. Please be respectful to all 
 
 ## Development Setup
 - Install [Clarinet](https://github.com/hirosystems/clarinet).
+- Install workspace dependencies with `npm install` and frontend dependencies with `npm --prefix frontend install`.
 - Run `clarinet console` to interact with contracts locally.
 - Run `clarinet test` to execute the test suite.
+- Run `npm --prefix frontend run lint` when changing the frontend.
