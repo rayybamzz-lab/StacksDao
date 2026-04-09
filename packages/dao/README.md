@@ -1,6 +1,10 @@
 # @stacksdao/dao
 
-Small utility package for the StacksDao monorepo.
+Governance DAO helpers for proposals and voting flows.
+
+## What it includes
+
+Utilities centered on proposal lifecycle and voting flows.
 
 ## Install
 
