@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Command-line helpers for StacksDao developer workflows."
+  "description": "Command-line helpers for StacksDao developer workflows.",
+  "keywords": [
+    "stacksdao",
+    "cli",
+    "tooling",
+    "node"
+  ]
 }
