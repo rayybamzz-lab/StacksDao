@@ -1,6 +1,10 @@
 # @stacksdao/queries
 
-Small utility package for the StacksDao monorepo.
+Query helpers for reading StacksDao protocol state.
+
+## What it includes
+
+Read-side helpers for fetching and shaping protocol data.
 
 ## Install
 
