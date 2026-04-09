@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Helpers for NFT staking flows and reward tracking."
+  "description": "Helpers for NFT staking flows and reward tracking.",
+  "keywords": [
+    "stacksdao",
+    "staking",
+    "rewards",
+    "typescript"
+  ]
 }
