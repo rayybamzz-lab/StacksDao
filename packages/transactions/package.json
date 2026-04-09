@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Transaction-building helpers for StacksDao interactions."
+  "description": "Transaction-building helpers for StacksDao interactions.",
+  "keywords": [
+    "stacksdao",
+    "transactions",
+    "stacks",
+    "typescript"
+  ]
 }
