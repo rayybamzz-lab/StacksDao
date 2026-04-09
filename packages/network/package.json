@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Network configuration helpers for StacksDao environments."
+  "description": "Network configuration helpers for StacksDao environments.",
+  "keywords": [
+    "stacksdao",
+    "network",
+    "stacks",
+    "config"
+  ]
 }
