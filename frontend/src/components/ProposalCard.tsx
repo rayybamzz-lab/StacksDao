@@ -74,6 +74,7 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                         <button
                             type="button"
                             onClick={() => onVote(proposal.id, true)}
+                            aria-label={`Vote for proposal ${proposal.id}`}
                             className="bg-indigo-500/10 border border-indigo-500/20 flex-1 font-bold h-9 hover:bg-indigo-500/20 rounded-lg text-indigo-400 text-xs transition-all"
                         >
                             Vote For
@@ -81,6 +82,7 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                         <button
                             type="button"
                             onClick={() => onVote(proposal.id, false)}
+                            aria-label={`Vote against proposal ${proposal.id}`}
                             className="bg-white/5 border border-white/10 flex-1 font-bold h-9 hover:bg-white/10 rounded-lg text-white/60 text-xs transition-all"
                         >
                             Against
@@ -90,6 +92,7 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                     <button
                         type="button"
                         onClick={() => onExecute(proposal.id)}
+                        aria-label={`Execute proposal ${proposal.id}`}
                         className="bg-indigo-600 flex-1 font-bold h-9 hover:bg-indigo-700 rounded-lg text-sm text-white transition-all shadow-lg shadow-indigo-600/20"
                     >
                         Execute Proposal
