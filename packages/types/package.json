@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Shared TypeScript types for the StacksDao monorepo."
+  "description": "Shared TypeScript types for the StacksDao monorepo.",
+  "keywords": [
+    "stacksdao",
+    "types",
+    "typescript",
+    "shared"
+  ]
 }
