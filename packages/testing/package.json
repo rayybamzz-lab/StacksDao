@@ -26,5 +26,6 @@
   "sideEffects": false,
   "engines": {
     "node": ">=18"
-  }
+  },
+  "description": "Testing helpers for StacksDao packages and apps."
 }
