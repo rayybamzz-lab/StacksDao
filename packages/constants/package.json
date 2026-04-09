@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Shared protocol constants for contracts and clients."
+  "description": "Shared protocol constants for contracts and clients.",
+  "keywords": [
+    "stacksdao",
+    "constants",
+    "config",
+    "typescript"
+  ]
 }
