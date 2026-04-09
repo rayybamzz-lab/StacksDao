@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "General utilities shared across StacksDao packages."
+  "description": "General utilities shared across StacksDao packages.",
+  "keywords": [
+    "stacksdao",
+    "utils",
+    "helpers",
+    "typescript"
+  ]
 }
