@@ -1,6 +1,10 @@
 # @stacksdao/governance-token
 
-Small utility package for the StacksDao monorepo.
+Helpers for the StacksDao governance token surface.
+
+## What it includes
+
+Focused helpers for the SDAO token contract and related flows.
 
 ## Install
 
