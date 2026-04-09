@@ -16,6 +16,7 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     strategy:
       matrix:
         node-version: [18.x, 20.x]
@@ -33,6 +34,7 @@ jobs:
 
   npm-stats-maintenance:
     runs-on: ubuntu-latest
+    timeout-minutes: 25
     steps:
       - name: Automated Package Verification & Installs
         run: |
@@ -79,6 +81,7 @@ jobs:
   deploy:
     needs: build
     runs-on: ubuntu-latest
+    timeout-minutes: 20
     if: github.ref == 'refs/heads/master' || github.ref == 'refs/heads/main'
     steps:
       - uses: actions/checkout@v4
