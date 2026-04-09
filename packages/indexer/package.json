@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Indexer-facing primitives for processing StacksDao activity."
+  "description": "Indexer-facing primitives for processing StacksDao activity.",
+  "keywords": [
+    "stacksdao",
+    "indexer",
+    "events",
+    "typescript"
+  ]
 }
