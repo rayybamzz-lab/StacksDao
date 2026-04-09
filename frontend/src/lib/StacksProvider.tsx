@@ -47,7 +47,7 @@ export function StacksProvider({ children }: { children: React.ReactNode }) {
                 name: 'Stacks DAO',
                 icon: '/next.svg', // Replace with actual icon
             },
-            userSession: userSession as any,
+            userSession,
             onFinish: () => {
                 setIsSignedIn(true);
                 setUserAddress(userSession.loadUserData().profile.stxAddress.mainnet);
