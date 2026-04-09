@@ -1,6 +1,10 @@
 # @stacksdao/network
 
-Small utility package for the StacksDao monorepo.
+Network configuration helpers for StacksDao environments.
+
+## What it includes
+
+Helpers for choosing network-specific addresses and runtime settings.
 
 ## Install
 
