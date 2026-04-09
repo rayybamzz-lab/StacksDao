@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "React integration helpers for StacksDao frontends."
+  "description": "React integration helpers for StacksDao frontends.",
+  "keywords": [
+    "stacksdao",
+    "react",
+    "hooks",
+    "frontend"
+  ]
 }
