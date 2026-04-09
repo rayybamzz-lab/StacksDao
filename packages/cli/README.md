@@ -1,6 +1,10 @@
 # @stacksdao/cli
 
-Small utility package for the StacksDao monorepo.
+Command-line helpers for StacksDao developer workflows.
+
+## What it includes
+
+Reusable utilities for local automation and operational tooling.
 
 ## Install
 
