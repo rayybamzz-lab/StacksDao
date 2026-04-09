@@ -68,12 +68,14 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                 {!isVotingEnded ? (
                     <>
                         <button
+                            type="button"
                             onClick={() => onVote(proposal.id, true)}
                             className="bg-indigo-500/10 border border-indigo-500/20 flex-1 font-bold h-9 hover:bg-indigo-500/20 rounded-lg text-indigo-400 text-xs transition-all"
                         >
                             Vote For
                         </button>
                         <button
+                            type="button"
                             onClick={() => onVote(proposal.id, false)}
                             className="bg-white/5 border border-white/10 flex-1 font-bold h-9 hover:bg-white/10 rounded-lg text-white/60 text-xs transition-all"
                         >
@@ -82,6 +84,7 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                     </>
                 ) : !proposal.executed && (
                     <button
+                        type="button"
                         onClick={() => onExecute(proposal.id)}
                         className="bg-indigo-600 flex-1 font-bold h-9 hover:bg-indigo-700 rounded-lg text-sm text-white transition-all shadow-lg shadow-indigo-600/20"
                     >
