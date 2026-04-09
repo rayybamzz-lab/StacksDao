@@ -1,6 +1,10 @@
 # @stacksdao/logger
 
-Small utility package for the StacksDao monorepo.
+Logging helpers for package and app diagnostics.
+
+## What it includes
+
+Shared logging helpers for CLIs, services, and apps.
 
 ## Install
 
