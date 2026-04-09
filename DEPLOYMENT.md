@@ -23,7 +23,7 @@ Argument: <your-deployer-address>.nft-staking-v2
 This step is **critical** — without it, the staking contract cannot mint reward tokens for stakers.
 
 ### 2. Verify Deployment
-- Call `get-mint-price` on `stacks-nft-v2` → should return `u10000`
+- Call `get-mint-price` on `stacks-nft-v2` → should return `u10000` (`0.01 STX`)
 - Call `get-max-supply` on `stacks-nft-v2` → should return `u10000`
 - Call `get-reward-per-block` on `nft-staking-v2` → should return `u10000000`
 - Call `get-symbol` on `governance-token-v2` → should return `"SDAO"`
