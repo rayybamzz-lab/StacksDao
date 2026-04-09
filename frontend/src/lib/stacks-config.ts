@@ -8,6 +8,7 @@ const networkName = (process.env.NEXT_PUBLIC_NETWORK || 'mainnet').toLowerCase()
 
 export const NETWORK = networkName === 'testnet' ? STACKS_TESTNET : STACKS_MAINNET;
 export const NETWORK_LABEL = networkName === 'testnet' ? 'Testnet' : 'Mainnet';
+export const EXPLORER_CHAIN = networkName === 'testnet' ? 'testnet' : 'mainnet';
 
 export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
 

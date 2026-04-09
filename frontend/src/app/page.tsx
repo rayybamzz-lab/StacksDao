@@ -10,7 +10,7 @@ import {
   Pc,
   PostConditionMode,
 } from '@stacks/transactions';
-import { NETWORK, NETWORK_LABEL, CONTRACT_ADDRESS, CONTRACTS } from '@/lib/stacks-config';
+import { NETWORK, NETWORK_LABEL, EXPLORER_CHAIN, CONTRACT_ADDRESS, CONTRACTS } from '@/lib/stacks-config';
 import { toast } from 'react-hot-toast';
 import {
   Wallet,
@@ -281,7 +281,7 @@ export default function Home() {
                   <ArrowRight className="h-4 w-4" />
                 </button>
                 <a
-                  href={`https://explorer.hiro.so/address/${CONTRACT_ADDRESS}?chain=mainnet`}
+                  href={`https://explorer.hiro.so/address/${CONTRACT_ADDRESS}?chain=${EXPLORER_CHAIN}`}
                   target="_blank"
                   rel="noopener noreferrer"
                   title="View StacksDao contracts (v2) on Hiro Explorer"
