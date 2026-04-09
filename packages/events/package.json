@@ -26,5 +26,6 @@
   "sideEffects": false,
   "engines": {
     "node": ">=18"
-  }
+  },
+  "description": "Typed event helpers for contract and app integrations."
 }
