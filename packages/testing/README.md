@@ -1,6 +1,10 @@
 # @stacksdao/testing
 
-Small utility package for the StacksDao monorepo.
+Testing helpers for StacksDao packages and apps.
+
+## What it includes
+
+Small helpers intended for unit tests and integration fixtures.
 
 ## Install
 
