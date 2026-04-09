@@ -34,10 +34,16 @@ export function StacksProvider({ children }: { children: React.ReactNode }) {
             setIsSignedIn(true);
             setUserAddress(userSession.loadUserData().profile.stxAddress.mainnet);
         } else if (userSession.isSignInPending()) {
-            userSession.handlePendingSignIn().then((userData) => {
-                setIsSignedIn(true);
-                setUserAddress(userData.profile.stxAddress.mainnet);
-            });
+            userSession
+                .handlePendingSignIn()
+                .then((userData) => {
+                    setIsSignedIn(true);
+                    setUserAddress(userData.profile.stxAddress.mainnet);
+                })
+                .catch(() => {
+                    setIsSignedIn(false);
+                    setUserAddress(null);
+                });
         }
     }, []);
 
