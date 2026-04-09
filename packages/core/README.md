@@ -1,6 +1,10 @@
 # @stacksdao/core
 
-Small utility package for the StacksDao monorepo.
+Core primitives shared across the StacksDao monorepo.
+
+## What it includes
+
+Foundational building blocks intended to stay lightweight and dependency-free.
 
 ## Install
 
