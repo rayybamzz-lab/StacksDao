@@ -1,5 +1,9 @@
 name: StacksDao CI & Maintenance
 
+concurrency:
+  group: stacksdao-ci-${{ github.ref }}
+  cancel-in-progress: true
+
 on:
   push:
     branches: [master, main]
