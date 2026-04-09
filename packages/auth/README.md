@@ -1,6 +1,10 @@
 # @stacksdao/auth
 
-Small utility package for the StacksDao monorepo.
+Shared wallet authentication helpers for the StacksDao monorepo.
+
+## What it includes
+
+Authentication state helpers and wallet-facing integration primitives.
 
 ## Install
 
