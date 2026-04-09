@@ -13,6 +13,8 @@ The following contracts are in scope for the security policy:
 ### Reporting Process
 Please do not report security vulnerabilities via public GitHub issues. Instead, send an email to security@stacksdao.com with a detailed description of the issue and steps to reproduce.
 
+Include the affected contract or package name, the network you tested against, and any transaction IDs that help confirm the issue.
+
 ## Security Best Practices
 - **Never share your mnemonic phrase**.
 - **Always verify the contract ID** before signing any transaction on mainnet.
