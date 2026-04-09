@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Contract-facing helpers and exports for StacksDao packages."
+  "description": "Contract-facing helpers and exports for StacksDao packages.",
+  "keywords": [
+    "stacksdao",
+    "contracts",
+    "clarity",
+    "typescript"
+  ]
 }
