@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Helpers for the StacksDao NFT contract surface."
+  "description": "Helpers for the StacksDao NFT contract surface.",
+  "keywords": [
+    "stacksdao",
+    "nft",
+    "stacks",
+    "typescript"
+  ]
 }
