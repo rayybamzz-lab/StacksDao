@@ -23,5 +23,8 @@
       "default": "./dist/index.js"
     }
   },
-  "sideEffects": false
+  "sideEffects": false,
+  "engines": {
+    "node": ">=18"
+  }
 }
