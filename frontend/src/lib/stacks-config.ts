@@ -6,7 +6,7 @@ export const userSession = new UserSession({ appConfig });
 
 export const NETWORK = STACKS_MAINNET;
 
-export const CONTRACT_ADDRESS = 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
+export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
 
 /**
  * Contract Names used across the protocol
