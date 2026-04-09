@@ -1,6 +1,10 @@
 # @stacksdao/staking
 
-Small utility package for the StacksDao monorepo.
+Helpers for NFT staking flows and reward tracking.
+
+## What it includes
+
+Utilities for staking status, rewards, and stake lifecycle flows.
 
 ## Install
 
