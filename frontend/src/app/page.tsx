@@ -10,7 +10,7 @@ import {
   Pc,
   PostConditionMode,
 } from '@stacks/transactions';
-import { NETWORK, CONTRACT_ADDRESS, CONTRACTS } from '@/lib/stacks-config';
+import { NETWORK, NETWORK_LABEL, CONTRACT_ADDRESS, CONTRACTS } from '@/lib/stacks-config';
 import { toast } from 'react-hot-toast';
 import {
   Wallet,
@@ -224,7 +224,7 @@ export default function Home() {
                 <div className="flex gap-3 items-center">
                   <div className="flex-col hidden items-end leading-none sm:flex">
                     <span className="font-medium text-sm">{userAddress?.slice(0, 6)}...{userAddress?.slice(-4)}</span>
-                    <span className="dark:text-zinc-400 text-[10px] text-slate-500">Mainnet Connected</span>
+                    <span className="dark:text-zinc-400 text-[10px] text-slate-500">{NETWORK_LABEL} Connected</span>
                   </div>
                   <button
                     onClick={disconnectWallet}
