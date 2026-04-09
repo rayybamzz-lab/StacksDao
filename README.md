@@ -12,7 +12,7 @@ A complete Stacks blockchain protocol built in Clarity — featuring NFT minting
 | Network | Stacks Mainnet |
 | NFT Standard | SIP-009 |
 | Token Standard | SIP-010 |
-| Mint Price | **0.001 STX** (100,000 micro-STX) |
+| Mint Price | **0.01 STX** (10,000 micro-STX) |
 | Max Supply | 10,000 NFTs |
 | Reward Token | **SDAO** (StacksDAO Token) |
 | Reward Rate | 10 SDAO per block staked |
