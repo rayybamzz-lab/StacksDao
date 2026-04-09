@@ -1,6 +1,10 @@
 # @stacksdao/react
 
-Small utility package for the StacksDao monorepo.
+React integration helpers for StacksDao frontends.
+
+## What it includes
+
+React-friendly helpers for frontends that consume StacksDao packages.
 
 ## Install
 
