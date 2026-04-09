@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Next.js integration helpers for StacksDao applications."
+  "description": "Next.js integration helpers for StacksDao applications.",
+  "keywords": [
+    "stacksdao",
+    "nextjs",
+    "react",
+    "frontend"
+  ]
 }
