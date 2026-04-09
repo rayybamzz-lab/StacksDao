@@ -1,10 +1,12 @@
-import { STACKS_MAINNET } from '@stacks/network';
+import { STACKS_MAINNET, STACKS_TESTNET } from '@stacks/network';
 import { AppConfig, UserSession } from '@stacks/auth';
 
 export const appConfig = new AppConfig(['store_write', 'publish_data']);
 export const userSession = new UserSession({ appConfig });
 
-export const NETWORK = STACKS_MAINNET;
+const networkName = (process.env.NEXT_PUBLIC_NETWORK || 'mainnet').toLowerCase();
+
+export const NETWORK = networkName === 'testnet' ? STACKS_TESTNET : STACKS_MAINNET;
 
 export const CONTRACT_ADDRESS = process.env.NEXT_PUBLIC_CONTRACT_ADDRESS || 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
 
