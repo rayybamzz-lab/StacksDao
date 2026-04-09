@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Shared wallet authentication helpers for the StacksDao monorepo."
+  "description": "Shared wallet authentication helpers for the StacksDao monorepo.",
+  "keywords": [
+    "stacksdao",
+    "auth",
+    "wallet",
+    "typescript"
+  ]
 }
