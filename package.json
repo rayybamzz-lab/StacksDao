@@ -10,7 +10,9 @@
     "packages/*"
   ],
   "scripts": {
-    "build": "npm run build --workspaces --if-present"
+    "build": "npm run build --workspaces --if-present",
+    "clarinet:check": "clarinet check",
+    "clarinet:test": "clarinet test"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
