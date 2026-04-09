@@ -26,5 +26,6 @@
   "sideEffects": false,
   "engines": {
     "node": ">=18"
-  }
+  },
+  "description": "General utilities shared across StacksDao packages."
 }
