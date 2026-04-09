@@ -26,5 +26,6 @@
   "sideEffects": false,
   "engines": {
     "node": ">=18"
-  }
+  },
+  "description": "Contract-facing helpers and exports for StacksDao packages."
 }
