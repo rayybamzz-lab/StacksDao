@@ -13,6 +13,9 @@ on:
     - cron: '0 0 * * *' # Run daily to maintain download visibility
   workflow_dispatch: # Allows manual triggering from the GitHub Actions UI
 
+permissions:
+  contents: read
+
 jobs:
   build:
     runs-on: ubuntu-latest
