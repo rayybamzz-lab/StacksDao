@@ -1,6 +1,10 @@
 # @stacksdao/events
 
-Small utility package for the StacksDao monorepo.
+Typed event helpers for contract and app integrations.
+
+## What it includes
+
+Utilities for describing and handling protocol events.
 
 ## Install
 
