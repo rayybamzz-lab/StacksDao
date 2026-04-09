@@ -1,6 +1,10 @@
 # @stacksdao/errors
 
-Small utility package for the StacksDao monorepo.
+Shared error helpers and typed failure primitives for StacksDao.
+
+## What it includes
+
+Error primitives for producing consistent failures across packages.
 
 ## Install
 
