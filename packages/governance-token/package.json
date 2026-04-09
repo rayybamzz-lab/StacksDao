@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Helpers for the StacksDao governance token surface."
+  "description": "Helpers for the StacksDao governance token surface.",
+  "keywords": [
+    "stacksdao",
+    "token",
+    "governance",
+    "typescript"
+  ]
 }
