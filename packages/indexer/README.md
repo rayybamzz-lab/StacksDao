@@ -1,6 +1,10 @@
 # @stacksdao/indexer
 
-Small utility package for the StacksDao monorepo.
+Indexer-facing primitives for processing StacksDao activity.
+
+## What it includes
+
+Primitives for event ingestion, transformation, and indexing workflows.
 
 ## Install
 
