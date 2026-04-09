@@ -1,6 +1,10 @@
 # @stacksdao/transactions
 
-Small utility package for the StacksDao monorepo.
+Transaction-building helpers for StacksDao interactions.
+
+## What it includes
+
+Utilities for preparing contract calls and transaction payloads.
 
 ## Install
 
