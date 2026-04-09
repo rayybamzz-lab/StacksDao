@@ -24,14 +24,14 @@ A complete Stacks blockchain protocol built in Clarity — featuring NFT minting
 
 ## Smart Contracts
 
-### 1. `governance-token.clar` — SDAO Token
+### 1. `governance-token-v2.clar` — SDAO Token
 The protocol's SIP-010 fungible token used for staking rewards and governance voting power.
 
 - **Mint**: Only the authorized staking contract can mint (set via `set-authorized-minter`)
 - **Transfer**: Standard SIP-010 `transfer` with optional memo
 - **Burn**: Token holders can burn their own tokens
 
-### 2. `stacks-nft.clar` — StacksDAO NFT
+### 2. `stacks-nft-v2.clar` — StacksDAO NFT
 SIP-009 compliant NFT collection with a 0.001 STX mint cost.
 
 - **`mint`** — Mint one NFT for 0.001 STX
@@ -39,7 +39,7 @@ SIP-009 compliant NFT collection with a 0.001 STX mint cost.
 - **`transfer`** — Standard SIP-009 transfer
 - Admin can update `base-uri` and pause minting
 
-### 3. `nft-staking.clar` — NFT Staking Vault
+### 3. `nft-staking-v2.clar` — NFT Staking Vault
 Lock your NFTs to earn SDAO rewards at 10 SDAO/block.
 
 - **`stake-nft (token-id)`** — Transfer NFT into the vault, start earning
@@ -47,7 +47,7 @@ Lock your NFTs to earn SDAO rewards at 10 SDAO/block.
 - **`unstake-nft (token-id)`** — Claim all rewards and return NFT to wallet
 - **`get-pending-rewards (token-id)`** — View unclaimed rewards (read-only)
 
-### 4. `governance-dao.clar` — Governance DAO
+### 4. `governance-dao-v2.clar` — Governance DAO
 On-chain proposal and voting system powered by SDAO balances.
 
 - **`create-proposal (title description)`** — Requires 100 SDAO balance
