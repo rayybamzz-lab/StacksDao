@@ -45,7 +45,7 @@ export function StacksProvider({ children }: { children: React.ReactNode }) {
         const authOptions: AuthOptions = {
             appDetails: {
                 name: 'Stacks DAO',
-                icon: '/next.svg', // Replace with actual icon
+                icon: '/logo.png',
             },
             userSession,
             onFinish: () => {
