@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Logging helpers for package and app diagnostics."
+  "description": "Logging helpers for package and app diagnostics.",
+  "keywords": [
+    "stacksdao",
+    "logger",
+    "diagnostics",
+    "node"
+  ]
 }
