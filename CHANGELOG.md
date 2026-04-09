@@ -2,6 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
+## Unreleased
+
+- Added package descriptions, keywords, README coverage, and package metadata exports across the workspace.
+- Improved root documentation, frontend configuration handling, and contract test coverage.
+
 - Refactored internal component logic tier 1
 - Refactored internal component logic tier 2
 - Refactored internal component logic tier 3
