@@ -26,5 +26,6 @@
   "sideEffects": false,
   "engines": {
     "node": ">=18"
-  }
+  },
+  "description": "Shared wallet authentication helpers for the StacksDao monorepo."
 }
