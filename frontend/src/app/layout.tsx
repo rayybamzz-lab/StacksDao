@@ -13,6 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://stacksdao.io"),
   title: "StacksDAO - NFT Staking & Governance",
   description: "The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.",
   icons: {
@@ -63,4 +64,3 @@ export default function RootLayout({
     </html>
   );
 }
-
