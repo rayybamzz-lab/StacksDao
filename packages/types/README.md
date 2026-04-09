@@ -1,6 +1,10 @@
 # @stacksdao/types
 
-Small utility package for the StacksDao monorepo.
+Shared TypeScript types for the StacksDao monorepo.
+
+## What it includes
+
+Shared TypeScript types intended for cross-package reuse.
 
 ## Install
 
