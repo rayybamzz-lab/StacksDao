@@ -65,10 +65,10 @@ StacksDao/
 ├── DEPLOYMENT.md               # Mainnet deployment guide
 ├── README.md
 ├── contracts/
-│   ├── governance-token.clar   # SIP-010 SDAO token
-│   ├── stacks-nft.clar         # SIP-009 NFT + minting
-│   ├── nft-staking.clar        # Staking vault + rewards
-│   └── governance-dao.clar     # DAO voting
+│   ├── governance-token-v2.clar   # SIP-010 SDAO token
+│   ├── stacks-nft-v2.clar         # SIP-009 NFT + minting
+│   ├── nft-staking-v2.clar        # Staking vault + rewards
+│   └── governance-dao-v2.clar     # DAO voting
 ├── settings/
 │   ├── Devnet.toml
 │   ├── Testnet.toml
