@@ -1,6 +1,10 @@
 # @stacksdao/nextjs
 
-Small utility package for the StacksDao monorepo.
+Next.js integration helpers for StacksDao applications.
+
+## What it includes
+
+Integration utilities tailored for Next.js applications.
 
 ## Install
 
