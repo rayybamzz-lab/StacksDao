@@ -27,5 +27,11 @@
   "engines": {
     "node": ">=18"
   },
-  "description": "Testing helpers for StacksDao packages and apps."
+  "description": "Testing helpers for StacksDao packages and apps.",
+  "keywords": [
+    "stacksdao",
+    "testing",
+    "mocks",
+    "typescript"
+  ]
 }
