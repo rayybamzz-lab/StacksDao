@@ -62,6 +62,10 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                         style={{ width: `${forPercentage}%` }}
                     />
                 </div>
+                <div className="flex justify-between text-xs">
+                    <span className="text-indigo-200/40">Total Votes</span>
+                    <span className="font-medium text-white">{totalVotes.toLocaleString()}</span>
+                </div>
             </div>
 
             <div className="flex gap-2 pt-2">
