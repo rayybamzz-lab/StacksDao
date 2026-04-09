@@ -1,6 +1,10 @@
 # @stacksdao/nft
 
-Small utility package for the StacksDao monorepo.
+Helpers for the StacksDao NFT contract surface.
+
+## What it includes
+
+Helpers for minting, ownership, and NFT-facing protocol flows.
 
 ## Install
 
