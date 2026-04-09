@@ -1,7 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
-import Image from "next/image";
+import { useState } from 'react';
 import { useStacks } from '@/lib/StacksProvider';
 import {
   openContractCall
@@ -11,19 +10,16 @@ import {
   Pc,
   PostConditionMode,
 } from '@stacks/transactions';
-import { NETWORK, CONTRACT_ADDRESS, CONTRACTS, CONTRACT_IDENTIFIERS } from '@/lib/stacks-config';
+import { NETWORK, CONTRACT_ADDRESS, CONTRACTS } from '@/lib/stacks-config';
 import { toast } from 'react-hot-toast';
 import {
   Wallet,
   LayoutDashboard,
-  Coins,
   Trophy,
-  Vote,
   ArrowRight,
   ExternalLink,
   ShieldCheck,
   Zap,
-  History,
   Flame
 } from 'lucide-react';
 import ProposalCard from '@/components/ProposalCard';
@@ -413,4 +409,3 @@ export default function Home() {
     </div>
   );
 }
-
