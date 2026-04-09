@@ -213,7 +213,7 @@
         )
         (ok (* blocks-staked REWARD-PER-BLOCK))
       )
-    (err u0)
+    ERR-NOT-STAKED
   )
 )
 
