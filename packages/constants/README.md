@@ -1,6 +1,10 @@
 # @stacksdao/constants
 
-Small utility package for the StacksDao monorepo.
+Shared protocol constants for contracts and clients.
+
+## What it includes
+
+Stable protocol values that should stay aligned across apps and packages.
 
 ## Install
 
