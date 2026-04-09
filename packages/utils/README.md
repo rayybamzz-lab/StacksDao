@@ -1,6 +1,10 @@
 # @stacksdao/utils
 
-Small utility package for the StacksDao monorepo.
+General utilities shared across StacksDao packages.
+
+## What it includes
+
+Small general-purpose helpers that do not fit a domain package.
 
 ## Install
 
