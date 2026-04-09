@@ -32,7 +32,7 @@ The protocol's SIP-010 fungible token used for staking rewards and governance vo
 - **Burn**: Token holders can burn their own tokens
 
 ### 2. `stacks-nft-v2.clar` — StacksDAO NFT
-SIP-009 compliant NFT collection with a 0.001 STX mint cost.
+SIP-009 compliant NFT collection with a 0.01 STX mint cost.
 
 - **`mint`** — Mint one NFT for 0.001 STX
 - **`mint-batch (count)`** — Mint up to 5 NFTs in a single transaction
