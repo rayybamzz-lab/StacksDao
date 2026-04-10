@@ -12,7 +12,8 @@
   "scripts": {
     "build": "npm run build --workspaces --if-present",
     "clarinet:check": "clarinet check",
-    "clarinet:test": "clarinet test"
+    "clarinet:test": "clarinet test",
+    "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
     "@types/node": "^25.5.0",
