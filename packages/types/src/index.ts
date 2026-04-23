@@ -20,3 +20,4 @@ export interface ThemeConfig { theme: AppTheme; system: boolean; }
 export interface PaginationResult<T> { data: T[]; total: number; page: number; limit: number; hasMore: boolean; }
 export interface ApiResponse<T> { success: boolean; data?: T; error?: string; }
 export interface ApiError { code: string; message: string; status: number; }
+export type LoadingState = 'idle' | 'loading' | 'success' | 'error';
