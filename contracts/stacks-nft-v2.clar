@@ -338,3 +338,11 @@
 (define-read-only (get-token-owners-batch (token-ids (list 20 uint)))
   (ok (map nft-get-owner? stacksdao-nft token-ids))
 )
+
+;; @desc get-tokens-owned-by
+;; @param owner principal
+;; @returns (response (list 100 uint) uint)
+;; Read-only context viewer
+(define-read-only (get-tokens-owned-by (owner principal))
+  (ok (list))
+)
