@@ -29,3 +29,4 @@ export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> { return
 export function sortBy<T>(arr: T[], key: keyof T, dir: 'asc' | 'desc' = 'asc'): T[] { return [...arr].sort((a, b) => { const av = a[key]; const bv = b[key]; return dir === 'asc' ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1); }); }
 export function chunk<T>(arr: T[], size: number): T[][] { const res: T[][] = []; for (let i = 0; i < arr.length; i += size) res.push(arr.slice(i, i + size)); return res; }
 export function flatten<T>(arr: T[][]): T[] { return arr.reduce((acc, val) => acc.concat(val), []); }
+export function deepEqual(a: unknown, b: unknown): boolean { return JSON.stringify(a) === JSON.stringify(b); }
