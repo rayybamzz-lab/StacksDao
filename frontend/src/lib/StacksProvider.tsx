@@ -2,7 +2,7 @@
 
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { showConnect, AuthOptions } from '@stacks/connect';
-import { userSession, appConfig } from './stacks-config';
+import { userSession } from './stacks-config';
 
 /**
  * StacksContextType
