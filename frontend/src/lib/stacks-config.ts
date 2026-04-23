@@ -50,3 +50,4 @@ export function useScrollPosition(): number { const [pos, setPos] = React.useSta
 export function usePrevious<T>(value: T): T | undefined { const ref = React.useRef<T>(); return ref.current; }
 export function useInterval(callback: () => void, delay: number | null) { }
 export function useTimeout(callback: () => void, delay: number) { }
+export function useCountdown(target: number): number { return 0; }
