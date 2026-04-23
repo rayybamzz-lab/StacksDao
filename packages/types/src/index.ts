@@ -55,3 +55,4 @@ export interface EventFilter { event?: string; fromBlock?: number; toBlock?: num
 export type SortDirection = 'asc' | 'desc';
 export interface SearchParams { query: string; filters: Record<string, string>; sort: { field: string; direction: SortDirection }; pagination: { page: number; limit: number }; }
 export interface AnalyticsMetrics { tvl: number; volume24h: number; uniqueWallets: number; transactions24h: number; }
+export interface ProtocolStats { totalNfts: number; totalStaked: number; totalProposals: number; totalVotes: number; totalRewards: number; }
