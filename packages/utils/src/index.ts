@@ -18,3 +18,4 @@ export function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> { cons
 export function isBrowser(): boolean { return typeof window !== 'undefined'; }
 export function isServer(): boolean { return typeof window === 'undefined'; }
 export function toKebabCase(str: string): string { return str.replace(/[A-Z]/g, m => '-' + m.toLowerCase()); }
+export function toSnakeCase(str: string): string { return str.replace(/[A-Z]/g, m => '_' + m.toLowerCase()); }
