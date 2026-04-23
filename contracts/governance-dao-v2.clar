@@ -489,3 +489,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-proposer-balance
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-proposer-balance (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (contract-call? .governance-token-v2 get-balance (get proposer proposal))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
