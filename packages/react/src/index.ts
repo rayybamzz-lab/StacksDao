@@ -7,3 +7,4 @@ export const packageMetadata = {
 } as const;
 export function useWallet() { return { connected: false, address: null as string | null }; }
 export function useBalance() { return { balance: 0, loading: false }; }
+export function useNetwork() { return { network: 'mainnet', label: 'Mainnet' }; }
