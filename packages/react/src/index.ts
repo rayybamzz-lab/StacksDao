@@ -22,3 +22,4 @@ export function useMintPrice() { return { price: 10000, loading: false }; }
 export function useMaxSupply() { return { supply: 10000, loading: false }; }
 export function useRemainingSupply() { return { remaining: 10000, loading: false }; }
 export function useIsVotingActive(proposalId: number) { return { active: false, proposalId, loading: false }; }
+export function useVoteRecord(proposalId: number, voter: string) { return { record: null, proposalId, voter, loading: false }; }
