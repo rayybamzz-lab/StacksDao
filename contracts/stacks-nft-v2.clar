@@ -197,6 +197,13 @@
   (ok (var-get last-token-id))
 )
 
+;; @desc get-contract-owner
+;; @returns (response principal none) - Returns the NFT contract owner
+;; Read-only context viewer
+(define-read-only (get-contract-owner)
+  (ok CONTRACT-OWNER)
+)
+
 ;; @desc get-token-uri
 ;; @param token-id uint - The ID of the NFT to query
 ;; @returns (response (optional (string-ascii 256)) uint) - Returns the token metadata URI
