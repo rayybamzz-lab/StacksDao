@@ -592,3 +592,12 @@ Clarinet.test({
         voted.result.expectOk().expectBool(false);
     },
 });
+
+Clarinet.test({
+    name: "nft-staking: is-staked returns false for unstaked token",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let staked = chain.callReadOnlyFn("nft-staking-v2", "is-staked", [types.uint(999)], deployer.address);
+        staked.result.expectOk().expectBool(false);
+    },
+});
