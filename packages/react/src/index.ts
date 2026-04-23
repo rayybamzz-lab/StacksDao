@@ -36,3 +36,4 @@ export function useUnstakeTx(tokenId: number) { return { submit: async () => {},
 export function useClaimTx(tokenId: number) { return { submit: async () => {}, loading: false }; }
 export function useVoteTx(proposalId: number, direction: boolean) { return { submit: async () => {}, loading: false }; }
 export function useExecuteTx(proposalId: number) { return { submit: async () => {}, loading: false }; }
+export function useCreateProposalTx() { return { submit: async (_title: string, _desc: string) => {}, loading: false }; }
