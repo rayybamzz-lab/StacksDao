@@ -49,3 +49,4 @@ export function toMicro(amount: number, decimals = 6): number { return Math.roun
 export function fromMicro(amount: number, decimals = 6): number { return amount / Math.pow(10, decimals); }
 export function formatCompactNumber(num: number): string { return Intl.NumberFormat('en', { notation: 'compact' }).format(num); }
 export function formatCurrency(amount: number, currency = 'USD'): string { return new Intl.NumberFormat('en', { style: 'currency', currency }).format(amount); }
+export function timeAgo(date: Date): string { const s = Math.floor((Date.now() - date.getTime()) / 1000); return s < 60 ? s + 's ago' : s < 3600 ? Math.floor(s / 60) + 'm ago' : s < 86400 ? Math.floor(s / 3600) + 'h ago' : Math.floor(s / 86400) + 'd ago'; }
