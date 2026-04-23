@@ -610,3 +610,12 @@ Clarinet.test({
         owner.result.expectOk().expectBool(false);
     },
 });
+
+Clarinet.test({
+    name: "governance-token: has-authorized-minter returns false initially",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let has = chain.callReadOnlyFn("governance-token-v2", "has-authorized-minter", [], deployer.address);
+        has.result.expectOk().expectBool(false);
+    },
+});
