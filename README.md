@@ -34,7 +34,7 @@ The protocol's SIP-010 fungible token used for staking rewards and governance vo
 ### 2. `stacks-nft-v2.clar` — StacksDAO NFT
 SIP-009 compliant NFT collection with a 0.01 STX mint cost.
 
-- **`mint`** — Mint one NFT for 0.001 STX
+- **`mint`** — Mint one NFT for 0.01 STX
 - **`mint-batch (count)`** — Mint up to 5 NFTs in a single transaction
 - **`transfer`** — Standard SIP-009 transfer
 - Admin can update `base-uri` and pause minting
@@ -94,8 +94,8 @@ Before starting, ensure you have the following installed:
 
 1. **Clone and Install**
    ```bash
-   git clone https://github.com/StacksDao/protocol.git
-   cd protocol
+   git clone https://github.com/rayybamzz-lab/StacksDao.git
+   cd StacksDao
    npm install
    ```
 
