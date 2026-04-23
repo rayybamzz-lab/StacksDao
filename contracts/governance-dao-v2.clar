@@ -507,3 +507,10 @@
 (define-read-only (get-active-proposals)
   (ok (list))
 )
+
+;; @desc get-executed-proposals
+;; @returns (response (list 100 uint) none)
+;; Read-only context viewer
+(define-read-only (get-executed-proposals)
+  (ok (list))
+)
