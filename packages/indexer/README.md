@@ -18,3 +18,4 @@ npm install @stacksdao/indexer
 npm run build
 ```
 # Indexer Package
+## Cursors
