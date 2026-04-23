@@ -21,3 +21,4 @@ export function toKebabCase(str: string): string { return str.replace(/[A-Z]/g, 
 export function toSnakeCase(str: string): string { return str.replace(/[A-Z]/g, m => '_' + m.toLowerCase()); }
 export function toPascalCase(str: string): string { return str.replace(/^\w|_\w/g, m => m.replace('_', '').toUpperCase()); }
 export function capitalize(str: string): string { return str.charAt(0).toUpperCase() + str.slice(1); }
+export function slugify(str: string): string { return str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''); }
