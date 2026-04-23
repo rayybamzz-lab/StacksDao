@@ -8,7 +8,9 @@ const { STACKS_MAINNET } = require('@stacks/network');
 const fs = require('fs');
 const path = require('path');
 
-const WALLET_FILE = path.join(__dirname, '../test-wallet.json');
+const WALLET_FILE = process.env.WALLET_FILE
+    ? path.resolve(process.env.WALLET_FILE)
+    : path.join(__dirname, '../test-wallet.example.json');
 const AMOUNT_PER_WALLET = 45000n; // 0.045 STX in micro-STX
 const FEE = 1000n; // 0.001 STX fee
 const NETWORK = STACKS_MAINNET;
