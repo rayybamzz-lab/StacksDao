@@ -28,3 +28,4 @@ export interface StakingSummary { totalStaked: number; totalRewards: number; apr
 export interface DaoSummary { activeProposals: number; totalProposals: number; totalVotes: number; }
 export interface NftSummary { minted: number; remaining: number; floorPrice?: number; }
 export interface TokenSummary { name: string; symbol: string; decimals: number; supply: number; price?: number; }
+export interface ProposalSummary { id: number; title: string; status: ProposalStatus; votesFor: number; votesAgainst: number; }
