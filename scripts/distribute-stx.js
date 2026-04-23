@@ -11,6 +11,7 @@ const path = require('path');
 const WALLET_FILE = process.env.WALLET_FILE
     ? path.resolve(process.env.WALLET_FILE)
     : path.join(__dirname, '../test-wallet.example.json');
+const API_BASE = process.env.STACKS_API_BASE || 'https://api.mainnet.hiro.so';
 const AMOUNT_PER_WALLET = 45000n; // 0.045 STX in micro-STX
 const FEE = 1000n; // 0.001 STX fee
 const NETWORK = STACKS_MAINNET;
@@ -21,7 +22,7 @@ async function delay(ms) {
 
 async function getTransactionStatus(txId) {
     try {
-        const response = await fetch(`https://api.mainnet.hiro.so/extended/v1/tx/${txId}`);
+        const response = await fetch(`${API_BASE}/extended/v1/tx/${txId}`);
         const data = await response.json();
         return data.tx_status;
     } catch (error) {
