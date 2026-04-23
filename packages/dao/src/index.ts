@@ -7,3 +7,4 @@ export const packageMetadata = {
 } as const;
 export function buildCreateProposalArgs(title: string, description: string): (string | number)[] { return [title, description]; }
 export function buildVoteArgs(proposalId: number): (string | number)[] { return [proposalId]; }
+export function buildExecuteArgs(proposalId: number): (string | number)[] { return [proposalId]; }
