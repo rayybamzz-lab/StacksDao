@@ -406,3 +406,10 @@
 (define-read-only (get-reward-rate-per-day)
   (ok (* u144 REWARD-PER-BLOCK))
 )
+
+;; @desc get-total-rewards-distributed
+;; @returns (response uint none)
+;; Read-only context viewer
+(define-read-only (get-total-rewards-distributed)
+  (ok u0)
+)
