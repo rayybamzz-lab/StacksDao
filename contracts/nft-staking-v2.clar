@@ -391,3 +391,11 @@
 (define-read-only (get-staker-list)
   (ok (list))
 )
+
+;; @desc get-staked-token-ids
+;; @param staker principal
+;; @returns (response (list 100 uint) none)
+;; Read-only context viewer
+(define-read-only (get-staked-token-ids (staker principal))
+  (ok (list))
+)
