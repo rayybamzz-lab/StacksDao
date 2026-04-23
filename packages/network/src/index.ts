@@ -8,3 +8,4 @@ export const packageMetadata = {
 export const MAINNET_URL = 'https://api.mainnet.hiro.so';
 export const TESTNET_URL = 'https://api.testnet.hiro.so';
 export const EXPLORER_MAINNET = 'https://explorer.hiro.so';
+export const EXPLORER_TESTNET = 'https://explorer.hiro.so/?chain=testnet';
