@@ -582,3 +582,13 @@ Clarinet.test({
         stats.result.expectOk();
     },
 });
+
+Clarinet.test({
+    name: "governance-dao: has-voted returns false for non-voter",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        const wallet1 = accounts.get("wallet_1")!;
+        let voted = chain.callReadOnlyFn("governance-dao-v2", "has-voted", [types.uint(999), types.principal(wallet1.address)], deployer.address);
+        voted.result.expectOk().expectBool(false);
+    },
+});
