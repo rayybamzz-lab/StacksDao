@@ -31,3 +31,4 @@ export interface TokenSummary { name: string; symbol: string; decimals: number; 
 export interface ProposalSummary { id: number; title: string; status: ProposalStatus; votesFor: number; votesAgainst: number; }
 export interface UserActivity { address: string; proposalsCreated: number; votesCast: number; nftsStaked: number; }
 export interface PriceFeed { asset: string; price: number; timestamp: number; source: string; }
+export type TransactionStatus = 'pending' | 'success' | 'error' | 'dropped';
