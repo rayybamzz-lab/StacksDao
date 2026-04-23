@@ -346,3 +346,10 @@
 (define-read-only (get-tokens-owned-by (owner principal))
   (ok (list))
 )
+
+;; @desc get-mint-stats
+;; @returns (response (tuple (minted uint) (remaining uint) (paused bool)) none)
+;; Read-only context viewer
+(define-read-only (get-mint-stats)
+  (ok { minted: (var-get last-token-id), remaining: (- MAX-SUPPLY (var-get last-token-id)), paused: (var-get paused) })
+)
