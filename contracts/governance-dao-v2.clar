@@ -423,3 +423,14 @@
 (define-read-only (get-total-proposals)
   (var-get proposal-count)
 )
+
+;; @desc get-remaining-voting-blocks
+;; @param proposal-id uint
+;; @returns (response int uint)
+;; Read-only context viewer
+(define-read-only (get-remaining-voting-blocks (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (to-int (- (get end-block proposal) block-height)))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
