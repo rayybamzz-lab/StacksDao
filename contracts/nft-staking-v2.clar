@@ -250,3 +250,14 @@
 (define-read-only (get-reward-per-block)
   (ok REWARD-PER-BLOCK)
 )
+
+;; @desc get-staking-start-block
+;; @param token-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-staking-start-block (token-id uint))
+  (match (map-get? staking-data token-id)
+    info (ok (get staked-at-block info))
+    ERR-NOT-STAKED
+  )
+)
