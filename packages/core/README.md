@@ -18,3 +18,4 @@ npm install @stacksdao/core
 npm run build
 ```
 # Core Package
+## Usage
