@@ -37,3 +37,4 @@ export interface ContractCallOptions { contractAddress: string; contractName: st
 export interface ReadOnlyCallOptions { contractAddress: string; contractName: string; functionName: string; functionArgs: unknown[]; network: string; senderAddress: string; }
 export interface PostCondition { type: string; principal: string; condition: string; amount: number; }
 export type PostConditionMode = 'allow' | 'deny';
+export interface Notification { id: string; message: string; type: 'info' | 'success' | 'warning' | 'error'; read: boolean; timestamp: number; }
