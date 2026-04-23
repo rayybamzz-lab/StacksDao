@@ -15,3 +15,4 @@ export function clamp(num: number, min: number, max: number): number { return Ma
 export function sleep(ms: number): Promise<void> { return new Promise(r => setTimeout(r, ms)); }
 export function unique<T>(arr: T[]): T[] { return Array.from(new Set(arr)); }
 export function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> { const r = {} as Pick<T, K>; keys.forEach(k => r[k] = obj[k]); return r; }
+export function isBrowser(): boolean { return typeof window !== 'undefined'; }
