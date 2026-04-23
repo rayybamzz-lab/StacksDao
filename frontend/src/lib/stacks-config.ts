@@ -58,3 +58,4 @@ export function useFocus() { const [focused, setFocused] = React.useState(false)
 export function useOnline() { const [online, setOnline] = React.useState(true); return online; }
 export function useWindowSize() { return { width: 0, height: 0 }; }
 export function usePageVisibility() { return true; }
+export function useKeyPress(targetKey: string) { return false; }
