@@ -44,3 +44,4 @@ export interface RouteConfig { path: string; label: string; icon?: string; prote
 export type IconName = 'wallet' | 'trophy' | 'vote' | 'flame' | 'zap' | 'shield' | 'globe' | 'layout';
 export interface ChartData { labels: string[]; datasets: { label: string; data: number[] }[]; }
 export interface TimeSeriesPoint { timestamp: number; value: number; }
+export interface LeaderboardEntry { rank: number; address: string; score: number; }
