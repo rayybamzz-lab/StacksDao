@@ -384,3 +384,10 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc get-staker-list
+;; @returns (response (list 100 principal) none)
+;; Read-only context viewer
+(define-read-only (get-staker-list)
+  (ok (list))
+)
