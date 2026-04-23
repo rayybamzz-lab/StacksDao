@@ -283,3 +283,11 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc is-staked
+;; @param token-id uint
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (is-staked (token-id uint))
+  (ok (is-some (map-get? staking-data token-id)))
+)
