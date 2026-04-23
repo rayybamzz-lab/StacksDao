@@ -196,3 +196,10 @@
 (define-read-only (has-authorized-minter)
   (ok (is-some (var-get authorized-minter)))
 )
+
+;; @desc get-token-summary
+;; @returns (response (tuple (name (string-ascii 32)) (symbol (string-ascii 10)) (decimals uint) (supply uint)) none)
+;; Read-only context viewer
+(define-read-only (get-token-summary)
+  (ok { name: "StacksDAO Token", symbol: "SDAO", decimals: u6, supply: (ft-get-supply sdao-token) })
+)
