@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export interface TxOptions { postConditionMode?: 'allow' | 'deny'; postConditions?: unknown[]; }
+export function buildPostCondition(amount: number, sender: string, asset: string): string { return sender + ' sends ' + amount + ' ' + asset; }
