@@ -601,3 +601,12 @@ Clarinet.test({
         staked.result.expectOk().expectBool(false);
     },
 });
+
+Clarinet.test({
+    name: "stacks-nft: is-owner returns false for wrong owner",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const wallet1 = accounts.get("wallet_1")!;
+        let owner = chain.callReadOnlyFn("stacks-nft-v2", "is-owner", [types.uint(1), types.principal(wallet1.address)], wallet1.address);
+        owner.result.expectOk().expectBool(false);
+    },
+});
