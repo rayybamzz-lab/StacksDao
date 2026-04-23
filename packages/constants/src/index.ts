@@ -32,3 +32,4 @@ export const CHAIN_IDS = { MAINNET: '0x00000001', TESTNET: '0x80000000' };
 export const TX_FEE_ESTIMATE_MARGIN = 1.2;
 export const DEFAULT_PAGE_SIZE = 20;
 export const MAX_PAGE_SIZE = 100;
+export const TOKEN_DECIMAL_DISPLAY = 6;
