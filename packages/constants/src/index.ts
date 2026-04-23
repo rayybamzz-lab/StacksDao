@@ -37,3 +37,4 @@ export const STX_DECIMAL_DISPLAY = 6;
 export const PROPOSAL_STATUS_COLORS = { active: 'indigo', passed: 'emerald', rejected: 'rose', executed: 'amber' } as const;
 export const REWARD_DISPLAY_PRECISION = 4;
 export const BLOCKS_PER_DAY = 144;
+export const DAYS_PER_YEAR = 365;
