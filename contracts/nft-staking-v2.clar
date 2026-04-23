@@ -399,3 +399,10 @@
 (define-read-only (get-staked-token-ids (staker principal))
   (ok (list))
 )
+
+;; @desc get-reward-rate-per-day
+;; @returns (response uint none)
+;; Read-only context viewer
+(define-read-only (get-reward-rate-per-day)
+  (ok (* u144 REWARD-PER-BLOCK))
+)
