@@ -61,7 +61,9 @@
 (define-public (set-authorized-minter (minter principal))
   (begin
     (asserts! (is-eq tx-sender CONTRACT-OWNER) ERR-NOT-AUTHORIZED)
-    (ok (var-set authorized-minter (some minter)))
+    (var-set authorized-minter (some minter))
+    (print { event: "authorized-minter-updated", minter: minter })
+    (ok true)
   )
 )
 
