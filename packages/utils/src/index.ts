@@ -40,3 +40,4 @@ export function calculateApr(rewards: number, principal: number): number { retur
 export function formatPercentage(value: number, decimals = 2): string { return value.toFixed(decimals) + '%'; }
 export function parsePrincipal(str: string): { prefix: string; hash: string } { return { prefix: str.slice(0, 2), hash: str.slice(2) }; }
 export function isContractPrincipal(p: string): boolean { return p.includes('.'); }
+export function getContractNameFromPrincipal(p: string): string { return p.split('.')[1] || ''; }
