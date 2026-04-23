@@ -25,3 +25,4 @@ export function slugify(str: string): string { return str.toLowerCase().replace(
 export function randomId(prefix = 'id'): string { return prefix + '-' + Math.random().toString(36).slice(2, 8); }
 export function debounce<T extends (...args: unknown[]) => unknown>(fn: T, wait = 300) { let t: ReturnType<typeof setTimeout>; return (...args: Parameters<T>) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); }; }
 export function throttle<T extends (...args: unknown[]) => unknown>(fn: T, limit = 300) { let inThrottle = false; return (...args: Parameters<T>) => { if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => inThrottle = false, limit); } }; }
+export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> { return arr.reduce((acc, item) => { const k = String(item[key]); (acc[k] = acc[k] || []).push(item); return acc; }, {} as Record<string, T[]>); }
