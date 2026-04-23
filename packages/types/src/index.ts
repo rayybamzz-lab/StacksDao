@@ -53,3 +53,4 @@ export interface NftMetadata { tokenId: number; name: string; description: strin
 export interface ContractEvent { event: string; data: Record<string, unknown>; blockHeight: number; txId: string; }
 export interface EventFilter { event?: string; fromBlock?: number; toBlock?: number; contract?: string; }
 export type SortDirection = 'asc' | 'desc';
+export interface SearchParams { query: string; filters: Record<string, string>; sort: { field: string; direction: SortDirection }; pagination: { page: number; limit: number }; }
