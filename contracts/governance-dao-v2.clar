@@ -528,3 +528,15 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-vote-weight
+;; @param proposal-id uint
+;; @param voter principal
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-vote-weight (proposal-id uint) (voter principal))
+  (match (map-get? votes { proposal-id: proposal-id, voter: voter })
+    record (ok (get amount record))
+    (ok u0)
+  )
+)
