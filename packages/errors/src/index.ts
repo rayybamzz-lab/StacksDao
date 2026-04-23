@@ -8,3 +8,4 @@ export const packageMetadata = {
 export class StacksDaoError extends Error { constructor(message: string) { super(message); this.name = 'StacksDaoError'; } }
 export class InsufficientBalanceError extends StacksDaoError { constructor() { super('Insufficient balance'); this.name = 'InsufficientBalanceError'; } }
 export class NotAuthorizedError extends StacksDaoError { constructor() { super('Not authorized'); this.name = 'NotAuthorizedError'; } }
+export class ProposalNotFoundError extends StacksDaoError { constructor(id: number) { super("Proposal " + id + " not found"); this.name = 'ProposalNotFoundError'; } }
