@@ -318,3 +318,10 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc get-contract-owner
+;; @returns (response principal none)
+;; Read-only context viewer
+(define-read-only (get-contract-owner)
+  (ok CONTRACT-OWNER)
+)
