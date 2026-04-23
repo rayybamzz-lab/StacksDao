@@ -26,3 +26,4 @@ export interface WalletInfo { address: string; balance: number; network: string;
 export interface TransactionReceipt { txId: string; status: 'pending' | 'success' | 'error'; blockHeight?: number; }
 export interface StakingSummary { totalStaked: number; totalRewards: number; apr: number; }
 export interface DaoSummary { activeProposals: number; totalProposals: number; totalVotes: number; }
+export interface NftSummary { minted: number; remaining: number; floorPrice?: number; }
