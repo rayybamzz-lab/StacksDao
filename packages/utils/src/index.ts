@@ -17,3 +17,4 @@ export function unique<T>(arr: T[]): T[] { return Array.from(new Set(arr)); }
 export function pick<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> { const r = {} as Pick<T, K>; keys.forEach(k => r[k] = obj[k]); return r; }
 export function isBrowser(): boolean { return typeof window !== 'undefined'; }
 export function isServer(): boolean { return typeof window === 'undefined'; }
+export function toKebabCase(str: string): string { return str.replace(/[A-Z]/g, m => '-' + m.toLowerCase()); }
