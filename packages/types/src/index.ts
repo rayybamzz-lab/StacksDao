@@ -41,3 +41,4 @@ export interface Notification { id: string; message: string; type: 'info' | 'suc
 export interface FilterState { search: string; status: string; sortBy: string; sortDir: 'asc' | 'desc'; }
 export interface FormState { values: Record<string, unknown>; errors: Record<string, string>; touched: Record<string, boolean>; }
 export interface RouteConfig { path: string; label: string; icon?: string; protected: boolean; }
+export type IconName = 'wallet' | 'trophy' | 'vote' | 'flame' | 'zap' | 'shield' | 'globe' | 'layout';
