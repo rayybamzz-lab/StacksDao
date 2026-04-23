@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function buildCreateProposalArgs(title: string, description: string): (string | number)[] { return [title, description]; }
+export function buildVoteArgs(proposalId: number): (string | number)[] { return [proposalId]; }
