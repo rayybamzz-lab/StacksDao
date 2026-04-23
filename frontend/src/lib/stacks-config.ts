@@ -68,3 +68,4 @@ export function useReducedMotion() { return false; }
 export function useScrollLock() { const [locked, setLocked] = React.useState(false); return { locked, lock: () => setLocked(true), unlock: () => setLocked(false) }; }
 export function useIsMobile() { return false; }
 export function useIsTablet() { return false; }
+export function useScrollDirection() { return 'down' as 'up' | 'down'; }
