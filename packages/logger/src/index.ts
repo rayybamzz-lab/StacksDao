@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export const LOGGER_LEVELS = ['debug', 'info', 'warn', 'error'] as const;
+export type LogLevel = typeof LOGGER_LEVELS[number];
