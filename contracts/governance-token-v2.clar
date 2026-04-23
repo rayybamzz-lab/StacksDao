@@ -243,3 +243,10 @@
 (define-read-only (get-allowance (owner principal) (spender principal))
   (ok u0)
 )
+
+;; @desc get-circulating-supply
+;; @returns (response uint none)
+;; Read-only context viewer
+(define-read-only (get-circulating-supply)
+  (ok (ft-get-supply sdao-token))
+)
