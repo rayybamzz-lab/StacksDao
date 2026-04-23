@@ -14,7 +14,10 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://stacksdao.io"),
-  title: "StacksDAO - NFT Staking & Governance",
+  title: {
+    default: "StacksDAO - NFT Staking & Governance",
+    template: "%s | StacksDAO",
+  },
   description: "The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.",
   icons: {
     icon: "/logo.png",
@@ -31,6 +34,12 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  twitter: {
+    card: "summary_large_image",
+    title: "StacksDAO - NFT Staking & Governance",
+    description: "The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.",
+    images: ["/logo.png"],
+  },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -38,6 +47,7 @@ export const metadata: Metadata = {
     siteName: "StacksDAO",
     title: "StacksDAO - NFT Staking & Governance",
     description: "The first decentralized protocol on Stacks enabling yield generation through NFT staking and multi-tier governance.",
+    images: ["/logo.png"],
   },
 };
 
