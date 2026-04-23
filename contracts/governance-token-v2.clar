@@ -182,3 +182,10 @@
 (define-read-only (is-minter (addr principal))
   (ok (or (is-eq addr CONTRACT-OWNER) (is-eq (some addr) (var-get authorized-minter))))
 )
+
+;; @desc get-minter-or-owner
+;; @returns (response principal uint)
+;; Read-only context viewer
+(define-read-only (get-minter-or-owner)
+  (ok (default-to CONTRACT-OWNER (var-get authorized-minter)))
+)
