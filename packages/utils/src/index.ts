@@ -23,3 +23,4 @@ export function toPascalCase(str: string): string { return str.replace(/^\w|_\w/
 export function capitalize(str: string): string { return str.charAt(0).toUpperCase() + str.slice(1); }
 export function slugify(str: string): string { return str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''); }
 export function randomId(prefix = 'id'): string { return prefix + '-' + Math.random().toString(36).slice(2, 8); }
+export function debounce<T extends (...args: unknown[]) => unknown>(fn: T, wait = 300) { let t: ReturnType<typeof setTimeout>; return (...args: Parameters<T>) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); }; }
