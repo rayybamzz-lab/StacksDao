@@ -18,3 +18,4 @@ npm install @stacksdao/errors
 npm run build
 ```
 # Errors Package
+## Error Classes
