@@ -7,3 +7,4 @@ export const packageMetadata = {
 } as const;
 export const LOGGER_LEVELS = ['debug', 'info', 'warn', 'error'] as const;
 export type LogLevel = typeof LOGGER_LEVELS[number];
+export interface LogEntry { level: LogLevel; message: string; timestamp: number; context?: string; }
