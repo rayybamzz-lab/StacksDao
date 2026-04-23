@@ -11,8 +11,11 @@
   ],
   "scripts": {
     "build": "npm run build --workspaces --if-present",
+    "clean": "npm run clean --workspaces --if-present && rm -rf .cache node_modules frontend/.next frontend/node_modules",
     "clarinet:check": "clarinet check",
     "clarinet:test": "clarinet test",
+    "frontend:lint": "npm --prefix frontend run lint",
+    "test": "npm run clarinet:check && npm run typecheck",
     "typecheck": "tsc --noEmit"
   },
   "devDependencies": {
