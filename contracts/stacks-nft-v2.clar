@@ -285,3 +285,10 @@
 (define-read-only (get-contract-metadata)
   (ok { name: "StacksDAO NFT", symbol: "SDAO-NFT", base-uri: (var-get base-uri) })
 )
+
+;; @desc get-mint-status
+;; @returns (response (tuple (paused bool) (remaining uint)) uint)
+;; Read-only context viewer
+(define-read-only (get-mint-status)
+  (ok { paused: (var-get paused), remaining: (- MAX-SUPPLY (var-get last-token-id)) })
+)
