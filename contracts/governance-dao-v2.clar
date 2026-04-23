@@ -563,3 +563,14 @@
     (ok none)
   )
 )
+
+;; @desc get-proposal-voter-count
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-voter-count (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (get total-votes proposal))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
