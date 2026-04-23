@@ -54,3 +54,4 @@ export function addDays(date: Date, days: number): Date { const r = new Date(dat
 export function startOfDay(date: Date): Date { const r = new Date(date); r.setHours(0, 0, 0, 0); return r; }
 export function endOfDay(date: Date): Date { const r = new Date(date); r.setHours(23, 59, 59, 999); return r; }
 export function isSameDay(a: Date, b: Date): boolean { return a.toDateString() === b.toDateString(); }
+export function generateNonce(): string { return Math.random().toString(36).slice(2, 10); }
