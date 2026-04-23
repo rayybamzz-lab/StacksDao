@@ -21,19 +21,24 @@ interface StacksContextType {
 
 const StacksContext = createContext<StacksContextType | undefined>(undefined);
 
+function getSignedInAddress() {
+    if (!userSession.isUserSignedIn()) {
+        return null;
+    }
+
+    return userSession.loadUserData().profile.stxAddress.mainnet;
+}
+
 /**
  * StacksProvider component
  * Provides Stacks authentication state to the application
  */
 export function StacksProvider({ children }: { children: React.ReactNode }) {
-    const [isSignedIn, setIsSignedIn] = useState(false);
-    const [userAddress, setUserAddress] = useState<string | null>(null);
+    const [isSignedIn, setIsSignedIn] = useState(() => userSession.isUserSignedIn());
+    const [userAddress, setUserAddress] = useState<string | null>(getSignedInAddress);
 
     useEffect(() => {
-        if (userSession.isUserSignedIn()) {
-            setIsSignedIn(true);
-            setUserAddress(userSession.loadUserData().profile.stxAddress.mainnet);
-        } else if (userSession.isSignInPending()) {
+        if (userSession.isSignInPending()) {
             userSession
                 .handlePendingSignIn()
                 .then((userData) => {
