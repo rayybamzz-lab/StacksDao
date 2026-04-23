@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export interface IndexerCursor { lastBlock: number; lastTxId?: string; }
+export function createCursor(block: number, tx?: string): IndexerCursor { return { lastBlock: block, lastTxId: tx }; }
