@@ -307,3 +307,10 @@
 (define-read-only (is-mint-paused)
   (ok (var-get paused))
 )
+
+;; @desc get-available-supply
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-available-supply)
+  (ok (- MAX-SUPPLY (var-get last-token-id)))
+)
