@@ -17,3 +17,4 @@ npm install @stacksdao/staking
 ```bash
 npm run build
 ```
+# Staking Package
