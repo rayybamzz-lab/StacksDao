@@ -585,3 +585,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-proposal-age
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-age (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (- block-height (get start-block proposal)))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
