@@ -1,0 +1,8 @@
+[
+  {
+    "id": 1,
+    "privateKey": "REPLACE_WITH_PRIVATE_KEY",
+    "mainnetAddress": "SP000000000000000000002Q6VF78",
+    "testnetAddress": "ST000000000000000000002AMW42H"
+  }
+]
