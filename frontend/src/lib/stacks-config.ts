@@ -54,3 +54,4 @@ export function useCountdown(target: number): number { return 0; }
 export function useAsync<T>(fn: () => Promise<T>) { const [data, setData] = React.useState<T | null>(null); const [err, setErr] = React.useState<Error | null>(null); const [loading, setLoading] = React.useState(false); return { data, error: err, loading, execute: fn }; }
 export function useToggle(initial = false) { const [on, setOn] = React.useState(initial); return { on, toggle: () => setOn(!on), setOn, setOff: () => setOn(false) }; }
 export function useHover() { const [hovered, setHovered] = React.useState(false); return { hovered, onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false) }; }
+export function useFocus() { const [focused, setFocused] = React.useState(false); return { focused, onFocus: () => setFocused(true), onBlur: () => setFocused(false) }; }
