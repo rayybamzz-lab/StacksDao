@@ -314,3 +314,11 @@
 (define-read-only (get-available-supply)
   (ok (- MAX-SUPPLY (var-get last-token-id)))
 )
+
+;; @desc get-token-creator
+;; @param token-id uint
+;; @returns (response principal uint)
+;; Read-only context viewer
+(define-read-only (get-token-creator (token-id uint))
+  (ok CONTRACT-OWNER)
+)
