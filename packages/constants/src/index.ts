@@ -19,3 +19,4 @@ export const NETWORK_NAMES = { MAINNET: 'mainnet', TESTNET: 'testnet', DEVNET: '
 export const EXPLORER_URLS = { MAINNET: 'https://explorer.hiro.so', TESTNET: 'https://explorer.hiro.so/?chain=testnet' } as const;
 export const API_URLS = { MAINNET: 'https://api.mainnet.hiro.so', TESTNET: 'https://api.testnet.hiro.so' } as const;
 export const TX_VERSION = 'v2';
+export const MAX_BATCH_SIZE = 5;
