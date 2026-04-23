@@ -13,3 +13,4 @@ export function createCacheKey(prefix: string, id: string): string { return pref
 export const DEFAULT_CACHE_TTL = 300000;
 export const APP_DESCRIPTION = 'StacksDAO Protocol v2';
 export const APP_URL = 'https://stacksdao.io';
+export const SUPPORT_EMAIL = 'support@stacksdao.io';
