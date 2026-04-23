@@ -14,3 +14,4 @@ export class VotingEndedError extends StacksDaoError { constructor() { super('Vo
 export class QuorumNotMetError extends StacksDaoError { constructor() { super('Quorum not met'); this.name = 'QuorumNotMetError'; } }
 export class ProposalRejectedError extends StacksDaoError { constructor() { super('Proposal was rejected'); this.name = 'ProposalRejectedError'; } }
 export class AlreadyExecutedError extends StacksDaoError { constructor() { super('Proposal already executed'); this.name = 'AlreadyExecutedError'; } }
+export class NotStakedError extends StacksDaoError { constructor() { super('NFT is not staked'); this.name = 'NotStakedError'; } }
