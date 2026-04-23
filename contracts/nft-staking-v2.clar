@@ -261,3 +261,14 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc get-last-claim-block
+;; @param token-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-last-claim-block (token-id uint))
+  (match (map-get? staking-data token-id)
+    info (ok (get last-claim-block info))
+    ERR-NOT-STAKED
+  )
+)
