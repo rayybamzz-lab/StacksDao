@@ -167,29 +167,32 @@
 ;; @returns (response uint uint) - Returns the rewards minted
 ;; State-modifying public function
 (define-public (claim-rewards (token-id uint))
-  (let
-    (
-      (stake-info (unwrap! (map-get? staking-data token-id) ERR-NOT-STAKED))
-      (staker (get staker stake-info))
-      (last-claim (get last-claim-block stake-info))
-      (blocks-staked (- block-height last-claim))
-      (rewards (* blocks-staked REWARD-PER-BLOCK))
+  (begin
+    (asserts! (> token-id u0) ERR-INVALID-TOKEN-ID)
+    (let
+      (
+        (stake-info (unwrap! (map-get? staking-data token-id) ERR-NOT-STAKED))
+        (staker (get staker stake-info))
+        (last-claim (get last-claim-block stake-info))
+        (blocks-staked (- block-height last-claim))
+        (rewards (* blocks-staked REWARD-PER-BLOCK))
+      )
+      ;; Only the staker can claim
+      (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
+      ;; Must have rewards to claim
+      (asserts! (> rewards u0) ERR-NO-REWARDS)
+
+      ;; Mint rewards
+      (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
+
+      ;; Update last claim block
+      (map-set staking-data token-id
+        (merge stake-info { last-claim-block: block-height })
+      )
+
+      (print { event: "rewards-claimed", token-id: token-id, staker: tx-sender, rewards: rewards })
+      (ok rewards)
     )
-    ;; Only the staker can claim
-    (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
-    ;; Must have rewards to claim
-    (asserts! (> rewards u0) ERR-NO-REWARDS)
-
-    ;; Mint rewards
-    (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
-
-    ;; Update last claim block
-    (map-set staking-data token-id
-      (merge stake-info { last-claim-block: block-height })
-    )
-
-    (print { event: "rewards-claimed", token-id: token-id, staker: tx-sender, rewards: rewards })
-    (ok rewards)
   )
 )
 
