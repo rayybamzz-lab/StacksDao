@@ -27,3 +27,4 @@ export function useRewardPerBlock() { return { rate: 10000000, loading: false };
 export function useStakerBalance(address: string) { return { balance: 0, address, loading: false }; }
 export function useTotalSupply() { return { supply: 0, loading: false }; }
 export function useTokenDecimals() { return { decimals: 6, loading: false }; }
+export function useTokenSymbol() { return { symbol: 'SDAO', loading: false }; }
