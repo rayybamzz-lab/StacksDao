@@ -325,3 +325,14 @@
 (define-read-only (get-contract-owner)
   (ok CONTRACT-OWNER)
 )
+
+;; @desc get-blocks-since-stake
+;; @param token-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-blocks-since-stake (token-id uint))
+  (match (map-get? staking-data token-id)
+    info (ok (- block-height (get staked-at-block info)))
+    ERR-NOT-STAKED
+  )
+)
