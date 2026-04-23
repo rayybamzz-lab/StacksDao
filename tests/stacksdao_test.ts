@@ -555,3 +555,12 @@ Clarinet.test({
         price.result.expectOk().expectUint(30000);
     },
 });
+
+Clarinet.test({
+    name: "nft-staking: reward estimate for 10 blocks",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let estimate = chain.callReadOnlyFn("nft-staking-v2", "get-reward-estimate", [types.uint(1), types.uint(10)], deployer.address);
+        estimate.result.expectOk().expectUint(100000000);
+    },
+});
