@@ -370,3 +370,17 @@
 (define-read-only (has-staked (staker principal))
   (> (default-to u0 (map-get? staker-balance staker)) u0)
 )
+
+;; @desc get-estimated-unstake-rewards
+;; @param token-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-estimated-unstake-rewards (token-id uint))
+  (match (map-get? staking-data token-id)
+    info
+      (let ((blocks (- block-height (get last-claim-block info))))
+        (ok (* blocks REWARD-PER-BLOCK))
+      )
+    ERR-NOT-STAKED
+  )
+)
