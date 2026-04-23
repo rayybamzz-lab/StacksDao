@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function buildStakeArgs(tokenId: number): (string | number)[] { return [tokenId]; }
+export function buildUnstakeArgs(tokenId: number): (string | number)[] { return [tokenId]; }
