@@ -19,3 +19,4 @@ export function useProposalCount() { return { count: 0, loading: false }; }
 export function useQuorum() { return { quorum: 500000000, loading: false }; }
 export function useVotingPeriod() { return { period: 144, loading: false }; }
 export function useMintPrice() { return { price: 10000, loading: false }; }
+export function useMaxSupply() { return { supply: 10000, loading: false }; }
