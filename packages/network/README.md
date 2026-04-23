@@ -17,3 +17,4 @@ npm install @stacksdao/network
 ```bash
 npm run build
 ```
+# Network Package
