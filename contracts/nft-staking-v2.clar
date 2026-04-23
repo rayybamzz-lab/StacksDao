@@ -72,33 +72,36 @@
 ;; @returns (response bool uint) - Returns true on success
 ;; State-modifying public function
 (define-public (stake-nft (token-id uint))
-  (let
-    (
-      (owner (unwrap! (contract-call? .stacks-nft-v2 get-owner token-id) ERR-NOT-AUTHORIZED))
+  (begin
+    (asserts! (> token-id u0) ERR-INVALID-TOKEN-ID)
+    (let
+      (
+        (owner (unwrap! (contract-call? .stacks-nft-v2 get-owner token-id) ERR-NOT-AUTHORIZED))
+      )
+      ;; Verify caller owns the NFT
+      (asserts! (is-eq (some tx-sender) owner) ERR-NOT-OWNER)
+      ;; Verify NFT is not already staked
+      (asserts! (is-none (map-get? staking-data token-id)) ERR-ALREADY-STAKED)
+
+      ;; Transfer NFT to this contract for custody
+      (try! (contract-call? .stacks-nft-v2 transfer token-id tx-sender (as-contract tx-sender)))
+
+      ;; Record staking data
+      (map-set staking-data token-id {
+        staker: tx-sender,
+        staked-at-block: block-height,
+        last-claim-block: block-height
+      })
+
+      ;; Update balances
+      (map-set staker-balance tx-sender
+        (+ (default-to u0 (map-get? staker-balance tx-sender)) u1)
+      )
+      (var-set total-staked (+ (var-get total-staked) u1))
+
+      (print { event: "nft-staked", token-id: token-id, staker: tx-sender, block: block-height })
+      (ok true)
     )
-    ;; Verify caller owns the NFT
-    (asserts! (is-eq (some tx-sender) owner) ERR-NOT-OWNER)
-    ;; Verify NFT is not already staked
-    (asserts! (is-none (map-get? staking-data token-id)) ERR-ALREADY-STAKED)
-
-    ;; Transfer NFT to this contract for custody
-    (try! (contract-call? .stacks-nft-v2 transfer token-id tx-sender (as-contract tx-sender)))
-
-    ;; Record staking data
-    (map-set staking-data token-id {
-      staker: tx-sender,
-      staked-at-block: block-height,
-      last-claim-block: block-height
-    })
-
-    ;; Update balances
-    (map-set staker-balance tx-sender
-      (+ (default-to u0 (map-get? staker-balance tx-sender)) u1)
-    )
-    (var-set total-staked (+ (var-get total-staked) u1))
-
-    (print { event: "nft-staked", token-id: token-id, staker: tx-sender, block: block-height })
-    (ok true)
   )
 )
 
