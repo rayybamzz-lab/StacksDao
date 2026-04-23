@@ -292,3 +292,11 @@
 (define-read-only (get-mint-status)
   (ok { paused: (var-get paused), remaining: (- MAX-SUPPLY (var-get last-token-id)) })
 )
+
+;; @desc get-token-info
+;; @param token-id uint
+;; @returns (response (tuple (owner (optional principal)) (uri (optional (string-ascii 256)))) uint)
+;; Read-only context viewer
+(define-read-only (get-token-info (token-id uint))
+  (ok { owner: (nft-get-owner? stacksdao-nft token-id), uri: (some (var-get base-uri)) })
+)
