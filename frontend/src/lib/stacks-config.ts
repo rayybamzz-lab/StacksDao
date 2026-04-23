@@ -61,3 +61,4 @@ export function usePageVisibility() { return true; }
 export function useKeyPress(targetKey: string) { return false; }
 export function useFormField<T>(initial: T) { const [value, setValue] = React.useState<T>(initial); return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value as unknown as T), setValue }; }
 export function useLoading() { const [loading, setLoading] = React.useState(false); return { loading, start: () => setLoading(true), stop: () => setLoading(false) }; }
+export function useInView(ref: React.RefObject<Element | null>) { return false; }
