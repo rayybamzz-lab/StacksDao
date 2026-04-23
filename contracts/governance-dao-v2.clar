@@ -500,3 +500,10 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-active-proposals
+;; @returns (response (list 100 uint) none)
+;; Read-only context viewer
+(define-read-only (get-active-proposals)
+  (ok (list))
+)
