@@ -46,3 +46,4 @@ export function useCopyToClipboard() { return async (text: string) => { try { aw
 export function useDebounce<T>(value: T, delay = 300): T { const [v, setV] = React.useState(value); React.useEffect(() => { const t = setTimeout(() => setV(value), delay); return () => clearTimeout(t); }, [value, delay]); return v; }
 export function useLocalStorage<T>(key: string, initial: T): [T, (v: T) => void] { const [val, setVal] = React.useState<T>(initial); return [val, setVal]; }
 export function useMediaQuery(query: string): boolean { const [match, setMatch] = React.useState(false); return match; }
+export function useScrollPosition(): number { const [pos, setPos] = React.useState(0); return pos; }
