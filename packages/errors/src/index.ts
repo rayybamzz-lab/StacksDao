@@ -9,3 +9,4 @@ export class StacksDaoError extends Error { constructor(message: string) { super
 export class InsufficientBalanceError extends StacksDaoError { constructor() { super('Insufficient balance'); this.name = 'InsufficientBalanceError'; } }
 export class NotAuthorizedError extends StacksDaoError { constructor() { super('Not authorized'); this.name = 'NotAuthorizedError'; } }
 export class ProposalNotFoundError extends StacksDaoError { constructor(id: number) { super("Proposal " + id + " not found"); this.name = 'ProposalNotFoundError'; } }
+export class AlreadyVotedError extends StacksDaoError { constructor() { super('Already voted on this proposal'); this.name = 'AlreadyVotedError'; } }
