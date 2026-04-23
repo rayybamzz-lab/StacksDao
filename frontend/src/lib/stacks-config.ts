@@ -49,3 +49,4 @@ export function useMediaQuery(query: string): boolean { const [match, setMatch] 
 export function useScrollPosition(): number { const [pos, setPos] = React.useState(0); return pos; }
 export function usePrevious<T>(value: T): T | undefined { const ref = React.useRef<T>(); return ref.current; }
 export function useInterval(callback: () => void, delay: number | null) { }
+export function useTimeout(callback: () => void, delay: number) { }
