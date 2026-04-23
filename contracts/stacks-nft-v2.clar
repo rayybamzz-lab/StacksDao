@@ -353,3 +353,10 @@
 (define-read-only (get-mint-stats)
   (ok { minted: (var-get last-token-id), remaining: (- MAX-SUPPLY (var-get last-token-id)), paused: (var-get paused) })
 )
+
+;; @desc is-minted-out
+;; @returns (response bool none)
+;; Read-only context viewer
+(define-read-only (is-minted-out)
+  (ok (>= (var-get last-token-id) MAX-SUPPLY))
+)
