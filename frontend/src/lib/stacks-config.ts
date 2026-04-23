@@ -51,3 +51,4 @@ export function usePrevious<T>(value: T): T | undefined { const ref = React.useR
 export function useInterval(callback: () => void, delay: number | null) { }
 export function useTimeout(callback: () => void, delay: number) { }
 export function useCountdown(target: number): number { return 0; }
+export function useAsync<T>(fn: () => Promise<T>) { const [data, setData] = React.useState<T | null>(null); const [err, setErr] = React.useState<Error | null>(null); const [loading, setLoading] = React.useState(false); return { data, error: err, loading, execute: fn }; }
