@@ -13,3 +13,4 @@ export type NetworkType = 'mainnet' | 'testnet' | 'devnet' | 'mocknet';
 export interface NetworkConfig { network: NetworkType; url: string; explorerUrl: string; }
 export type ContractName = 'governance-token-v2' | 'stacks-nft-v2' | 'nft-staking-v2' | 'governance-dao-v2';
 export interface ContractIdentifier { address: string; name: ContractName; }
+export type VoteDirection = 'for' | 'against';
