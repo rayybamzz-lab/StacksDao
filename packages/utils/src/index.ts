@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function microToStx(micro: number): string { return (micro / 1_000_000).toFixed(6); }
+export function stxToMicro(stx: string): number { return Math.round(parseFloat(stx) * 1_000_000); }
