@@ -11,3 +11,4 @@ export function getUserAgent(): string { return APP_NAME + '/' + APP_VERSION; }
 export interface CacheConfig { ttl: number; key: string; }
 export function createCacheKey(prefix: string, id: string): string { return prefix + ':' + id; }
 export const DEFAULT_CACHE_TTL = 300000;
+export const APP_DESCRIPTION = 'StacksDAO Protocol v2';
