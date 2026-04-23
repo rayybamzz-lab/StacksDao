@@ -16,7 +16,7 @@ const NETWORK = STACKS_MAINNET;
 const API_BASE = process.env.STACKS_API_BASE || 'https://api.mainnet.hiro.so';
 const CONTRACT_ADDRESS = process.env.CONTRACT_ADDRESS || 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
 const FEE = 1000n; // 0.001 STX gas
-const TOTAL_INTERACTIONS = 328;
+const TOTAL_INTERACTIONS = Number(process.env.TOTAL_INTERACTIONS || 328);
 
 async function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
