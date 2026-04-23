@@ -18,3 +18,4 @@ npm install @stacksdao/staking
 npm run build
 ```
 # Staking Package
+## Vault
