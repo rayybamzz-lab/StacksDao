@@ -413,3 +413,11 @@
 (define-read-only (get-total-rewards-distributed)
   (ok u0)
 )
+
+;; @desc get-staker-rank
+;; @param staker principal
+;; @returns (response uint none)
+;; Read-only context viewer
+(define-read-only (get-staker-rank (staker principal))
+  (ok u0)
+)
