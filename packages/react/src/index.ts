@@ -10,3 +10,4 @@ export function useBalance() { return { balance: 0, loading: false }; }
 export function useNetwork() { return { network: 'mainnet', label: 'Mainnet' }; }
 export function useBlockHeight() { return { height: 0, loading: false }; }
 export function useProposals() { return { proposals: [], loading: false }; }
+export function useStakes() { return { stakes: [], loading: false }; }
