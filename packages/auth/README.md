@@ -17,3 +17,4 @@ npm install @stacksdao/auth
 ```bash
 npm run build
 ```
+# Auth Package
