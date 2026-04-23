@@ -261,3 +261,12 @@
 (define-read-only (get-all-token-ids)
   (ok (list))
 )
+
+;; @desc is-owner
+;; @param token-id uint
+;; @param owner principal
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (is-owner (token-id uint) (owner principal))
+  (ok (is-eq (some owner) (nft-get-owner? stacksdao-nft token-id)))
+)
