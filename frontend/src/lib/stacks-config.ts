@@ -70,3 +70,4 @@ export function useIsMobile() { return false; }
 export function useIsTablet() { return false; }
 export function useScrollDirection() { return 'down' as 'up' | 'down'; }
 export function useClipboard() { return { copied: false, copy: async (_text: string) => {} }; }
+export function useFavicon(url: string) { }
