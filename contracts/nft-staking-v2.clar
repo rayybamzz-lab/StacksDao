@@ -272,3 +272,14 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc get-staker
+;; @param token-id uint
+;; @returns (response principal uint)
+;; Read-only context viewer
+(define-read-only (get-staker (token-id uint))
+  (match (map-get? staking-data token-id)
+    info (ok (get staker info))
+    ERR-NOT-STAKED
+  )
+)
