@@ -385,3 +385,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-proposal-description
+;; @param proposal-id uint
+;; @returns (response (string-utf8 1024) uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-description (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (get description proposal))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
