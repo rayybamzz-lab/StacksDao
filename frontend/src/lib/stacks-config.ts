@@ -55,3 +55,4 @@ export function useAsync<T>(fn: () => Promise<T>) { const [data, setData] = Reac
 export function useToggle(initial = false) { const [on, setOn] = React.useState(initial); return { on, toggle: () => setOn(!on), setOn, setOff: () => setOn(false) }; }
 export function useHover() { const [hovered, setHovered] = React.useState(false); return { hovered, onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false) }; }
 export function useFocus() { const [focused, setFocused] = React.useState(false); return { focused, onFocus: () => setFocused(true), onBlur: () => setFocused(false) }; }
+export function useOnline() { const [online, setOnline] = React.useState(true); return online; }
