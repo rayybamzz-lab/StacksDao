@@ -11,3 +11,4 @@ export const GAS_LIMITS = { DEFAULT: 500000, MINT: 300000, STAKE: 400000, VOTE: 
 export const BLOCK_TIME_SECONDS = 600;
 export const REWARD_PER_BLOCK = 10_000_000;
 export const MINT_PRICE_MICRO_STX = 10_000;
+export const MAX_SUPPLY = 10_000;
