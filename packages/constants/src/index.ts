@@ -9,3 +9,4 @@ export const CONTRACT_NAMES = { GOVERNANCE_TOKEN: 'governance-token-v2', STACKS_
 export const DECIMALS = { SDAO: 6, STX: 6, MICRO: 6 } as const;
 export const GAS_LIMITS = { DEFAULT: 500000, MINT: 300000, STAKE: 400000, VOTE: 350000 } as const;
 export const BLOCK_TIME_SECONDS = 600;
+export const REWARD_PER_BLOCK = 10_000_000;
