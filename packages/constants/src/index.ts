@@ -28,3 +28,4 @@ export const SIP010_TRAIT = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-t
 export const DEFAULT_GAS_LIMIT = 500000;
 export const DEFAULT_POSTCONDITION_MODE = 'deny';
 export const APP_THEMES = ['light', 'dark', 'system'] as const;
+export const CHAIN_IDS = { MAINNET: '0x00000001', TESTNET: '0x80000000' };
