@@ -38,3 +38,4 @@ export interface ReadOnlyCallOptions { contractAddress: string; contractName: st
 export interface PostCondition { type: string; principal: string; condition: string; amount: number; }
 export type PostConditionMode = 'allow' | 'deny';
 export interface Notification { id: string; message: string; type: 'info' | 'success' | 'warning' | 'error'; read: boolean; timestamp: number; }
+export interface FilterState { search: string; status: string; sortBy: string; sortDir: 'asc' | 'desc'; }
