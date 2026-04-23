@@ -24,3 +24,4 @@ export function capitalize(str: string): string { return str.charAt(0).toUpperCa
 export function slugify(str: string): string { return str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''); }
 export function randomId(prefix = 'id'): string { return prefix + '-' + Math.random().toString(36).slice(2, 8); }
 export function debounce<T extends (...args: unknown[]) => unknown>(fn: T, wait = 300) { let t: ReturnType<typeof setTimeout>; return (...args: Parameters<T>) => { clearTimeout(t); t = setTimeout(() => fn(...args), wait); }; }
+export function throttle<T extends (...args: unknown[]) => unknown>(fn: T, limit = 300) { let inThrottle = false; return (...args: Parameters<T>) => { if (!inThrottle) { fn(...args); inThrottle = true; setTimeout(() => inThrottle = false, limit); } }; }
