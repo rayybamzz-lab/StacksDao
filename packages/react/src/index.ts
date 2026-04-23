@@ -8,3 +8,4 @@ export const packageMetadata = {
 export function useWallet() { return { connected: false, address: null as string | null }; }
 export function useBalance() { return { balance: 0, loading: false }; }
 export function useNetwork() { return { network: 'mainnet', label: 'Mainnet' }; }
+export function useBlockHeight() { return { height: 0, loading: false }; }
