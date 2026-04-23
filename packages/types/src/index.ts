@@ -35,3 +35,4 @@ export type TransactionStatus = 'pending' | 'success' | 'error' | 'dropped';
 export interface FeeEstimate { fee: number; gasLimit: number; nonce: number; }
 export interface ContractCallOptions { contractAddress: string; contractName: string; functionName: string; functionArgs: unknown[]; network: string; }
 export interface ReadOnlyCallOptions { contractAddress: string; contractName: string; functionName: string; functionArgs: unknown[]; network: string; senderAddress: string; }
+export interface PostCondition { type: string; principal: string; condition: string; amount: number; }
