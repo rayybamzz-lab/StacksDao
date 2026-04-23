@@ -31,3 +31,4 @@ export function chunk<T>(arr: T[], size: number): T[][] { const res: T[][] = [];
 export function flatten<T>(arr: T[][]): T[] { return arr.reduce((acc, val) => acc.concat(val), []); }
 export function deepEqual(a: unknown, b: unknown): boolean { return JSON.stringify(a) === JSON.stringify(b); }
 export function memoize<T extends (...args: unknown[]) => unknown>(fn: T): T { const cache = new Map(); return ((...args: unknown[]) => { const key = JSON.stringify(args); if (cache.has(key)) return cache.get(key); const result = fn(...args); cache.set(key, result); return result; }) as T; }
+export function retry<T>(fn: () => Promise<T>, retries = 3): Promise<T> { return fn().catch(e => retries > 0 ? retry(fn, retries - 1) : Promise.reject(e)); }
