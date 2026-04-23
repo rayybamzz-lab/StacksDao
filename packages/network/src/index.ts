@@ -10,3 +10,4 @@ export const TESTNET_URL = 'https://api.testnet.hiro.so';
 export const EXPLORER_MAINNET = 'https://explorer.hiro.so';
 export const EXPLORER_TESTNET = 'https://explorer.hiro.so/?chain=testnet';
 export function getApiUrl(network: string): string { return network === 'testnet' ? TESTNET_URL : MAINNET_URL; }
+export function getExplorerTxUrl(txid: string, network: string): string { return getApiUrl(network).replace('/api', '/explorer') + '/txid/' + txid; }
