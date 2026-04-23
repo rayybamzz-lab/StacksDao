@@ -18,3 +18,4 @@ npm install @stacksdao/types
 npm run build
 ```
 # Types Package
+## Exports
