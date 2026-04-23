@@ -4,5 +4,5 @@ stacks_node_rpc_address = "https://stacks-node-api.testnet.stacks.co"
 deployment_fee_rate = 100
 
 [accounts.deployer]
-mnemonic = "*** REPLACE WITH YOUR TESTNET DEPLOYER WALLET MNEMONIC ***"
+mnemonic = "*** REPLACE WITH YOUR TESTNET DEPLOYER WALLET MNEMONIC OR USE settings/Testnet.local.toml ***"
 balance = 1_000_000_000_000
