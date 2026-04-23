@@ -1,0 +1,39 @@
+---
+id: 0
+name: Mainnet v2 deployment
+network: mainnet
+stacks-node: "https://stacks-node-api.mainnet.stacks.co"
+bitcoin-node: "https://blockstream.info/api"
+plan:
+  batches:
+    - id: 0
+      transactions:
+        - contract-publish:
+            contract-name: governance-token-v2
+            expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
+            cost: 1394000
+            path: contracts/governance-token-v2.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: governance-dao-v2
+            expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
+            cost: 3353500
+            path: contracts/governance-dao-v2.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: stacks-nft-v2
+            expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
+            cost: 1889000
+            path: contracts/stacks-nft-v2.clar
+            anchor-block-only: true
+            clarity-version: 2
+        - contract-publish:
+            contract-name: nft-staking-v2
+            expected-sender: SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2
+            cost: 2513000
+            path: contracts/nft-staking-v2.clar
+            anchor-block-only: true
+            clarity-version: 2
+      epoch: "2.5"
