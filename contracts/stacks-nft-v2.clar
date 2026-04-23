@@ -322,3 +322,11 @@
 (define-read-only (get-token-creator (token-id uint))
   (ok CONTRACT-OWNER)
 )
+
+;; @desc get-token-royalty
+;; @param token-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-token-royalty (token-id uint))
+  (ok u0)
+)
