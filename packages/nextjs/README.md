@@ -17,3 +17,4 @@ npm install @stacksdao/nextjs
 ```bash
 npm run build
 ```
+# NextJS Package
