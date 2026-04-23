@@ -27,3 +27,4 @@ export interface TransactionReceipt { txId: string; status: 'pending' | 'success
 export interface StakingSummary { totalStaked: number; totalRewards: number; apr: number; }
 export interface DaoSummary { activeProposals: number; totalProposals: number; totalVotes: number; }
 export interface NftSummary { minted: number; remaining: number; floorPrice?: number; }
+export interface TokenSummary { name: string; symbol: string; decimals: number; supply: number; price?: number; }
