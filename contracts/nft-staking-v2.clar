@@ -307,3 +307,14 @@
 (define-read-only (get-total-staker-count)
   (var-get total-staked)
 )
+
+;; @desc can-claim
+;; @param token-id uint
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (can-claim (token-id uint))
+  (match (map-get? staking-data token-id)
+    info (ok (> (- block-height (get last-claim-block info)) u0))
+    ERR-NOT-STAKED
+  )
+)
