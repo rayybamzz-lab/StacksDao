@@ -250,3 +250,10 @@
 (define-read-only (get-circulating-supply)
   (ok (ft-get-supply sdao-token))
 )
+
+;; @desc get-token-info-full
+;; @returns (response (tuple (name (string-ascii 32)) (symbol (string-ascii 10)) (decimals uint) (supply uint) (uri (optional (string-utf8 256)))) none)
+;; Read-only context viewer
+(define-read-only (get-token-info-full)
+  (ok { name: "StacksDAO Token", symbol: "SDAO", decimals: u6, supply: (ft-get-supply sdao-token), uri: (var-get token-uri) })
+)
