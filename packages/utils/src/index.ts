@@ -39,3 +39,4 @@ export function getYearlyRewards(ratePerBlock: number): number { return ratePerB
 export function calculateApr(rewards: number, principal: number): number { return principal > 0 ? (rewards / principal) * 100 : 0; }
 export function formatPercentage(value: number, decimals = 2): string { return value.toFixed(decimals) + '%'; }
 export function parsePrincipal(str: string): { prefix: string; hash: string } { return { prefix: str.slice(0, 2), hash: str.slice(2) }; }
+export function isContractPrincipal(p: string): boolean { return p.includes('.'); }
