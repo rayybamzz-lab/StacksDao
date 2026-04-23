@@ -10,3 +10,4 @@ export class InsufficientBalanceError extends StacksDaoError { constructor() { s
 export class NotAuthorizedError extends StacksDaoError { constructor() { super('Not authorized'); this.name = 'NotAuthorizedError'; } }
 export class ProposalNotFoundError extends StacksDaoError { constructor(id: number) { super("Proposal " + id + " not found"); this.name = 'ProposalNotFoundError'; } }
 export class AlreadyVotedError extends StacksDaoError { constructor() { super('Already voted on this proposal'); this.name = 'AlreadyVotedError'; } }
+export class VotingEndedError extends StacksDaoError { constructor() { super('Voting period has ended'); this.name = 'VotingEndedError'; } }
