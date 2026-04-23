@@ -17,3 +17,4 @@ npm install @stacksdao/cli
 ```bash
 npm run build
 ```
+# CLI Package
