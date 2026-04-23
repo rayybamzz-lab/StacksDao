@@ -13,3 +13,4 @@ export class AlreadyVotedError extends StacksDaoError { constructor() { super('A
 export class VotingEndedError extends StacksDaoError { constructor() { super('Voting period has ended'); this.name = 'VotingEndedError'; } }
 export class QuorumNotMetError extends StacksDaoError { constructor() { super('Quorum not met'); this.name = 'QuorumNotMetError'; } }
 export class ProposalRejectedError extends StacksDaoError { constructor() { super('Proposal was rejected'); this.name = 'ProposalRejectedError'; } }
+export class AlreadyExecutedError extends StacksDaoError { constructor() { super('Proposal already executed'); this.name = 'AlreadyExecutedError'; } }
