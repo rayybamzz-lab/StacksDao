@@ -32,3 +32,4 @@ export const CONTRACT_IDENTIFIERS = {
     GOVERNANCE_DAO: `${CONTRACT_ADDRESS}.${CONTRACTS.GOVERNANCE_DAO}`
 } as const;
 export function cn(...classes: (string | false | undefined)[]) { return classes.filter(Boolean).join(' '); }
+export const EXPLORER_TX_URL = (txid: string) => 'https://explorer.hiro.so/txid/' + txid + '?chain=mainnet';
