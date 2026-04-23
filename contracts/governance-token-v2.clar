@@ -219,3 +219,11 @@
 (define-read-only (can-burn (addr principal))
   (ok true)
 )
+
+;; @desc get-balance-or-zero
+;; @param account principal
+;; @returns uint
+;; Read-only context viewer
+(define-read-only (get-balance-or-zero (account principal))
+  (ft-get-balance sdao-token account)
+)
