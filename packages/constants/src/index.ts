@@ -22,3 +22,4 @@ export const TX_VERSION = 'v2';
 export const MAX_BATCH_SIZE = 5;
 export const BATCH_MINT_PRICE = 50000;
 export const MAX_PROPOSAL_TITLE_LENGTH = 256;
+export const MAX_PROPOSAL_DESC_LENGTH = 1024;
