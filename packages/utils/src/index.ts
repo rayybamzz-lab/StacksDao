@@ -48,3 +48,4 @@ export function clampUint(value: number): number { return Math.max(0, Math.min(v
 export function toMicro(amount: number, decimals = 6): number { return Math.round(amount * Math.pow(10, decimals)); }
 export function fromMicro(amount: number, decimals = 6): number { return amount / Math.pow(10, decimals); }
 export function formatCompactNumber(num: number): string { return Intl.NumberFormat('en', { notation: 'compact' }).format(num); }
+export function formatCurrency(amount: number, currency = 'USD'): string { return new Intl.NumberFormat('en', { style: 'currency', currency }).format(amount); }
