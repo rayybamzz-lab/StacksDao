@@ -347,3 +347,10 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc get-contract-metadata
+;; @returns (response (tuple (version (string-ascii 5)) (reward-per-block uint)) uint)
+;; Read-only context viewer
+(define-read-only (get-contract-metadata)
+  (ok { version: "v2.0", reward-per-block: REWARD-PER-BLOCK })
+)
