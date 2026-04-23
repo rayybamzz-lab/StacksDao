@@ -18,3 +18,4 @@ npm install @stacksdao/events
 npm run build
 ```
 ## Events
+## Type Guards
