@@ -270,3 +270,11 @@
 (define-read-only (is-owner (token-id uint) (owner principal))
   (ok (is-eq (some owner) (nft-get-owner? stacksdao-nft token-id)))
 )
+
+;; @desc get-batch-mint-price
+;; @param count uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-batch-mint-price (count uint))
+  (ok (* count MINT-PRICE))
+)
