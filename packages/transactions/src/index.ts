@@ -8,3 +8,4 @@ export const packageMetadata = {
 export interface TxOptions { postConditionMode?: 'allow' | 'deny'; postConditions?: unknown[]; }
 export function buildPostCondition(amount: number, sender: string, asset: string): string { return sender + ' sends ' + amount + ' ' + asset; }
 export function encodeMemo(memo: string): string { return memo.slice(0, 34); }
+export function decodeMemo(memo: string): string { return memo; }
