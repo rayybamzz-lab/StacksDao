@@ -17,3 +17,4 @@ npm install @stacksdao/queries
 ```bash
 npm run build
 ```
+# Queries Package
