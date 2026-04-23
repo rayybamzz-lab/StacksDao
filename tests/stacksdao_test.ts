@@ -189,7 +189,7 @@ Clarinet.test({
             Tx.contractCall(
                 "governance-token-v2",
                 "set-authorized-minter",
-                [types.principal(`${deployer.address}.nft-staking`)],
+                [types.principal(`${deployer.address}.nft-staking-v2`)],
                 deployer.address
             ),
             // wallet1 mints an NFT
