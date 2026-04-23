@@ -11,3 +11,4 @@ export class NotAuthorizedError extends StacksDaoError { constructor() { super('
 export class ProposalNotFoundError extends StacksDaoError { constructor(id: number) { super("Proposal " + id + " not found"); this.name = 'ProposalNotFoundError'; } }
 export class AlreadyVotedError extends StacksDaoError { constructor() { super('Already voted on this proposal'); this.name = 'AlreadyVotedError'; } }
 export class VotingEndedError extends StacksDaoError { constructor() { super('Voting period has ended'); this.name = 'VotingEndedError'; } }
+export class QuorumNotMetError extends StacksDaoError { constructor() { super('Quorum not met'); this.name = 'QuorumNotMetError'; } }
