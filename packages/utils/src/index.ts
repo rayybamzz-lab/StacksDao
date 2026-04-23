@@ -51,3 +51,4 @@ export function formatCompactNumber(num: number): string { return Intl.NumberFor
 export function formatCurrency(amount: number, currency = 'USD'): string { return new Intl.NumberFormat('en', { style: 'currency', currency }).format(amount); }
 export function timeAgo(date: Date): string { const s = Math.floor((Date.now() - date.getTime()) / 1000); return s < 60 ? s + 's ago' : s < 3600 ? Math.floor(s / 60) + 'm ago' : s < 86400 ? Math.floor(s / 3600) + 'h ago' : Math.floor(s / 86400) + 'd ago'; }
 export function addDays(date: Date, days: number): Date { const r = new Date(date); r.setDate(r.getDate() + days); return r; }
+export function startOfDay(date: Date): Date { const r = new Date(date); r.setHours(0, 0, 0, 0); return r; }
