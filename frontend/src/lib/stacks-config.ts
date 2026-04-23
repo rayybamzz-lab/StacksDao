@@ -56,3 +56,4 @@ export function useToggle(initial = false) { const [on, setOn] = React.useState(
 export function useHover() { const [hovered, setHovered] = React.useState(false); return { hovered, onMouseEnter: () => setHovered(true), onMouseLeave: () => setHovered(false) }; }
 export function useFocus() { const [focused, setFocused] = React.useState(false); return { focused, onFocus: () => setFocused(true), onBlur: () => setFocused(false) }; }
 export function useOnline() { const [online, setOnline] = React.useState(true); return online; }
+export function useWindowSize() { return { width: 0, height: 0 }; }
