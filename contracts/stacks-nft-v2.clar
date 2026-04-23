@@ -300,3 +300,10 @@
 (define-read-only (get-token-info (token-id uint))
   (ok { owner: (nft-get-owner? stacksdao-nft token-id), uri: (some (var-get base-uri)) })
 )
+
+;; @desc is-mint-paused
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (is-mint-paused)
+  (ok (var-get paused))
+)
