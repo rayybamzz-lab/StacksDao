@@ -551,3 +551,15 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-vote-direction
+;; @param proposal-id uint
+;; @param voter principal
+;; @returns (response (optional bool) uint)
+;; Read-only context viewer
+(define-read-only (get-vote-direction (proposal-id uint) (voter principal))
+  (match (map-get? votes { proposal-id: proposal-id, voter: voter })
+    record (ok (some (get in-favor record)))
+    (ok none)
+  )
+)
