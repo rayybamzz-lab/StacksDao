@@ -239,3 +239,10 @@
 (define-read-only (get-remaining-supply)
   (ok (- MAX-SUPPLY (var-get last-token-id)))
 )
+
+;; @desc get-token-count
+;; @returns uint
+;; Read-only context viewer
+(define-read-only (get-token-count)
+  (var-get last-token-id)
+)
