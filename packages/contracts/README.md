@@ -17,3 +17,4 @@ npm install @stacksdao/contracts
 ```bash
 npm run build
 ```
+# Contracts Package
