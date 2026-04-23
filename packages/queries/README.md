@@ -18,3 +18,4 @@ npm install @stacksdao/queries
 npm run build
 ```
 # Queries Package
+## Pagination
