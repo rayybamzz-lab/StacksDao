@@ -17,3 +17,4 @@ export function usePendingRewards(tokenId: number) { return { rewards: 0, tokenI
 export function useTotalStaked() { return { total: 0, loading: false }; }
 export function useProposalCount() { return { count: 0, loading: false }; }
 export function useQuorum() { return { quorum: 500000000, loading: false }; }
+export function useVotingPeriod() { return { period: 144, loading: false }; }
