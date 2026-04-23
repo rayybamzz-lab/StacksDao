@@ -38,3 +38,4 @@ export function useVoteTx(proposalId: number, direction: boolean) { return { sub
 export function useExecuteTx(proposalId: number) { return { submit: async () => {}, loading: false }; }
 export function useCreateProposalTx() { return { submit: async (_title: string, _desc: string) => {}, loading: false }; }
 export function useMintTx() { return { submit: async () => {}, loading: false }; }
+export function useBatchMintTx(count: number) { return { submit: async () => {}, loading: false }; }
