@@ -203,3 +203,11 @@
 (define-read-only (get-token-summary)
   (ok { name: "StacksDAO Token", symbol: "SDAO", decimals: u6, supply: (ft-get-supply sdao-token) })
 )
+
+;; @desc can-mint
+;; @param addr principal
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (can-mint (addr principal))
+  (ok (or (is-eq addr CONTRACT-OWNER) (is-eq (some addr) (var-get authorized-minter))))
+)
