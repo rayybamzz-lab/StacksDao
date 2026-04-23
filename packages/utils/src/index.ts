@@ -47,3 +47,4 @@ export function safeDivide(a: number, b: number): number { return b === 0 ? 0 : 
 export function clampUint(value: number): number { return Math.max(0, Math.min(value, Number.MAX_SAFE_INTEGER)); }
 export function toMicro(amount: number, decimals = 6): number { return Math.round(amount * Math.pow(10, decimals)); }
 export function fromMicro(amount: number, decimals = 6): number { return amount / Math.pow(10, decimals); }
+export function formatCompactNumber(num: number): string { return Intl.NumberFormat('en', { notation: 'compact' }).format(num); }
