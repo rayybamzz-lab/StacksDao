@@ -445,6 +445,31 @@ Clarinet.test({
 });
 
 Clarinet.test({
+    name: "governance-token: exposes the current authorized minter",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+
+        let block = chain.mineBlock([
+            Tx.contractCall(
+                "governance-token-v2",
+                "set-authorized-minter",
+                [types.principal(`${deployer.address}.nft-staking-v2`)],
+                deployer.address
+            )
+        ]);
+        block.receipts[0].result.expectOk().expectBool(true);
+
+        let minter = chain.callReadOnlyFn(
+            "governance-token-v2",
+            "get-authorized-minter",
+            [],
+            deployer.address
+        );
+        minter.result.expectOk().expectSome().expectPrincipal(`${deployer.address}.nft-staking-v2`);
+    },
+});
+
+Clarinet.test({
     name: "stacks-nft: only owner can set base URI",
     async fn(chain: Chain, accounts: Map<string, Account>) {
         const wallet1 = accounts.get("wallet_1")!;
