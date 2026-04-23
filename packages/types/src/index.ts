@@ -32,3 +32,4 @@ export interface ProposalSummary { id: number; title: string; status: ProposalSt
 export interface UserActivity { address: string; proposalsCreated: number; votesCast: number; nftsStaked: number; }
 export interface PriceFeed { asset: string; price: number; timestamp: number; source: string; }
 export type TransactionStatus = 'pending' | 'success' | 'error' | 'dropped';
+export interface FeeEstimate { fee: number; gasLimit: number; nonce: number; }
