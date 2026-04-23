@@ -17,3 +17,4 @@ export type VoteDirection = 'for' | 'against';
 export interface VoteRecord { proposalId: number; voter: string; amount: number; direction: VoteDirection; }
 export type AppTheme = typeof APP_THEMES[number];
 export interface ThemeConfig { theme: AppTheme; system: boolean; }
+export interface PaginationResult<T> { data: T[]; total: number; page: number; limit: number; hasMore: boolean; }
