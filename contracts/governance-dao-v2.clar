@@ -416,3 +416,10 @@
 (define-read-only (has-voted (proposal-id uint) (voter principal))
   (ok (is-some (map-get? votes { proposal-id: proposal-id, voter: voter })))
 )
+
+;; @desc get-total-proposals
+;; @returns uint
+;; Read-only context viewer
+(define-read-only (get-total-proposals)
+  (var-get proposal-count)
+)
