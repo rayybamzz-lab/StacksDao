@@ -1,6 +1,9 @@
 # Build artifacts
 .cache/
 node_modules/
+frontend/node_modules/
+packages/*/dist/
+packages/*/tsconfig.tsbuildinfo
 
 # Clarinet devnet state
 .clarinet/
@@ -8,20 +11,15 @@ node_modules/
 # Environment / secrets - NEVER commit real mnemonics
 .env
 .env.local
+*.env
+test-wallet.local.json
+scripts/test-wallet.local.json
+settings/*.local.toml
+deployments/*.local.yaml
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# Settings and Secrets
-settings/Mainnet.toml
-settings/Testnet.toml
-*.env
-deployments/default.mainnet-plan.yaml
-
-# Scripts with test wallet data
-scripts/
-test-wallet.json
-
 # Next.js build output
-.next/
+frontend/.next/
