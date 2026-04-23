@@ -329,3 +329,14 @@
 (define-read-only (get-quorum)
   (ok QUORUM)
 )
+
+;; @desc get-proposal-tally
+;; @param proposal-id uint
+;; @returns (response (tuple (votes-for uint) (votes-against uint) (total uint)) uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-tally (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok { votes-for: (get votes-for proposal), votes-against: (get votes-against proposal), total: (get total-votes proposal) })
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
