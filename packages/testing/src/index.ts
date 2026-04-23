@@ -7,3 +7,4 @@ export const packageMetadata = {
 } as const;
 export function createTestAccount(seed: string) { return { address: 'SP' + seed, key: seed }; }
 export function mockBlock(height: number) { return { height, time: Date.now() }; }
+export function mockTx(status: 'success' | 'error') { return { txId: '0x' + Math.random().toString(36).slice(2), status }; }
