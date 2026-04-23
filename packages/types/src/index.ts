@@ -29,3 +29,4 @@ export interface DaoSummary { activeProposals: number; totalProposals: number; t
 export interface NftSummary { minted: number; remaining: number; floorPrice?: number; }
 export interface TokenSummary { name: string; symbol: string; decimals: number; supply: number; price?: number; }
 export interface ProposalSummary { id: number; title: string; status: ProposalStatus; votesFor: number; votesAgainst: number; }
+export interface UserActivity { address: string; proposalsCreated: number; votesCast: number; nftsStaked: number; }
