@@ -42,3 +42,4 @@ export function isTestnet(network: string): boolean { return network === 'testne
 export const SUPPORTED_WALLETS = ['leather', 'xverse'] as const;
 export type SupportedWallet = typeof SUPPORTED_WALLETS[number];
 export function useMounted() { const [mounted, setMounted] = React.useState(false); React.useEffect(() => setMounted(true), []); return mounted; }
+export function useCopyToClipboard() { return async (text: string) => { try { await navigator.clipboard.writeText(text); return true; } catch { return false; } }; }
