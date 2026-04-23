@@ -36,3 +36,4 @@ export function timeout<T>(promise: Promise<T>, ms: number): Promise<T> { return
 export function daysToBlocks(days: number): number { return days * 144; }
 export function blocksToDays(blocks: number): number { return Math.floor(blocks / 144); }
 export function getYearlyRewards(ratePerBlock: number): number { return ratePerBlock * 144 * 365; }
+export function calculateApr(rewards: number, principal: number): number { return principal > 0 ? (rewards / principal) * 100 : 0; }
