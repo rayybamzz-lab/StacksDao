@@ -518,14 +518,3 @@ Clarinet.test({
         block.receipts[0].result.expectErr().expectUint(402);
     },
 });
-
-Clarinet.test({
-    name: "governance-dao: only owner can call authorized-only helpers (theoretical)",
-    async fn(chain: Chain, accounts: Map<string, Account>) {
-        const wallet1 = accounts.get("wallet_1")!;
-        // Testing private function access via public wrapper if we ever add one, 
-        // for now we just verify the ERR-NOT-AUTHORIZED exists.
-        // This is a placeholder for future governance expansion.
-        assertEquals(true, true);
-    },
-});
