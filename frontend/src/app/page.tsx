@@ -24,6 +24,10 @@ import {
 } from 'lucide-react';
 import ProposalCard from '@/components/ProposalCard';
 
+function getErrorMessage(error: unknown) {
+  return error instanceof Error ? error.message : 'Unknown error';
+}
+
 /**
  * Home
  * Functional UI component / utility
@@ -49,8 +53,8 @@ export default function Home() {
         functionName: 'mint',
         functionArgs: [],
         postConditionMode: PostConditionMode.Deny,
-        postConditions: postConditions as any,
-        network: NETWORK as any,
+        postConditions,
+        network: NETWORK,
         onFinish: (data) => {
           toast.success('Successfully broadcasted mint transaction!');
           console.log('Mint TXID:', data.txId);
@@ -61,9 +65,9 @@ export default function Home() {
           setIsMinting(false);
         },
       });
-    } catch (e: any) {
-      console.error('[Mint] Error:', e);
-      const errorMessage = e.message || 'Transaction failed to broadcast';
+    } catch (error: unknown) {
+      console.error('[Mint] Error:', error);
+      const errorMessage = getErrorMessage(error);
       toast.error(`Minting Failed: ${errorMessage}`);
       setIsMinting(false);
     }
@@ -90,9 +94,9 @@ export default function Home() {
           toast.error('Voting cancelled');
         },
       });
-    } catch (error) {
+    } catch (error: unknown) {
       console.error('Voting error:', error);
-      toast.error('Failed to broadcast vote');
+      toast.error(`Failed to broadcast vote: ${getErrorMessage(error)}`);
     }
   };
 
@@ -104,7 +108,7 @@ export default function Home() {
         contractName: CONTRACTS.GOVERNANCE_DAO,
         functionName: 'execute-proposal',
         functionArgs: [Cl.uint(proposalId)],
-        network: NETWORK as any,
+        network: NETWORK,
         onFinish: (data) => {
           toast.success('Successfully broadcasted execution transaction!');
           console.log('Execute TXID:', data.txId);
@@ -113,9 +117,9 @@ export default function Home() {
           toast('Execution cancelled', { icon: 'ℹ️' });
         },
       });
-    } catch (e: any) {
-      console.error('[Execute] Error:', e);
-      toast.error(`Execution Failed: ${e.message || 'Unknown error'}`);
+    } catch (error: unknown) {
+      console.error('[Execute] Error:', error);
+      toast.error(`Execution Failed: ${getErrorMessage(error)}`);
     }
   };
 
