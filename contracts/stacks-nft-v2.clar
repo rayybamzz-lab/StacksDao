@@ -196,7 +196,10 @@
 ;; @returns (response (optional (string-ascii 256)) uint) - Returns the token metadata URI
 ;; Read-only context viewer
 (define-read-only (get-token-uri (token-id uint))
-  (ok (some (var-get base-uri)))
+  (match (nft-get-owner? stacksdao-nft token-id)
+    owner (ok (some (var-get base-uri)))
+    (ok none)
+  )
 )
 
 ;; ---------------------
