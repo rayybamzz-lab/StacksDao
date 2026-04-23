@@ -7,3 +7,4 @@ export const packageMetadata = {
 } as const;
 export interface QueryOptions { limit?: number; offset?: number; order?: 'asc' | 'desc'; }
 export function buildPagination(limit = 20, offset = 0): QueryOptions { return { limit, offset }; }
+export function buildQueryFilter(field: string, value: string): string { return field + '=' + value; }
