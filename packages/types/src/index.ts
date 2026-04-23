@@ -33,3 +33,4 @@ export interface UserActivity { address: string; proposalsCreated: number; votes
 export interface PriceFeed { asset: string; price: number; timestamp: number; source: string; }
 export type TransactionStatus = 'pending' | 'success' | 'error' | 'dropped';
 export interface FeeEstimate { fee: number; gasLimit: number; nonce: number; }
+export interface ContractCallOptions { contractAddress: string; contractName: string; functionName: string; functionArgs: unknown[]; network: string; }
