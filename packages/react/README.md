@@ -17,3 +17,4 @@ npm install @stacksdao/react
 ```bash
 npm run build
 ```
+# React Package
