@@ -22,3 +22,4 @@ export function toSnakeCase(str: string): string { return str.replace(/[A-Z]/g, 
 export function toPascalCase(str: string): string { return str.replace(/^\w|_\w/g, m => m.replace('_', '').toUpperCase()); }
 export function capitalize(str: string): string { return str.charAt(0).toUpperCase() + str.slice(1); }
 export function slugify(str: string): string { return str.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, ''); }
+export function randomId(prefix = 'id'): string { return prefix + '-' + Math.random().toString(36).slice(2, 8); }
