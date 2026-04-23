@@ -17,3 +17,4 @@ npm install @stacksdao/logger
 ```bash
 npm run build
 ```
+# Logger Package
