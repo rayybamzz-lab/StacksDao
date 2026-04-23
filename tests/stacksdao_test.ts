@@ -546,3 +546,12 @@ Clarinet.test({
         status.result.expectOk().expectAscii("active");
     },
 });
+
+Clarinet.test({
+    name: "stacks-nft: batch mint price is correct",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let price = chain.callReadOnlyFn("stacks-nft-v2", "get-batch-mint-price", [types.uint(3)], deployer.address);
+        price.result.expectOk().expectUint(30000);
+    },
+});
