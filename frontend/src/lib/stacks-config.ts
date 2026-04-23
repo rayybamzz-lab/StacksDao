@@ -44,3 +44,4 @@ export type SupportedWallet = typeof SUPPORTED_WALLETS[number];
 export function useMounted() { const [mounted, setMounted] = React.useState(false); React.useEffect(() => setMounted(true), []); return mounted; }
 export function useCopyToClipboard() { return async (text: string) => { try { await navigator.clipboard.writeText(text); return true; } catch { return false; } }; }
 export function useDebounce<T>(value: T, delay = 300): T { const [v, setV] = React.useState(value); React.useEffect(() => { const t = setTimeout(() => setV(value), delay); return () => clearTimeout(t); }, [value, delay]); return v; }
+export function useLocalStorage<T>(key: string, initial: T): [T, (v: T) => void] { const [val, setVal] = React.useState<T>(initial); return [val, setVal]; }
