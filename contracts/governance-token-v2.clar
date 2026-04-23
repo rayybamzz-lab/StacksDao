@@ -211,3 +211,11 @@
 (define-read-only (can-mint (addr principal))
   (ok (or (is-eq addr CONTRACT-OWNER) (is-eq (some addr) (var-get authorized-minter))))
 )
+
+;; @desc can-burn
+;; @param addr principal
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (can-burn (addr principal))
+  (ok true)
+)
