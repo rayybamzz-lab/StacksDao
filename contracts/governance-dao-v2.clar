@@ -141,6 +141,8 @@
     (asserts! (> (len title) u0) ERR-INVALID-TITLE)
     ;; Validate description
     (asserts! (> (len description) u0) ERR-INVALID-DESCRIPTION)
+    ;; Validate proposer balance threshold
+    (asserts! (>= proposer-balance MIN-PROPOSAL-BALANCE) ERR-INSUFFICIENT-BALANCE)
 
     ;; Create the proposal
     (map-set proposals new-id {
