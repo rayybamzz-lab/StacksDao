@@ -532,3 +532,17 @@ Clarinet.test({
         block.receipts[0].result.expectErr().expectUint(402);
     },
 });
+
+Clarinet.test({
+    name: "governance-dao: get-proposal-status returns active for new proposal",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        const wallet1 = accounts.get("wallet_1")!;
+        chain.mineBlock([
+            Tx.contractCall("governance-token-v2", "mint", [types.uint(200000000), types.principal(wallet1.address)], deployer.address),
+            Tx.contractCall("governance-dao-v2", "create-proposal", [types.utf8("Test"), types.utf8("Test")], wallet1.address),
+        ]);
+        let status = chain.callReadOnlyFn("governance-dao-v2", "get-proposal-status", [types.uint(1)], deployer.address);
+        status.result.expectOk().expectAscii("active");
+    },
+});
