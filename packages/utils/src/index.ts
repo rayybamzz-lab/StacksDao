@@ -34,3 +34,4 @@ export function memoize<T extends (...args: unknown[]) => unknown>(fn: T): T { c
 export function retry<T>(fn: () => Promise<T>, retries = 3): Promise<T> { return fn().catch(e => retries > 0 ? retry(fn, retries - 1) : Promise.reject(e)); }
 export function timeout<T>(promise: Promise<T>, ms: number): Promise<T> { return Promise.race([promise, new Promise<T>((_, reject) => setTimeout(() => reject(new Error('Timeout')), ms))]); }
 export function daysToBlocks(days: number): number { return days * 144; }
+export function blocksToDays(blocks: number): number { return Math.floor(blocks / 144); }
