@@ -40,3 +40,4 @@ export function useCreateProposalTx() { return { submit: async (_title: string, 
 export function useMintTx() { return { submit: async () => {}, loading: false }; }
 export function useBatchMintTx(count: number) { return { submit: async () => {}, loading: false }; }
 export function useTransferTx() { return { submit: async (_amount: number, _to: string) => {}, loading: false }; }
+export function useBurnTx() { return { submit: async (_amount: number) => {}, loading: false }; }
