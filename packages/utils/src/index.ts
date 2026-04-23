@@ -57,3 +57,4 @@ export function isSameDay(a: Date, b: Date): boolean { return a.toDateString() =
 export function generateNonce(): string { return Math.random().toString(36).slice(2, 10); }
 export function hashString(str: string): number { let h = 0; for (let i = 0; i < str.length; i++) h = (h << 5) - h + str.charCodeAt(i); return h; }
 export function pickRandom<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
+export function shuffleArray<T>(arr: T[]): T[] { const a = [...arr]; for (let i = a.length - 1; i > 0; i--) { const j = Math.floor(Math.random() * (i + 1)); [a[i], a[j]] = [a[j], a[i]]; } return a; }
