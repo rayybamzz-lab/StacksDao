@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function useWallet() { return { connected: false, address: null as string | null }; }
+export function useBalance() { return { balance: 0, loading: false }; }
