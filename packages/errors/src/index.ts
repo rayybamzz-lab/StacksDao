@@ -12,3 +12,4 @@ export class ProposalNotFoundError extends StacksDaoError { constructor(id: numb
 export class AlreadyVotedError extends StacksDaoError { constructor() { super('Already voted on this proposal'); this.name = 'AlreadyVotedError'; } }
 export class VotingEndedError extends StacksDaoError { constructor() { super('Voting period has ended'); this.name = 'VotingEndedError'; } }
 export class QuorumNotMetError extends StacksDaoError { constructor() { super('Quorum not met'); this.name = 'QuorumNotMetError'; } }
+export class ProposalRejectedError extends StacksDaoError { constructor() { super('Proposal was rejected'); this.name = 'ProposalRejectedError'; } }
