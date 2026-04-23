@@ -246,3 +246,11 @@
 (define-read-only (get-token-count)
   (var-get last-token-id)
 )
+
+;; @desc exists
+;; @param token-id uint
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (exists (token-id uint))
+  (ok (is-some (nft-get-owner? stacksdao-nft token-id)))
+)
