@@ -41,3 +41,4 @@ export function isMainnet(network: string): boolean { return network === 'mainne
 export function isTestnet(network: string): boolean { return network === 'testnet'; }
 export const SUPPORTED_WALLETS = ['leather', 'xverse'] as const;
 export type SupportedWallet = typeof SUPPORTED_WALLETS[number];
+export function useMounted() { const [mounted, setMounted] = React.useState(false); React.useEffect(() => setMounted(true), []); return mounted; }
