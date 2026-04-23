@@ -14,3 +14,4 @@ export const MINT_PRICE_MICRO_STX = 10_000;
 export const MAX_SUPPLY = 10_000;
 export const VOTING_PERIOD_BLOCKS = 144;
 export const MIN_PROPOSAL_BALANCE_MICRO = 100_000_000;
+export const QUORUM_MICRO = 500_000_000;
