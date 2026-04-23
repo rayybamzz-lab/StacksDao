@@ -213,16 +213,19 @@
 ;; @returns (response uint uint) - Returns the rewards accrued but not claimed
 ;; Read-only context viewer
 (define-read-only (get-pending-rewards (token-id uint))
-  (match (map-get? staking-data token-id)
-    stake-info
-      (let
-        (
-          (last-claim (get last-claim-block stake-info))
-          (blocks-staked (- block-height last-claim))
+  (begin
+    (asserts! (> token-id u0) ERR-INVALID-TOKEN-ID)
+    (match (map-get? staking-data token-id)
+      stake-info
+        (let
+          (
+            (last-claim (get last-claim-block stake-info))
+            (blocks-staked (- block-height last-claim))
+          )
+          (ok (* blocks-staked REWARD-PER-BLOCK))
         )
-        (ok (* blocks-staked REWARD-PER-BLOCK))
-      )
-    (err u0)
+      (err u0)
+    )
   )
 )
 
