@@ -28,3 +28,4 @@ export function useStakerBalance(address: string) { return { balance: 0, address
 export function useTotalSupply() { return { supply: 0, loading: false }; }
 export function useTokenDecimals() { return { decimals: 6, loading: false }; }
 export function useTokenSymbol() { return { symbol: 'SDAO', loading: false }; }
+export function useTokenName() { return { name: 'StacksDAO Token', loading: false }; }
