@@ -514,3 +514,17 @@
 (define-read-only (get-executed-proposals)
   (ok (list))
 )
+
+;; @desc get-proposal-approval-rate
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-approval-rate (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal
+      (let ((total (+ (get votes-for proposal) (get votes-against proposal))))
+        (ok (if (> total u0) (/ (* (get votes-for proposal) u100) total) u0))
+      )
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
