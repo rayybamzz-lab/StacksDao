@@ -20,3 +20,4 @@ export function isServer(): boolean { return typeof window === 'undefined'; }
 export function toKebabCase(str: string): string { return str.replace(/[A-Z]/g, m => '-' + m.toLowerCase()); }
 export function toSnakeCase(str: string): string { return str.replace(/[A-Z]/g, m => '_' + m.toLowerCase()); }
 export function toPascalCase(str: string): string { return str.replace(/^\w|_\w/g, m => m.replace('_', '').toUpperCase()); }
+export function capitalize(str: string): string { return str.charAt(0).toUpperCase() + str.slice(1); }
