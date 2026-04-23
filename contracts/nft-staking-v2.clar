@@ -114,44 +114,47 @@
 ;; @returns (response uint uint) - Returns the total rewards minted on unstake
 ;; State-modifying public function
 (define-public (unstake-nft (token-id uint))
-  (let
-    (
-      (stake-info (unwrap! (map-get? staking-data token-id) ERR-NOT-STAKED))
-      (staker (get staker stake-info))
-      (last-claim (get last-claim-block stake-info))
-      (blocks-staked (- block-height last-claim))
-      (rewards (* blocks-staked REWARD-PER-BLOCK))
+  (begin
+    (asserts! (> token-id u0) ERR-INVALID-TOKEN-ID)
+    (let
+      (
+        (stake-info (unwrap! (map-get? staking-data token-id) ERR-NOT-STAKED))
+        (staker (get staker stake-info))
+        (last-claim (get last-claim-block stake-info))
+        (blocks-staked (- block-height last-claim))
+        (rewards (* blocks-staked REWARD-PER-BLOCK))
+      )
+      ;; --------------------------------------------------------------------------
+      ;; Reward Calculation & Balance Updates
+      ;; --------------------------------------------------------------------------
+      ;; Calculates pending rewards based on blocks elapsed since last claim.
+      ;; 10 SDAO per block (10,000,000 micro-SDAO).
+      ;; --------------------------------------------------------------------------
+
+      ;; Only the original staker can unstake
+      (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
+
+      ;; Mint any pending rewards
+      (if (> rewards u0)
+        (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
+        true
+      )
+
+      ;; Return NFT to staker
+      (try! (as-contract (contract-call? .stacks-nft-v2 transfer token-id tx-sender staker)))
+
+      ;; Clean up staking data
+      (map-delete staking-data token-id)
+
+      ;; Update balances
+      (map-set staker-balance tx-sender
+        (- (default-to u0 (map-get? staker-balance tx-sender)) u1)
+      )
+      (var-set total-staked (- (var-get total-staked) u1))
+
+      (print { event: "nft-unstaked", token-id: token-id, staker: tx-sender, rewards: rewards })
+      (ok rewards)
     )
-    ;; --------------------------------------------------------------------------
-    ;; Reward Calculation & Balance Updates
-    ;; --------------------------------------------------------------------------
-    ;; Calculates pending rewards based on blocks elapsed since last claim.
-    ;; 10 SDAO per block (10,000,000 micro-SDAO).
-    ;; --------------------------------------------------------------------------
-    
-    ;; Only the original staker can unstake
-    (asserts! (is-eq tx-sender staker) ERR-NOT-OWNER)
-
-    ;; Mint any pending rewards
-    (if (> rewards u0)
-      (try! (contract-call? .governance-token-v2 mint rewards tx-sender))
-      true
-    )
-
-    ;; Return NFT to staker
-    (try! (as-contract (contract-call? .stacks-nft-v2 transfer token-id tx-sender staker)))
-
-    ;; Clean up staking data
-    (map-delete staking-data token-id)
-
-    ;; Update balances
-    (map-set staker-balance tx-sender
-      (- (default-to u0 (map-get? staker-balance tx-sender)) u1)
-    )
-    (var-set total-staked (- (var-get total-staked) u1))
-
-    (print { event: "nft-unstaked", token-id: token-id, staker: tx-sender, rewards: rewards })
-    (ok rewards)
   )
 )
 
