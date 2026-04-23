@@ -278,3 +278,10 @@
 (define-read-only (get-batch-mint-price (count uint))
   (ok (* count MINT-PRICE))
 )
+
+;; @desc get-contract-metadata
+;; @returns (response (tuple (name (string-ascii 32)) (symbol (string-ascii 10)) (base-uri (string-ascii 256))) uint)
+;; Read-only context viewer
+(define-read-only (get-contract-metadata)
+  (ok { name: "StacksDAO NFT", symbol: "SDAO-NFT", base-uri: (var-get base-uri) })
+)
