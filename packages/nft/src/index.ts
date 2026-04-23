@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function buildMintArgs(): string[] { return []; }
+export function buildBatchMintArgs(count: number): (string | number)[] { return [count]; }
