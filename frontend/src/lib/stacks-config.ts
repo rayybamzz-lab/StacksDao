@@ -40,3 +40,4 @@ export function truncateMiddle(str: string, start = 6, end = 4): string { return
 export function isMainnet(network: string): boolean { return network === 'mainnet'; }
 export function isTestnet(network: string): boolean { return network === 'testnet'; }
 export const SUPPORTED_WALLETS = ['leather', 'xverse'] as const;
+export type SupportedWallet = typeof SUPPORTED_WALLETS[number];
