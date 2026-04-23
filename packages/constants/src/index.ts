@@ -35,3 +35,4 @@ export const MAX_PAGE_SIZE = 100;
 export const TOKEN_DECIMAL_DISPLAY = 6;
 export const STX_DECIMAL_DISPLAY = 6;
 export const PROPOSAL_STATUS_COLORS = { active: 'indigo', passed: 'emerald', rejected: 'rose', executed: 'amber' } as const;
+export const REWARD_DISPLAY_PRECISION = 4;
