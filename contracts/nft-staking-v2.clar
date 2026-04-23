@@ -362,3 +362,11 @@
 (define-read-only (get-staking-count (staker principal))
   (default-to u0 (map-get? staker-balance staker))
 )
+
+;; @desc has-staked
+;; @param staker principal
+;; @returns bool
+;; Read-only context viewer
+(define-read-only (has-staked (staker principal))
+  (> (default-to u0 (map-get? staker-balance staker)) u0)
+)
