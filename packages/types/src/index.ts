@@ -21,3 +21,4 @@ export interface PaginationResult<T> { data: T[]; total: number; page: number; l
 export interface ApiResponse<T> { success: boolean; data?: T; error?: string; }
 export interface ApiError { code: string; message: string; status: number; }
 export type LoadingState = 'idle' | 'loading' | 'success' | 'error';
+export interface AsyncState<T> { data: T | null; loading: boolean; error: ApiError | null; }
