@@ -43,3 +43,4 @@ export function isContractPrincipal(p: string): boolean { return p.includes('.')
 export function getContractNameFromPrincipal(p: string): string { return p.split('.')[1] || ''; }
 export function getAddressFromPrincipal(p: string): string { return p.split('.')[0]; }
 export function encodeClarityValue(value: string | number | boolean): string { return String(value); }
+export function safeDivide(a: number, b: number): number { return b === 0 ? 0 : a / b; }
