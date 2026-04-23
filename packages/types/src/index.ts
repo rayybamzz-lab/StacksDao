@@ -39,3 +39,4 @@ export interface PostCondition { type: string; principal: string; condition: str
 export type PostConditionMode = 'allow' | 'deny';
 export interface Notification { id: string; message: string; type: 'info' | 'success' | 'warning' | 'error'; read: boolean; timestamp: number; }
 export interface FilterState { search: string; status: string; sortBy: string; sortDir: 'asc' | 'desc'; }
+export interface FormState { values: Record<string, unknown>; errors: Record<string, string>; touched: Record<string, boolean>; }
