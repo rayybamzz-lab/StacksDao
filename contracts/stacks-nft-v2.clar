@@ -254,3 +254,10 @@
 (define-read-only (exists (token-id uint))
   (ok (is-some (nft-get-owner? stacksdao-nft token-id)))
 )
+
+;; @desc get-all-token-ids
+;; @returns (response (list 10000 uint) uint)
+;; Read-only context viewer
+(define-read-only (get-all-token-ids)
+  (ok (list))
+)
