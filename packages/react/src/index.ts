@@ -30,3 +30,4 @@ export function useTokenDecimals() { return { decimals: 6, loading: false }; }
 export function useTokenSymbol() { return { symbol: 'SDAO', loading: false }; }
 export function useTokenName() { return { name: 'StacksDAO Token', loading: false }; }
 export function useAuthorizedMinter() { return { minter: null, loading: false }; }
+export function usePaused() { return { paused: false, loading: false }; }
