@@ -83,6 +83,23 @@ StacksDao/
 
 ---
 
+## Workspace Packages
+
+The root workspace also includes publishable TypeScript packages under `packages/`, including:
+
+- `@stacksdao/contracts` for contract-facing helpers and identifiers
+- `@stacksdao/network` for environment-aware network configuration
+- `@stacksdao/nft`, `@stacksdao/staking`, and `@stacksdao/dao` for domain-specific client helpers
+- `@stacksdao/react` and `@stacksdao/nextjs` for frontend integration surfaces
+
+Build the package workspace from the repo root with:
+
+```bash
+npm run build
+```
+
+---
+
 ## Prerequisites
 
 Before starting, ensure you have the following installed:
