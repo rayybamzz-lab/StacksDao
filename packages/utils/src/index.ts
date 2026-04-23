@@ -35,3 +35,4 @@ export function retry<T>(fn: () => Promise<T>, retries = 3): Promise<T> { return
 export function timeout<T>(promise: Promise<T>, ms: number): Promise<T> { return Promise.race([promise, new Promise<T>((_, reject) => setTimeout(() => reject(new Error('Timeout')), ms))]); }
 export function daysToBlocks(days: number): number { return days * 144; }
 export function blocksToDays(blocks: number): number { return Math.floor(blocks / 144); }
+export function getYearlyRewards(ratePerBlock: number): number { return ratePerBlock * 144 * 365; }
