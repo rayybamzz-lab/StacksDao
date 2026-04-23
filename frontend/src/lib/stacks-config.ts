@@ -33,3 +33,4 @@ export const CONTRACT_IDENTIFIERS = {
 } as const;
 export function cn(...classes: (string | false | undefined)[]) { return classes.filter(Boolean).join(' '); }
 export const EXPLORER_TX_URL = (txid: string) => 'https://explorer.hiro.so/txid/' + txid + '?chain=mainnet';
+export const EXPLORER_ADDRESS_URL = (addr: string) => 'https://explorer.hiro.so/address/' + addr + '?chain=mainnet';
