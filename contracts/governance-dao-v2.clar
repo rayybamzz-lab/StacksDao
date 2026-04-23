@@ -540,3 +540,14 @@
     (ok u0)
   )
 )
+
+;; @desc get-proposal-quorum-met
+;; @param proposal-id uint
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-quorum-met (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (>= (get total-votes proposal) QUORUM))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
