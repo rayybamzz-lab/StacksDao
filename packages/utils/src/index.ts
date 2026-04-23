@@ -28,3 +28,4 @@ export function throttle<T extends (...args: unknown[]) => unknown>(fn: T, limit
 export function groupBy<T>(arr: T[], key: keyof T): Record<string, T[]> { return arr.reduce((acc, item) => { const k = String(item[key]); (acc[k] = acc[k] || []).push(item); return acc; }, {} as Record<string, T[]>); }
 export function sortBy<T>(arr: T[], key: keyof T, dir: 'asc' | 'desc' = 'asc'): T[] { return [...arr].sort((a, b) => { const av = a[key]; const bv = b[key]; return dir === 'asc' ? (av > bv ? 1 : -1) : (av < bv ? 1 : -1); }); }
 export function chunk<T>(arr: T[], size: number): T[][] { const res: T[][] = []; for (let i = 0; i < arr.length; i += size) res.push(arr.slice(i, i + size)); return res; }
+export function flatten<T>(arr: T[][]): T[] { return arr.reduce((acc, val) => acc.concat(val), []); }
