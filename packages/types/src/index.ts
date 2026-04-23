@@ -48,3 +48,4 @@ export interface LeaderboardEntry { rank: number; address: string; score: number
 export interface RewardEstimate { daily: number; weekly: number; monthly: number; yearly: number; }
 export interface StakingPosition { tokenId: number; stakedAt: number; rewardsAccrued: number; apy: number; }
 export interface GovernanceConfig { votingPeriod: number; minProposalBalance: number; quorum: number; }
+export interface NftAttribute { trait: string; value: string; }
