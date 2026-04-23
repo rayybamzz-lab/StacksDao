@@ -17,3 +17,4 @@ npm install @stacksdao/events
 ```bash
 npm run build
 ```
+## Events
