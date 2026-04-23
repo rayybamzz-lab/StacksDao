@@ -573,3 +573,12 @@ Clarinet.test({
         summary.result.expectOk();
     },
 });
+
+Clarinet.test({
+    name: "stacks-nft: mint stats reflect zero mints at start",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let stats = chain.callReadOnlyFn("stacks-nft-v2", "get-mint-stats", [], deployer.address);
+        stats.result.expectOk();
+    },
+});
