@@ -51,3 +51,4 @@ export interface GovernanceConfig { votingPeriod: number; minProposalBalance: nu
 export interface NftAttribute { trait: string; value: string; }
 export interface NftMetadata { tokenId: number; name: string; description: string; image: string; attributes: NftAttribute[]; }
 export interface ContractEvent { event: string; data: Record<string, unknown>; blockHeight: number; txId: string; }
+export interface EventFilter { event?: string; fromBlock?: number; toBlock?: number; contract?: string; }
