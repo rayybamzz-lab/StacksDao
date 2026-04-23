@@ -56,3 +56,4 @@ export function endOfDay(date: Date): Date { const r = new Date(date); r.setHour
 export function isSameDay(a: Date, b: Date): boolean { return a.toDateString() === b.toDateString(); }
 export function generateNonce(): string { return Math.random().toString(36).slice(2, 10); }
 export function hashString(str: string): number { let h = 0; for (let i = 0; i < str.length; i++) h = (h << 5) - h + str.charCodeAt(i); return h; }
+export function pickRandom<T>(arr: T[]): T { return arr[Math.floor(Math.random() * arr.length)]; }
