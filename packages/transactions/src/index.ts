@@ -10,3 +10,4 @@ export function buildPostCondition(amount: number, sender: string, asset: string
 export function encodeMemo(memo: string): string { return memo.slice(0, 34); }
 export function decodeMemo(memo: string): string { return memo; }
 export function estimateFee(action: string): number { return action === 'mint' ? 300000 : 500000; }
+export function txIdToHex(txId: string): string { return txId.startsWith('0x') ? txId : '0x' + txId; }
