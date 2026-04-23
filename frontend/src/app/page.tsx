@@ -31,8 +31,6 @@ import ProposalCard from '@/components/ProposalCard';
 export default function Home() {
   const { isSignedIn, userAddress, connectWallet, disconnectWallet } = useStacks();
   const [isMinting, setIsMinting] = useState(false);
-  const [isStaking, setIsStaking] = useState(false);
-  const [isUnstaking, setIsUnstaking] = useState(false);
 
   const handleMint = async () => {
     if (!isSignedIn) return connectWallet();
@@ -68,85 +66,6 @@ export default function Home() {
       const errorMessage = e.message || 'Transaction failed to broadcast';
       toast.error(`Minting Failed: ${errorMessage}`);
       setIsMinting(false);
-    }
-  };
-
-  const handleStake = async (tokenId: number) => {
-    if (!isSignedIn) return connectWallet();
-
-    setIsStaking(true);
-    try {
-      await openContractCall({
-        contractAddress: CONTRACT_ADDRESS,
-        contractName: CONTRACTS.NFT_STAKING,
-        functionName: 'stake-nft',
-        functionArgs: [Cl.uint(tokenId)],
-        network: NETWORK as any,
-        onFinish: (data) => {
-          toast.success('Successfully broadcasted staking transaction!');
-          console.log('Stake TXID:', data.txId);
-          setIsStaking(false);
-        },
-        onCancel: () => {
-          toast('Staking cancelled by user', { icon: 'ℹ️' });
-          setIsStaking(false);
-        },
-      });
-    } catch (e: any) {
-      console.error('[Stake] Error:', e);
-      const errorMessage = e.message || 'Transaction failed to broadcast';
-      toast.error(`Staking Failed: ${errorMessage}`);
-      setIsStaking(false);
-    }
-  };
-
-  const handleUnstake = async (tokenId: number) => {
-    if (!isSignedIn) return connectWallet();
-    setIsUnstaking(true);
-    try {
-      await openContractCall({
-        contractAddress: CONTRACT_ADDRESS,
-        contractName: CONTRACTS.NFT_STAKING,
-        functionName: 'unstake-nft',
-        functionArgs: [Cl.uint(tokenId)],
-        network: NETWORK as any,
-        onFinish: (data) => {
-          toast.success('Successfully broadcasted unstaking transaction!');
-          console.log('Unstake TXID:', data.txId);
-          setIsUnstaking(false);
-        },
-        onCancel: () => {
-          toast('Unstaking cancelled', { icon: 'ℹ️' });
-          setIsUnstaking(false);
-        },
-      });
-    } catch (e: any) {
-      console.error('[Unstake] Error:', e);
-      toast.error(`Unstaking Failed: ${e.message || 'Unknown error'}`);
-      setIsUnstaking(false);
-    }
-  };
-
-  const handleClaim = async (tokenId: number) => {
-    if (!isSignedIn) return connectWallet();
-    try {
-      await openContractCall({
-        contractAddress: CONTRACT_ADDRESS,
-        contractName: CONTRACTS.NFT_STAKING,
-        functionName: 'claim-rewards',
-        functionArgs: [Cl.uint(tokenId)],
-        network: NETWORK as any,
-        onFinish: (data) => {
-          toast.success('Successfully broadcasted claim transaction!');
-          console.log('Claim TXID:', data.txId);
-        },
-        onCancel: () => {
-          toast('Claim cancelled', { icon: 'ℹ️' });
-        },
-      });
-    } catch (e: any) {
-      console.error('[Claim] Error:', e);
-      toast.error(`Claim Failed: ${e.message || 'Unknown error'}`);
     }
   };
 
