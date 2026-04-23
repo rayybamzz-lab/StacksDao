@@ -23,3 +23,4 @@ export interface ApiError { code: string; message: string; status: number; }
 export type LoadingState = 'idle' | 'loading' | 'success' | 'error';
 export interface AsyncState<T> { data: T | null; loading: boolean; error: ApiError | null; }
 export interface WalletInfo { address: string; balance: number; network: string; connected: boolean; }
+export interface TransactionReceipt { txId: string; status: 'pending' | 'success' | 'error'; blockHeight?: number; }
