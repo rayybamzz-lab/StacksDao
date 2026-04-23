@@ -156,6 +156,13 @@
   )
 )
 
+;; @desc get-paused
+;; @returns (response bool none) - Returns whether minting is paused
+;; Read-only context viewer
+(define-read-only (get-paused)
+  (ok (var-get paused))
+)
+
 ;; ---------------------
 ;; SIP-009 Interface
 ;; ---------------------
