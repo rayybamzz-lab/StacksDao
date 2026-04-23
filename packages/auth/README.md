@@ -19,3 +19,4 @@ npm run build
 ```
 # Auth Package
 ## Overview
+## Installation
