@@ -30,3 +30,4 @@ export interface NftSummary { minted: number; remaining: number; floorPrice?: nu
 export interface TokenSummary { name: string; symbol: string; decimals: number; supply: number; price?: number; }
 export interface ProposalSummary { id: number; title: string; status: ProposalStatus; votesFor: number; votesAgainst: number; }
 export interface UserActivity { address: string; proposalsCreated: number; votesCast: number; nftsStaked: number; }
+export interface PriceFeed { asset: string; price: number; timestamp: number; source: string; }
