@@ -596,3 +596,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc is-proposal-expired
+;; @param proposal-id uint
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (is-proposal-expired (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (> block-height (get end-block proposal)))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
