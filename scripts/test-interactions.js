@@ -9,7 +9,9 @@ const { STACKS_MAINNET } = require('@stacks/network');
 const fs = require('fs');
 const path = require('path');
 
-const WALLET_FILE = path.join(__dirname, 'test-wallet.json');
+const WALLET_FILE = process.env.WALLET_FILE
+    ? path.resolve(process.env.WALLET_FILE)
+    : path.join(__dirname, 'test-wallet.example.json');
 const NETWORK = STACKS_MAINNET;
 const API_BASE = 'https://api.mainnet.hiro.so';
 const CONTRACT_ADDRESS = 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
