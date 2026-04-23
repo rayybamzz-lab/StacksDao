@@ -5,3 +5,4 @@ export const packageMetadata = {
   name: PACKAGE_NAME,
   scope: PACKAGE_SCOPE,
 } as const;
+export function buildMintArgs(): string[] { return []; }
