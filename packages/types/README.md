@@ -17,3 +17,4 @@ npm install @stacksdao/types
 ```bash
 npm run build
 ```
+# Types Package
