@@ -55,3 +55,4 @@ export function startOfDay(date: Date): Date { const r = new Date(date); r.setHo
 export function endOfDay(date: Date): Date { const r = new Date(date); r.setHours(23, 59, 59, 999); return r; }
 export function isSameDay(a: Date, b: Date): boolean { return a.toDateString() === b.toDateString(); }
 export function generateNonce(): string { return Math.random().toString(36).slice(2, 10); }
+export function hashString(str: string): number { let h = 0; for (let i = 0; i < str.length; i++) h = (h << 5) - h + str.charCodeAt(i); return h; }
