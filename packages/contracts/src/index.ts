@@ -8,3 +8,4 @@ export const packageMetadata = {
 export const CONTRACT_ADDRESS = 'SP3KN56MPA655CXFK5ZBZR9BG9VX1RTCB6PB8VQH2';
 export const CONTRACT_VERSION = 'v2';
 export function getContractIdentifier(name: string): string { return CONTRACT_ADDRESS + '.' + name; }
+export function getContractAbiUrl(name: string, network: string): string { return 'https://api.' + network + '.hiro.so/v2/contracts/interface/' + CONTRACT_ADDRESS + '/' + name; }
