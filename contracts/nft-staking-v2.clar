@@ -354,3 +354,11 @@
 (define-read-only (get-contract-metadata)
   (ok { version: "v2.0", reward-per-block: REWARD-PER-BLOCK })
 )
+
+;; @desc get-staking-count
+;; @param staker principal
+;; @returns uint
+;; Read-only context viewer
+(define-read-only (get-staking-count (staker principal))
+  (default-to u0 (map-get? staker-balance staker))
+)
