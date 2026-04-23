@@ -4,5 +4,6 @@ stacks_node_rpc_address = "https://api.mainnet.hiro.so"
 deployment_fee_rate = 100
 
 [accounts.deployer]
+# Keep real deployer credentials in settings/Mainnet.local.toml instead of source control.
 mnemonic = "*** REPLACE WITH YOUR MAINNET DEPLOYER WALLET MNEMONIC OR USE settings/Mainnet.local.toml ***"
 balance = 1_000_000_000_000
