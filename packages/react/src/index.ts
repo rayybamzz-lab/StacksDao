@@ -25,3 +25,4 @@ export function useIsVotingActive(proposalId: number) { return { active: false, 
 export function useVoteRecord(proposalId: number, voter: string) { return { record: null, proposalId, voter, loading: false }; }
 export function useRewardPerBlock() { return { rate: 10000000, loading: false }; }
 export function useStakerBalance(address: string) { return { balance: 0, address, loading: false }; }
+export function useTotalSupply() { return { supply: 0, loading: false }; }
