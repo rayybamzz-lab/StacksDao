@@ -291,3 +291,12 @@
 (define-read-only (is-staked (token-id uint))
   (ok (is-some (map-get? staking-data token-id)))
 )
+
+;; @desc get-reward-estimate
+;; @param token-id uint
+;; @param blocks uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-reward-estimate (token-id uint) (blocks uint))
+  (ok (* blocks REWARD-PER-BLOCK))
+)
