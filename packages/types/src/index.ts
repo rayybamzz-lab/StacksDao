@@ -45,3 +45,4 @@ export type IconName = 'wallet' | 'trophy' | 'vote' | 'flame' | 'zap' | 'shield'
 export interface ChartData { labels: string[]; datasets: { label: string; data: number[] }[]; }
 export interface TimeSeriesPoint { timestamp: number; value: number; }
 export interface LeaderboardEntry { rank: number; address: string; score: number; }
+export interface RewardEstimate { daily: number; weekly: number; monthly: number; yearly: number; }
