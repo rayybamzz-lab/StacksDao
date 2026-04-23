@@ -508,6 +508,21 @@ Clarinet.test({
 });
 
 Clarinet.test({
+    name: "stacks-nft: exposes the paused mint state",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+
+        let setup = chain.mineBlock([
+            Tx.contractCall("stacks-nft-v2", "set-paused", [types.bool(true)], deployer.address)
+        ]);
+        setup.receipts[0].result.expectOk().expectBool(true);
+
+        let paused = chain.callReadOnlyFn("stacks-nft-v2", "get-paused", [], deployer.address);
+        paused.result.expectOk().expectBool(true);
+    },
+});
+
+Clarinet.test({
     name: "governance-token: cannot burn zero tokens",
     async fn(chain: Chain, accounts: Map<string, Account>) {
         const wallet1 = accounts.get("wallet_1")!;
