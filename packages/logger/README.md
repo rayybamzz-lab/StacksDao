@@ -18,3 +18,4 @@ npm install @stacksdao/logger
 npm run build
 ```
 # Logger Package
+## Log Levels
