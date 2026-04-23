@@ -42,3 +42,4 @@ export function parsePrincipal(str: string): { prefix: string; hash: string } { 
 export function isContractPrincipal(p: string): boolean { return p.includes('.'); }
 export function getContractNameFromPrincipal(p: string): string { return p.split('.')[1] || ''; }
 export function getAddressFromPrincipal(p: string): string { return p.split('.')[0]; }
+export function encodeClarityValue(value: string | number | boolean): string { return String(value); }
