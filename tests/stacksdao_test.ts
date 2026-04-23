@@ -282,6 +282,27 @@ Clarinet.test({
 });
 
 Clarinet.test({
+    name: "governance-dao: cannot create proposal below the SDAO threshold",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const wallet1 = accounts.get("wallet_1")!;
+
+        let block = chain.mineBlock([
+            Tx.contractCall(
+                "governance-dao-v2",
+                "create-proposal",
+                [
+                    types.utf8("Increase reward rate"),
+                    types.utf8("Proposal to increase SDAO reward rate from 10 to 15 per block"),
+                ],
+                wallet1.address
+            ),
+        ]);
+
+        block.receipts[0].result.expectErr().expectUint(708);
+    },
+});
+
+Clarinet.test({
     name: "governance-dao: cannot vote twice on same proposal",
     async fn(chain: Chain, accounts: Map<string, Account>) {
         const deployer = accounts.get("deployer")!;
