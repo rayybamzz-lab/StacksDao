@@ -336,3 +336,14 @@
     ERR-NOT-STAKED
   )
 )
+
+;; @desc get-blocks-since-claim
+;; @param token-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-blocks-since-claim (token-id uint))
+  (match (map-get? staking-data token-id)
+    info (ok (- block-height (get last-claim-block info)))
+    ERR-NOT-STAKED
+  )
+)
