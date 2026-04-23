@@ -33,3 +33,4 @@ export function useAuthorizedMinter() { return { minter: null, loading: false };
 export function usePaused() { return { paused: false, loading: false }; }
 export function useStakeTx(tokenId: number) { return { submit: async () => {}, loading: false }; }
 export function useUnstakeTx(tokenId: number) { return { submit: async () => {}, loading: false }; }
+export function useClaimTx(tokenId: number) { return { submit: async () => {}, loading: false }; }
