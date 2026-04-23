@@ -17,3 +17,4 @@ npm install @stacksdao/errors
 ```bash
 npm run build
 ```
+# Errors Package
