@@ -10,3 +10,4 @@ export const APP_VERSION = '2.0.0';
 export function getUserAgent(): string { return APP_NAME + '/' + APP_VERSION; }
 export interface CacheConfig { ttl: number; key: string; }
 export function createCacheKey(prefix: string, id: string): string { return prefix + ':' + id; }
+export const DEFAULT_CACHE_TTL = 300000;
