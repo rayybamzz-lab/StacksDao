@@ -17,5 +17,6 @@ Include the affected contract or package name, the network you tested against, a
 
 ## Security Best Practices
 - **Never share your mnemonic phrase**.
+- **Never commit mnemonics, private keys, or wallet export files**. If a credential ever lands in git history, rotate it immediately.
 - **Always verify the contract ID** before signing any transaction on mainnet.
 - **Use post-conditions** in your interactions to prevent unauthorized token transfers.
