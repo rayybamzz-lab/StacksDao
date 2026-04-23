@@ -64,3 +64,4 @@ export function useLoading() { const [loading, setLoading] = React.useState(fals
 export function useInView(ref: React.RefObject<Element | null>) { return false; }
 export function useLockBodyScroll(lock = false) { }
 export function useClickOutside(ref: React.RefObject<Element | null>, handler: () => void) { }
+export function useReducedMotion() { return false; }
