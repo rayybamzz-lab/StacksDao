@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function createTestAccount(seed: string) { return { address: 'SP' + seed, key: seed }; }
+export function mockBlock(height: number) { return { height, time: Date.now() }; }
