@@ -12,3 +12,4 @@ export function formatNumber(n: number): string { return n.toLocaleString(); }
 export function blocksToTime(blocks: number): string { const mins = (blocks * 10) % 60; const hrs = Math.floor((blocks * 10) / 60); return hrs + 'h ' + mins + 'm'; }
 export function isValidPrincipal(p: string): boolean { return p.startsWith('SP') || p.startsWith('ST'); }
 export function clamp(num: number, min: number, max: number): number { return Math.min(Math.max(num, min), max); }
+export function sleep(ms: number): Promise<void> { return new Promise(r => setTimeout(r, ms)); }
