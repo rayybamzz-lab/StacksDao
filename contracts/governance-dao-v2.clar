@@ -478,3 +478,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-proposal-total-votes
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-total-votes (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (get total-votes proposal))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
