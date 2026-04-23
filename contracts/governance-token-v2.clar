@@ -189,3 +189,10 @@
 (define-read-only (get-minter-or-owner)
   (ok (default-to CONTRACT-OWNER (var-get authorized-minter)))
 )
+
+;; @desc has-authorized-minter
+;; @returns (response bool none)
+;; Read-only context viewer
+(define-read-only (has-authorized-minter)
+  (ok (is-some (var-get authorized-minter)))
+)
