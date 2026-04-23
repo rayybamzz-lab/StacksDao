@@ -234,3 +234,12 @@
 (define-read-only (is-sip010-compliant)
   (ok true)
 )
+
+;; @desc get-allowance
+;; @param owner principal
+;; @param spender principal
+;; @returns (response uint none)
+;; Read-only context viewer
+(define-read-only (get-allowance (owner principal) (spender principal))
+  (ok u0)
+)
