@@ -351,3 +351,26 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-proposal-status
+;; @param proposal-id uint
+;; @returns (response (string-ascii 10) uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-status (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal
+      (ok
+        (if (get executed proposal)
+          "executed"
+          (if (> block-height (get end-block proposal))
+            (if (> (get votes-for proposal) (get votes-against proposal))
+              "passed"
+              "rejected"
+            )
+            "active"
+          )
+        )
+      )
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
