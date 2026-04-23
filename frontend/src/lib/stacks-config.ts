@@ -67,3 +67,4 @@ export function useClickOutside(ref: React.RefObject<Element | null>, handler: (
 export function useReducedMotion() { return false; }
 export function useScrollLock() { const [locked, setLocked] = React.useState(false); return { locked, lock: () => setLocked(true), unlock: () => setLocked(false) }; }
 export function useIsMobile() { return false; }
+export function useIsTablet() { return false; }
