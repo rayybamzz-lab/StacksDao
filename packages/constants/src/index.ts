@@ -27,3 +27,4 @@ export const SIP009_TRAIT = 'SP2PABAF9FTAJYNFZH93XENAJ8FVY99RRM50D2JG9.nft-trait
 export const SIP010_TRAIT = 'SP3FBR2AGK5H9QBDH3EEN6DF8EK8JY7RX8QJ5SVTE.sip-010-trait-ft-standard.sip-010-trait';
 export const DEFAULT_GAS_LIMIT = 500000;
 export const DEFAULT_POSTCONDITION_MODE = 'deny';
+export const APP_THEMES = ['light', 'dark', 'system'] as const;
