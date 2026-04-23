@@ -17,3 +17,6 @@ StacksDao (v2) is built on the Stacks blockchain using Clarity smart contracts. 
 The frontend uses `Next.js` and `@stacks/connect` for seamless wallet interactions. Post-conditions are strictly enforced for all STX transfers to ensure user security.
 
 Frontend runtime configuration is provided through `NEXT_PUBLIC_CONTRACT_ADDRESS` and `NEXT_PUBLIC_NETWORK`, allowing the UI to target the intended Stacks environment without editing source files.
+
+## Package Workspace
+The repository also ships a small TypeScript package workspace under `packages/` for contract identifiers, network helpers, frontend adapters, and domain-specific protocol helpers. These packages build independently from the root workspace and are intended to stay aligned with the deployed `-v2` contracts.
