@@ -59,3 +59,4 @@ export function useOnline() { const [online, setOnline] = React.useState(true); 
 export function useWindowSize() { return { width: 0, height: 0 }; }
 export function usePageVisibility() { return true; }
 export function useKeyPress(targetKey: string) { return false; }
+export function useFormField<T>(initial: T) { const [value, setValue] = React.useState<T>(initial); return { value, onChange: (e: React.ChangeEvent<HTMLInputElement>) => setValue(e.target.value as unknown as T), setValue }; }
