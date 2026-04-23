@@ -18,3 +18,4 @@ npm install @stacksdao/governance-token
 npm run build
 ```
 # Governance Token Package
+## Token
