@@ -9,3 +9,4 @@ export function microToStx(micro: number): string { return (micro / 1_000_000).t
 export function stxToMicro(stx: string): number { return Math.round(parseFloat(stx) * 1_000_000); }
 export function shortenAddress(addr: string): string { return addr.slice(0, 5) + '...' + addr.slice(-4); }
 export function formatNumber(n: number): string { return n.toLocaleString(); }
+export function blocksToTime(blocks: number): string { const mins = (blocks * 10) % 60; const hrs = Math.floor((blocks * 10) / 60); return hrs + 'h ' + mins + 'm'; }
