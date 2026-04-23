@@ -7,3 +7,4 @@ export const packageMetadata = {
 } as const;
 export type ProposalStatus = 'active' | 'passed' | 'rejected' | 'executed';
 export interface Proposal { id: number; title: string; description: string; status: ProposalStatus; proposer: string; startBlock: number; endBlock: number; votesFor: number; votesAgainst: number; executed: boolean; }
+export interface StakeInfo { tokenId: number; staker: string; stakedAt: number; lastClaim: number; }
