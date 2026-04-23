@@ -72,7 +72,6 @@
 ;; ---------------------
 ;; Data Maps
 ;; ---------------------
-(define-map token-uris uint (string-ascii 256))
 
 ;; ---------------------
 ;; Mint Function
