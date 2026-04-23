@@ -227,3 +227,10 @@
 (define-read-only (get-balance-or-zero (account principal))
   (ft-get-balance sdao-token account)
 )
+
+;; @desc is-sip010-compliant
+;; @returns (response bool none)
+;; Read-only context viewer
+(define-read-only (is-sip010-compliant)
+  (ok true)
+)
