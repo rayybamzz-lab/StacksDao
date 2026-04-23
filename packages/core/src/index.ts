@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export const APP_NAME = 'StacksDAO';
+export const APP_VERSION = '2.0.0';
