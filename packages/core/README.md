@@ -17,3 +17,4 @@ npm install @stacksdao/core
 ```bash
 npm run build
 ```
+# Core Package
