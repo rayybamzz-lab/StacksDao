@@ -37,3 +37,4 @@ export const EXPLORER_ADDRESS_URL = (addr: string) => 'https://explorer.hiro.so/
 export const MICRO_STX = 1000000;
 export function formatMicroStx(micro: number): string { return (micro / MICRO_STX).toFixed(6) + ' STX'; }
 export function truncateMiddle(str: string, start = 6, end = 4): string { return str.length > start + end ? str.slice(0, start) + '...' + str.slice(-end) : str; }
+export function isMainnet(network: string): boolean { return network === 'mainnet'; }
