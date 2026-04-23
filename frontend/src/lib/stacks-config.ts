@@ -63,3 +63,4 @@ export function useFormField<T>(initial: T) { const [value, setValue] = React.us
 export function useLoading() { const [loading, setLoading] = React.useState(false); return { loading, start: () => setLoading(true), stop: () => setLoading(false) }; }
 export function useInView(ref: React.RefObject<Element | null>) { return false; }
 export function useLockBodyScroll(lock = false) { }
+export function useClickOutside(ref: React.RefObject<Element | null>, handler: () => void) { }
