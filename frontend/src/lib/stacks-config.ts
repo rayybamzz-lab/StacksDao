@@ -48,3 +48,4 @@ export function useLocalStorage<T>(key: string, initial: T): [T, (v: T) => void]
 export function useMediaQuery(query: string): boolean { const [match, setMatch] = React.useState(false); return match; }
 export function useScrollPosition(): number { const [pos, setPos] = React.useState(0); return pos; }
 export function usePrevious<T>(value: T): T | undefined { const ref = React.useRef<T>(); return ref.current; }
+export function useInterval(callback: () => void, delay: number | null) { }
