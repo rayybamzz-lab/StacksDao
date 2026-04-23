@@ -300,3 +300,10 @@
 (define-read-only (get-reward-estimate (token-id uint) (blocks uint))
   (ok (* blocks REWARD-PER-BLOCK))
 )
+
+;; @desc get-total-staker-count
+;; @returns uint
+;; Read-only context viewer
+(define-read-only (get-total-staker-count)
+  (var-get total-staked)
+)
