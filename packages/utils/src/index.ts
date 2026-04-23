@@ -44,3 +44,4 @@ export function getContractNameFromPrincipal(p: string): string { return p.split
 export function getAddressFromPrincipal(p: string): string { return p.split('.')[0]; }
 export function encodeClarityValue(value: string | number | boolean): string { return String(value); }
 export function safeDivide(a: number, b: number): number { return b === 0 ? 0 : a / b; }
+export function clampUint(value: number): number { return Math.max(0, Math.min(value, Number.MAX_SAFE_INTEGER)); }
