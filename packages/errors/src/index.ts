@@ -5,3 +5,4 @@ export const packageMetadata = {
   name: PACKAGE_NAME,
   scope: PACKAGE_SCOPE,
 } as const;
+export class StacksDaoError extends Error { constructor(message: string) { super(message); this.name = 'StacksDaoError'; } }
