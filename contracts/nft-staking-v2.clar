@@ -76,7 +76,7 @@
     (asserts! (> token-id u0) ERR-INVALID-TOKEN-ID)
     (let
       (
-        (owner (unwrap! (contract-call? .stacks-nft-v2 get-owner token-id) ERR-NOT-AUTHORIZED))
+        (owner (unwrap! (contract-call? .stacks-nft-v2 get-owner token-id) ERR-INVALID-TOKEN-ID))
       )
       ;; Verify caller owns the NFT
       (asserts! (is-eq (some tx-sender) owner) ERR-NOT-OWNER)
