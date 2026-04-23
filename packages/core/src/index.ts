@@ -8,3 +8,4 @@ export const packageMetadata = {
 export const APP_NAME = 'StacksDAO';
 export const APP_VERSION = '2.0.0';
 export function getUserAgent(): string { return APP_NAME + '/' + APP_VERSION; }
+export interface CacheConfig { ttl: number; key: string; }
