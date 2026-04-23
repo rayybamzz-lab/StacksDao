@@ -35,3 +35,4 @@ export function cn(...classes: (string | false | undefined)[]) { return classes.
 export const EXPLORER_TX_URL = (txid: string) => 'https://explorer.hiro.so/txid/' + txid + '?chain=mainnet';
 export const EXPLORER_ADDRESS_URL = (addr: string) => 'https://explorer.hiro.so/address/' + addr + '?chain=mainnet';
 export const MICRO_STX = 1000000;
+export function formatMicroStx(micro: number): string { return (micro / MICRO_STX).toFixed(6) + ' STX'; }
