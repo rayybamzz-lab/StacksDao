@@ -25,3 +25,4 @@ export interface AsyncState<T> { data: T | null; loading: boolean; error: ApiErr
 export interface WalletInfo { address: string; balance: number; network: string; connected: boolean; }
 export interface TransactionReceipt { txId: string; status: 'pending' | 'success' | 'error'; blockHeight?: number; }
 export interface StakingSummary { totalStaked: number; totalRewards: number; apr: number; }
+export interface DaoSummary { activeProposals: number; totalProposals: number; totalVotes: number; }
