@@ -158,3 +158,10 @@
 (define-read-only (get-token-uri)
   (ok (var-get token-uri))
 )
+
+;; @desc get-authorized-minter
+;; @returns (response (optional principal) none) - Returns the current authorized minter principal
+;; Read-only context viewer
+(define-read-only (get-authorized-minter)
+  (ok (var-get authorized-minter))
+)
