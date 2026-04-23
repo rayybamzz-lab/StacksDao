@@ -6,3 +6,4 @@ export const packageMetadata = {
   scope: PACKAGE_SCOPE,
 } as const;
 export function StacksProviderStub({ children }: { children: unknown }) { return children; }
+export function withAuth(guard: boolean) { return guard; }
