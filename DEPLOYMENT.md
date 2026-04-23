@@ -9,6 +9,9 @@ Contracts must be deployed in this exact order due to inter-contract dependencie
 3. `nft-staking-v2` — calls `stacks-nft-v2` and `governance-token-v2`
 4. `governance-dao-v2` — calls `governance-token-v2`
 
+The repo includes `deployments/Mainnet.yaml` for the full v2 deployment sequence and
+`deployments/FinalizeMainnet.yaml` for the post-deploy `set-authorized-minter` transaction.
+
 ## Post-Deployment Setup
 
 After deploying all four contracts, call these transactions in order:
@@ -46,7 +49,7 @@ This step is **critical** — without it, the staking contract cannot mint rewar
 ---
 
 ## Recommended Pre-Mainnet Checklist
-- [x] Run `clarinet check` — 0 errors
+- [x] Run `npm test` — root contract and workspace verification
 - [ ] Deploy and test full flow on **testnet** first
 - [ ] Audit staking reward math (blocks × REWARD-PER-BLOCK)
 - [ ] Confirm deployer wallet has ≥ 2.5 STX for fees
