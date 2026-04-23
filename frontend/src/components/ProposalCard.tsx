@@ -21,6 +21,7 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
     const isVotingEnded = currentBlock > proposal.endBlock;
     const totalVotes = proposal.votesFor + proposal.votesAgainst;
     const forPercentage = totalVotes > 0 ? (proposal.votesFor / totalVotes) * 100 : 0;
+    const approvalWidth = Math.min(Math.max(forPercentage, 0), 100);
 
     return (
         <div className="flex flex-col gap-4 glass-panel p-6 rounded-2xl">
@@ -59,7 +60,7 @@ export default function ProposalCard({ proposal, currentBlock, onVote, onExecute
                 <div className="bg-white/5 h-1.5 overflow-hidden rounded-full w-full">
                     <div
                         className="bg-indigo-500 h-full rounded-full transition-all duration-1000"
-                        style={{ width: `${forPercentage}%` }}
+                        style={{ width: `${approvalWidth}%` }}
                     />
                 </div>
                 <div className="flex justify-between text-xs">
