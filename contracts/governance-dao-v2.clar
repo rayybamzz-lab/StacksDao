@@ -396,3 +396,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-proposal-end-block
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-proposal-end-block (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (get end-block proposal))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
