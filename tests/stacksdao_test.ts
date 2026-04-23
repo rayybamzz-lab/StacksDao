@@ -564,3 +564,12 @@ Clarinet.test({
         estimate.result.expectOk().expectUint(100000000);
     },
 });
+
+Clarinet.test({
+    name: "governance-token: get-token-summary returns correct metadata",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let summary = chain.callReadOnlyFn("governance-token-v2", "get-token-summary", [], deployer.address);
+        summary.result.expectOk();
+    },
+});
