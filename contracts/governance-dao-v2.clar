@@ -574,3 +574,14 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc get-winning-votes
+;; @param proposal-id uint
+;; @returns (response uint uint)
+;; Read-only context viewer
+(define-read-only (get-winning-votes (proposal-id uint))
+  (match (map-get? proposals proposal-id)
+    proposal (ok (if (> (get votes-for proposal) (get votes-against proposal)) (get votes-for proposal) (get votes-against proposal)))
+    ERR-PROPOSAL-NOT-FOUND
+  )
+)
