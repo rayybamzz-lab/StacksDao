@@ -407,3 +407,12 @@
     ERR-PROPOSAL-NOT-FOUND
   )
 )
+
+;; @desc has-voted
+;; @param proposal-id uint
+;; @param voter principal
+;; @returns (response bool uint)
+;; Read-only context viewer
+(define-read-only (has-voted (proposal-id uint) (voter principal))
+  (ok (is-some (map-get? votes { proposal-id: proposal-id, voter: voter })))
+)
