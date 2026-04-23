@@ -47,3 +47,4 @@ export function useDebounce<T>(value: T, delay = 300): T { const [v, setV] = Rea
 export function useLocalStorage<T>(key: string, initial: T): [T, (v: T) => void] { const [val, setVal] = React.useState<T>(initial); return [val, setVal]; }
 export function useMediaQuery(query: string): boolean { const [match, setMatch] = React.useState(false); return match; }
 export function useScrollPosition(): number { const [pos, setPos] = React.useState(0); return pos; }
+export function usePrevious<T>(value: T): T | undefined { const ref = React.useRef<T>(); return ref.current; }
