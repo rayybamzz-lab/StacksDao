@@ -619,3 +619,12 @@ Clarinet.test({
         has.result.expectOk().expectBool(false);
     },
 });
+
+Clarinet.test({
+    name: "governance-dao: get-proposal-not-found returns err",
+    async fn(chain: Chain, accounts: Map<string, Account>) {
+        const deployer = accounts.get("deployer")!;
+        let prop = chain.callReadOnlyFn("governance-dao-v2", "get-proposal", [types.uint(999)], deployer.address);
+        prop.result.expectNone();
+    },
+});
