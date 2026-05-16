@@ -65,6 +65,8 @@
 ;; @const ERR-VOTING-NOT-ENDED
 ;; Immutable protocol setting
 (define-constant ERR-VOTING-NOT-ENDED (err u709))
+(define-constant ERR-PROPOSAL-CANCELLED (err u710))
+(define-constant ERR-ALREADY-CANCELLED (err u711))
 
 ;; @const ERR-INVALID-TITLE
 ;; Immutable protocol setting
@@ -97,6 +99,7 @@
     votes-for: uint,
     votes-against: uint,
     executed: bool,
+    cancelled: bool,
     total-votes: uint
   }
 )
@@ -144,6 +147,7 @@
       votes-for: u0,
       votes-against: u0,
       executed: false,
+      cancelled: false,
       total-votes: u0
     })
 
@@ -168,6 +172,8 @@
       (proposal (unwrap! (map-get? proposals proposal-id) ERR-PROPOSAL-NOT-FOUND))
       (voter-balance (unwrap-panic (contract-call? .governance-token-v2 get-balance tx-sender)))
     )
+    ;; Proposal must not be cancelled
+    (asserts! (not (get cancelled proposal)) ERR-PROPOSAL-CANCELLED)
     ;; Voting must be active
     (asserts! (<= block-height (get end-block proposal)) ERR-VOTING-ENDED)
     ;; Cannot vote twice
@@ -207,6 +213,8 @@
       (proposal (unwrap! (map-get? proposals proposal-id) ERR-PROPOSAL-NOT-FOUND))
       (voter-balance (unwrap-panic (contract-call? .governance-token-v2 get-balance tx-sender)))
     )
+    ;; Proposal must not be cancelled
+    (asserts! (not (get cancelled proposal)) ERR-PROPOSAL-CANCELLED)
     ;; Voting must be active
     (asserts! (<= block-height (get end-block proposal)) ERR-VOTING-ENDED)
     ;; Cannot vote twice
@@ -245,6 +253,8 @@
     (
       (proposal (unwrap! (map-get? proposals proposal-id) ERR-PROPOSAL-NOT-FOUND))
     )
+    ;; Proposal must not be cancelled
+    (asserts! (not (get cancelled proposal)) ERR-PROPOSAL-CANCELLED)
     ;; Voting period must be over
     (asserts! (> block-height (get end-block proposal)) ERR-VOTING-NOT-ENDED)
     ;; Cannot execute twice
@@ -268,6 +278,33 @@
 ;; Read-only context viewer
 (define-read-only (get-contract-owner)
   (ok CONTRACT-OWNER)
+)
+
+;; ---------------------
+;; Cancel Proposal
+;; ---------------------
+(define-public (cancel-proposal (proposal-id uint))
+  (let
+    (
+      (proposal (unwrap! (map-get? proposals proposal-id) ERR-PROPOSAL-NOT-FOUND))
+    )
+    ;; Only proposer can cancel
+    (asserts! (is-eq tx-sender (get proposer proposal)) ERR-NOT-AUTHORIZED)
+    ;; Voting period must NOT be over
+    (asserts! (<= block-height (get end-block proposal)) ERR-VOTING-ENDED)
+    ;; Cannot cancel twice
+    (asserts! (not (get cancelled proposal)) ERR-ALREADY-CANCELLED)
+    ;; Cannot cancel if executed
+    (asserts! (not (get executed proposal)) ERR-ALREADY-EXECUTED)
+
+    ;; Mark as cancelled
+    (map-set proposals proposal-id
+      (merge proposal { cancelled: true })
+    )
+
+    (print { event: "proposal-cancelled", proposal-id: proposal-id })
+    (ok true)
+  )
 )
 
 ;; ---------------------
