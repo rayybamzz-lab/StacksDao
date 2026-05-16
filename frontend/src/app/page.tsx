@@ -23,6 +23,9 @@ import {
   Flame
 } from 'lucide-react';
 import ProposalCard from '@/components/ProposalCard';
+import StakingCard from '@/components/StakingCard';
+import MinterCard from '@/components/MinterCard';
+import TransactionHistory from '@/components/TransactionHistory';
 
 function getErrorMessage(error: unknown) {
   return error instanceof Error ? error.message : 'Unknown error';
@@ -297,6 +300,17 @@ export default function Home() {
             onExecute={handleExecute}
           />
         </div>
+
+        {/* Transaction History Section */}
+        {isSignedIn && (
+          <TransactionHistory
+            transactions={[
+              { id: '0x1c...a2f', type: 'NFT Minting', status: 'confirmed', timestamp: '2 hours ago', amount: '0.01 STX' },
+              { id: '0x3b...e4d', type: 'Token Staking', status: 'confirmed', timestamp: '5 hours ago', amount: '1 NFT' },
+              { id: '0x9a...f11', type: 'Governance Vote', status: 'pending', timestamp: '10 mins ago' },
+            ]}
+          />
+        )}
 
         {/* Status Section */}
         {!isSignedIn && (
